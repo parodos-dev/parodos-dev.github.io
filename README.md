@@ -1,41 +1,39 @@
-# Website
+# project-flotta.io webpage
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-### Installation
-
-```
-$ yarn
-```
-
-### Local Development
+## Build
 
 ```
-$ yarn start
+make build
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
+## Check links
 
 ```
-$ yarn build
+make check-link
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
+## Run site locally
 
 ```
-$ USE_SSH=true yarn deploy
+make run
 ```
 
-Not using SSH:
+The site is available at http://localhost:4000/
 
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
+## Contrib
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Template based on `github.com/themefisher/kross-jekyll` project.
+
+
+## Documentation version update
+
+On documentation version change, the following changes need to be done:
+
+- [] cp _data/documentation/latest.yaml _data/documentation/$VERSION.yaml
+- [] cp -rfv /documentation/latest /documentation/$VERSION
+- [] edit /documentation/$VERSION/gsg/*.md and change the following:
+  - git clone commands to the right version.
+  - make deploy with the right container version
+- [] edit /documentation/$VERSION/operations/api.html and change the swagger URL
+

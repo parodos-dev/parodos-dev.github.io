@@ -1,0 +1,50 @@
+@startuml
+
+@startuml
+!theme bluegray
+skinparam dpi 65
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName DejaVu Serif
+skinparam defaultFontSize 16
+left to right direction
+
+node "Edge Cluster" {
+    frame Kubernetes {
+        database etcd [
+            ETCD
+            ====
+            EdgeDevice
+            EdgeDeviceSet
+            EdgeWorkload
+            ----
+        ]
+        component "API Server" as apiserver
+        component "Flotta Edge API" as edgeAPI
+        component "Flotta Operator" as operator
+    }
+}
+
+node "Edge Device" {
+    frame "Flotta Agent" as deviceAgent {
+        component "Device Worker" as device_worker
+        component "Podman" as podman
+        component "Systemd" as systemd
+        component "Workloads" as workloads
+    }
+}
+
+device_worker -r-> edgeAPI : Gets\nupdates/\nSends\nstatus\n[https]
+
+operator <--> apiserver: reconcile
+edgeAPI <--> apiserver: register/\nupdate device
+apiserver <--> etcd: "Flotta CRDs"
+
+device_worker --l--> podman : interacts with
+podman --> systemd : Generates
+device_worker --> systemd : Configures
+systemd --> workloads : Runs
+
+@enduml
+
+@enduml

@@ -1,0 +1,336 @@
+#-------------------------------
+# General Site Settings
+
+title: Parodos
+logo: assets/images/flotta-logo.png
+author: themefisher
+description: this is meta description
+email: parodos@redhat.com
+phone:
+address:
+copyright: Copyright &copy; 2020 Designed by [Themefisher](https://themefisher.com) & Developed by [Getjekyllthemes](https://getjekyllthemes.com)
+
+menu:
+# - {name: About, link: '/about'}
+- {name: Blog, link: '/blog.html'}
+- {name: Documentation, link: '/documentation/latest/intro/overview.html'}
+# - {name: Portfolio, link: '/portfolio'}
+# - {name: Contact, link: '/contact'}
+
+
+#-------------------------------
+# Google Analytics Section
+
+# Analytics helps you understand who visits your website.
+# Learn more at: http://support.google.com/analytics/answer/1008065
+
+# NOTE: If you want to use Google Analytics for basic web tracking: Just uncomment and enter your UA-Code here.
+
+google-analytics: # UA-XXXXXX-X
+
+
+#-------------------------------
+# Comment Section (Disqus)
+
+disqus-identifier: # Add your shortname for Disqus Comment. For example mr-brown
+
+
+#-------------------------------
+# Hero Section
+
+hero:
+  hero-title: |
+    Parados: <br>
+    The internal developer platform for Enterprises with legacy applications
+  hero-text: "Empower Your developers with Parodos: Streamline Workflow Management with a simple Java Toolkit"
+  hero-image: assets/images/flotta-device-diagram.png
+social:
+- {icon: "ti-linkedin", link: "https://www.linkedin.com/company/project-flotta/about/"}
+- {icon: "ti-twitter", link: "https://twitter.com/project_flotta"}
+- {icon: "ti-github", link: "https://github.com/project-flotta/"}
+
+
+#-------------------------------
+# About (Section and Page)
+
+# About Section
+blurb: |
+  Parodos is a Java toolkit to help enterprise's with a legacy footprint build
+  internal developer platforms (IDP) that enable their developers to get access
+  to the tools and environments required to start coding with less time, friction
+  and frustration. <br><br>
+
+  The project consist in two parts. The user interface for Parodos is <a
+  href="https://backstage.io/">Backstage</a> plugin that will be contributed to
+  Red Hat's Janus-IDP initiative soon. And some backend services base on Java
+  Spring where anyone can write workflows.<br><br>
+
+  The focus of Parodos is around Workflows (composed of WorkflowTasks) that bring
+  together the existing tools and processes of the enterpise in an end-to-end
+  experience that developers, quality assurance, production support and other
+  enterprise software development/delivery team members can consume (through our
+  Backstage plugin or by your own interfaces calling these backing services) to
+  get the outcomes they need with fewer tickets/meetings/frustration.
+
+blurb-btn-link: '/documentation/latest/intro/overview.html'
+blurb-btn-name: know more
+
+
+# About Page
+
+# Work Process Section
+work-process:
+  - title : "Research and Plan"
+    icon : "assets/images/icons/plan.png"
+    content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  - title : "Design and Develop"
+    icon : "assets/images/icons/design.png"
+    content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  - title : "Deliver"
+    icon : "assets/images/icons/print.png"
+    content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+
+# # My Team Section
+# team:
+#   - title : "Jack Schenziwe"
+#     image : "assets/images/team/member-1.png"
+#     designation : "Project Manager"
+    
+#   - title : "Julias Carlie"
+#     image : "assets/images/team/member-2.png"
+#     designation : "Web Developer"
+    
+#   - title : "John Doe"
+#     image : "assets/images/team/member-3.png"
+#     designation : "Designer"
+
+
+
+
+#-------------------------------
+# Exprerience Section
+
+experience-title: Experience
+experience:
+- {name: Junior UX Designer, icon: 'icon-1.png', date: 'Jan 2007 - Feb 2009', organization: 'WEBEX'}
+- {name: UX & UI Designer, icon: 'icon-2.png', date: 'Mar 2009 - Aug 2014', organization: 'AUGMEDIX'}
+- {name: Senior UI Designer, icon: 'icon-3.png', date: 'Sep 2014 - Present', organization: 'THEMEFISHER'}
+
+
+#-------------------------------
+# Education Section
+
+education-title: Education
+education:
+- {name: Marters in UX Design, date: '2006', organization: 'Masassusets Institute of Technology'}
+- {name: Honours in Fine Arts, date: '2004', organization: 'Harvard University'}
+- {name: Higher Secondary Certificat, date: '2000', organization: 'Cardiff School'}
+- {name: Secondary School Certificate, date: '1998', organization: 'Cardiff School'}
+
+
+#-------------------------------
+# Services Section
+
+features-title: Features
+features:
+- {
+    name: OS Management,
+    icon: ti-package,
+    description: 'Manage Operating system lifecycle using RPM ostree technology and manage the current state of the device.',
+    active: # Add true to select section
+  }
+- {
+    name: Observability,
+    icon: ti-search,
+    description: 'Get any information on the workloads running in the Edgedevice and export it to a central Prometheus instance with limited bandwidth, at the same time export all logs to a central device in case it’s needed.',
+    active: true # Add true to select section
+  }
+
+- {
+    name: Identity aware,
+    icon:  ti-shield,
+    description: 'All devices have their own identity managed by X509 certificates and all communication with the Flotta Edge API is secured by MTLS connection, which also managed the device approval to enrol into the fleet.',
+    active: # Add true to select section
+  }
+
+- {
+    name: Low footprint,
+    icon: ti-wand,
+    description: 'Flotta device is a lightweight daemon that is able to run on disconnected environments or not reliable networks, also managed to limit the control-plane bandwidth.',
+    active: true # Add true to select section
+  }
+- {
+    name: Data Upload,
+    icon: ti-upload,
+    description: 'Upload any data produced by your workload to a centralized location from all of your devices',
+    active: false # Add true to select section
+  }
+- {
+    name: Ansible integration,
+    icon: ti-plug,
+    description: 'Execute Ansible playbooks on specific subset of Flotta devices and check their execution status',
+    active: true # Add true to select section
+  }
+
+# - {
+#     name: FDO,
+#     icon: ti-vector,
+#     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+#     active: true # Add true to select section
+#   }
+
+# - {
+#     name: GIT OPS friendly,
+#     icon: ti-vector,
+#     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+#     active: true # Add true to select section
+#   }
+
+
+#-------------------------------
+# Portfolio (Section and Page)
+
+# Portfolio Home Section
+portfolio-home-items:
+  - image : "assets/images/portfolio/item-1.png"
+    url: "#"
+    
+  - image : "assets/images/portfolio/item-2.png"
+    url: "#"
+    
+  - image : "assets/images/portfolio/item-3.png"
+    url: "#"
+    
+  - image : "assets/images/portfolio/item-4.png"
+    url: "#"
+    
+  - image : "assets/images/portfolio/item-5.png"
+    url: "#"
+
+
+# Portfolio Page
+portfolio-label:
+- {
+    title : "UI/UX Design",
+    type : "design"
+  }
+- {
+    title : "BRANDING",
+    type : "branding"
+  }
+- {
+    title : "ILLUSTRATION",
+    type : "illustration"
+  }
+
+portfolio-items:
+  - image : "assets/images/portfolio/item-1.png"
+    url: "#"
+    portfolio-type:
+     - type: "design"
+     - type: "illustration"
+      
+  - image : "assets/images/portfolio/item-2.png"
+    url: "#"
+    portfolio-type:
+      - type: "branding"
+      
+  - image : "assets/images/portfolio/item-3.png"
+    url: "#"
+    portfolio-type:
+      - type: "illustration"
+      
+  - image : "assets/images/portfolio/item-6.png"
+    url: "#"
+    portfolio-type:
+      - type: "design"
+      - type: "branding"
+      
+  - image : "assets/images/portfolio/item-8.png"
+    url: "#"
+    portfolio-type:
+      - type: "illustration"
+      
+  - image : "assets/images/portfolio/item-5.png"
+    url: "#"
+    portfolio-type:
+      - type: "design"
+      
+  - image : "assets/images/portfolio/item-1.png"
+    url: "#"
+    portfolio-type:
+      - type: "branding"
+      
+  - image : "assets/images/portfolio/item-3.png"
+    url: "#"
+    portfolio-type:
+      - type: "design"
+      - type: "illustration"
+      - type: "branding"
+      
+  - image : "assets/images/portfolio/item-7.png"
+    url: "#"
+    portfolio-type:
+      - type: "illustration"
+
+
+#-------------------------------
+# Testimonials Section
+
+testimonial-items:
+  - name: "Jesica Gomez"
+    image: "assets/images/testimonial/client-1.png"
+    designation : "CEO, Funder"
+    content : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <strong>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</strong> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    
+  - name: "Jesica Gomez"
+    image: "assets/images/testimonial/client-1.png"
+    designation: "CEO, Funder"
+    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <strong>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</strong> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    
+  - name: "Jesica Gomez"
+    image: "assets/images/testimonial/client-1.png"
+    designation: "CEO, Funder"
+    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <strong>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</strong> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+
+
+#-------------------------------
+# Client Slider Section
+
+client-slider-items:
+  # - logo: "assets/images/clients-logo/client-logo-1.png"
+  #   url: "#"
+    
+  # - logo: "assets/images/clients-logo/client-logo-2.png"
+  #   url: "#"
+    
+  # - logo: "assets/images/clients-logo/client-logo-3.png"
+  #   url: "#"
+    
+  # - logo: "assets/images/clients-logo/client-logo-4.png"
+  #   url: "#"
+    
+  # - logo: "assets/images/clients-logo/client-logo-5.png"
+  #   url: "#"
+    
+  # - logo: "assets/images/clients-logo/client-logo-1.png"
+  #   url: "#"
+    
+  # - logo: "assets/images/clients-logo/client-logo-2.png"
+  #   url: "#"
+    
+  # - logo: "assets/images/clients-logo/client-logo-3.png"
+  #   url: "#"
+    
+  # - logo: "assets/images/clients-logo/client-logo-4.png"
+  #   url: "#"
+    
+  # - logo: "assets/images/clients-logo/client-logo-5.png"
+  #   url: "#"
+
+#-------------------------------
+# Contact Section
+
+contact-title: Contact Info
+contact-email: flotta@redhat.com

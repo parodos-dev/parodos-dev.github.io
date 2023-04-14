@@ -1,0 +1,33 @@
+---
+layout: documentation
+title: API reference
+---
+
+# WorkFlow-service
+
+<link rel="stylesheet" type="text/css" href="/assets/swagger/swagger-ui.css" />
+<style> .swagger-ui .scheme-container, .swagger-ui .topbar { display: none !important; } </style>
+<div id="swagger-ui"></div>
+<script src="/assets/swagger/swagger-ui-bundle.js" charset="UTF-8"> </script>
+<script src="/assets/swagger/swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
+<script language="javascript">
+window.onload = function() {
+
+  window.ui = SwaggerUIBundle({
+    url: "https://raw.githubusercontent.com/project-flotta/flotta-operator/main/swagger.yaml",
+    dom_id: '#swagger-ui',
+    deepLinking: true,
+    presets: [
+      SwaggerUIBundle.presets.apis,
+      SwaggerUIStandalonePreset
+    ],
+    plugins: [
+      SwaggerUIBundle.plugins.DownloadUrl
+    ],
+    layout: "StandaloneLayout"
+  });
+};
+</script>
+
+
+# Notification service

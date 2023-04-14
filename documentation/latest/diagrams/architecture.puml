@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/deployment-diagram
+
+frame Kubernetes {
+      control "Flotta controller" as controller
+    interface "Flotta Edge API" as edgeAPI
+    file "EdgeWorkload CR" as workload
+    file "EdgeDevice CR" as deviceCR
+    database "Object Storage" as objectStore
+}
+
+node Device {
+    component Agent
+    control Podman
+    collections Workloads
+}
+deviceCR o-- workload
+
+controller -[dashed]-> workload: process
+controller -[dashed]-> deviceCR: process
+controller --> objectStore: provision
+
+edgeAPI -[dashed]-> workload: read
+edgeAPI -[dashed]-> deviceCR: read/update status
+
+Agent ---> edgeAPI: get desired state
+Agent --> edgeAPI: update status
+Agent --> Podman : CRUD/monitor workloads
+Agent -> objectStore : upload files
+
+Podman -[dashed]-> Workloads: supervise workloads
+
+
+@enduml

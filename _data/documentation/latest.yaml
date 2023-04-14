@@ -1,0 +1,41 @@
+- Name: Intro
+  Childs:
+  - Name: What is Parados
+    Link: "intro/overview.md"
+  - Name: Use cases
+    Link: "intro/usecases.md"
+  - Name: Parados vs others
+    Link: "intro/vs.md"
+  - Name: Parados Concepts
+    Link: "intro/concepts.md"
+
+- Name: Getting started
+  Childs:
+  - Name: Kind
+    Link: "gsg/kind.md"
+  - Name: Openshift
+    Link: "gsg/ocp.md"
+  - Name: Running WorkFlows
+    Link: "gsg/running_workflows.md"
+
+- Name: Operations
+  Childs:
+  - Name: System Requirements
+    Link: "operations/requirements.md"
+  - Name: Deployment options
+    Link: "operations/deployment_options.md"
+  - Name: Configuration
+    Link: "operations/configuration.md"
+  - Name: Observability
+    Link: "operations/observability.md"
+  - Name: Troubleshooting
+    Link: "operations/troubleshooting.md"
+  - Name: API reference
+    Link: "operations/api.html"
+
+- Name: For developers
+  Childs:
+  - Name: Manual installation & tips
+    Link: "dev/installation.md"
+  - Name: Development Guide
+    Link: "dev/guide.md"
