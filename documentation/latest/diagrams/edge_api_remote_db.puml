@@ -1,0 +1,29 @@
+@startuml
+'https://plantuml.com/deployment-diagram
+
+frame Flotta {
+    frame Kubernetes {
+        interface "Flotta Edge API" as edgeAPI
+        database etcd
+    }
+    node Device {
+    }
+}
+
+frame "User-provided" {
+    interface "Edge Configuration API" as edgeDBapi
+
+    database EdgeConfigurationProvider {
+        file "EdgeDevice Configuration" as device {
+            file "EdgeWorkload Configuration" as workload
+        }
+    }
+}
+
+edgeAPI --> edgeDBapi: read/update status
+
+Device -right-> edgeAPI: get configuration/update status
+edgeDBapi -down-> device: read/update data
+
+edgeAPI -[dashed]right-> etcd
+@enduml
