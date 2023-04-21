@@ -12,7 +12,7 @@ are part of the deployment of the Parodos services on top of OpenShift.
 flowchart TB
   classDef plain fill:#ddd,stroke:#fff,stroke-width:4px,color:#000;
   classDef k8s fill:#326ce5,stroke:#fff,stroke-width:4px,color:#fff;
-  classDef cluster fill:#fff,stroke:#bbb,stroke-width:2px,color:#326ce5;
+  classDef cluster fill:#FFF,stroke:#bbb,stroke-width:2px,color:#326ce5,text-align:left;
 
   subgraph "Openshift"
     direction TB
@@ -27,6 +27,11 @@ flowchart TB
   end
 
   User --->  ing
+
+
+  class ing,ouathB,OauthP,OauthN,back,workflow-service,notification-service k8s;
+  class Openshift cluster;
+
 {% endmermaid %}
 
 - All the authentication are based on Openshift Oauth proxy.
