@@ -15,7 +15,7 @@ following components are needed:
 ## Workflow-service
 
 Is the service that register all the workflows and schedule the
-workflow-executions, escalations and retries in the platform.
+workflow-executions, escalations and retries in the platform. 
 
 ## Notification-service
 

@@ -3,245 +3,35 @@ layout: documentation
 title: Observability
 ---
 
-# Device metrics
+All Parodos Observability metrics are part of the [Spring](https://spring.io/)
+common metrics, so any Spring grafana dashboard will work out of the box. At
+the same time, Parodos also provide more Observability metrics on top of that
+ones, so users will be able to easily track the status of workflow executions.
 
-Edge devices can collect metrics from all deployed workloads and the system of
-the device itself. The collected metrics are sent to a `metrics receiver`. This
-document describes how that functionality can be configured.
+The target URL for all Parodos services is: `/actuator/prometheus` 
 
-## System metrics
+At the moment, Parodos team does not provide any Grafana dashboard at all, but
+the idea is to provide more information soon. For Spring dashboard we recommend
+the following ones:
 
-### Collection frequency
+- [https://grafana.com/grafana/dashboards/6756-spring-boot-statistics/]()
+- [https://grafana.com/grafana/dashboards/4701-jvm-micrometer/]()
 
-System metrics collection is enabled by default and the Flotta agent will start
-gathering them when the device is started - with default intervals of **60**
-seconds. Said interval can be customized by setting desired frequency (in
-seconds) in an `EdgeDevice` CR.
+Regarding Opentracing, it's not yet implemented, but is planned for the near
+future.
 
-For instance, following spec snippet would instruct the device worker to collect
-system metrics every 5 minutes.
+# WorkFlow-service metrics
 
-```yaml
-spec:
-  metrics:
-    system:
-      interval: 300
-```
+More than spring metrics, each service provide us different  metrics, here are
+the list of metrics for the workflow-service
 
-### Allow-lists
 
-By default, the device worker would collect only pre-defined, narrow list of
-system metrics; user can modify the set of collected metrics using *system
-metrics allow-list*.
+| Name: | workflow_executions_total                                   |
+|-------|-------------------------------------------------------------|
+| Labels: | IN_PROGRESS, COMPLETED, REJECTED                          |
+| Description: | Each time that a workflow execution change it's state|
+{: .table }
 
-Allow-list configuration comprises two elements:
- - `ConfigMap` containing a list of metrics to be collected (exclusively)
- - Reference to the above `ConfigMap` in the `EdgeDevice` system metrics configuration
+## Notification-service metrics
 
-Sample allow-list `ConfigMap` (mind `metrics_list.yaml` key):
-
-```yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: system-allow-list
-  namespace: devices
-data:
-  metrics_list.yaml: |
-    names:
-      - node_disk_io_now
-      - node_memory_Mapped_bytes
-      - node_network_speed_bytes
-```
-
-Reference to the above `ConfigMap` in an `EdgeDevice` spec:
-
-```yaml
-spec:
-  metrics:
-    system:
-      allowList: 
-          name: system-allow-list
-```
-## Metrics receiver
-
-### Overview
-
-The devices can be configured to write the metrics to a remote server. The
-client in the device uses [Prometheus Remote Write
-API](https://docs.google.com/document/d/1LPhVRSFkGNSuU1fBd81ulhsCPR4hkSZyyBj1SZ8fWOM/edit#heading=h.p12mxouu8g0h)
-(see also [Prometheus
-Integrations](https://prometheus.io/docs/operating/integrations/)). The device
-writes metrics until it reaches the end of the TSDB contents. It then waits 5
-minutes for more metrics to be collected.
-
-### Configuration
-
-The feature is disabled by default. It is configured via
-EdgeDevice/EdgeDeviceSet CRs. Example with inline documentation and defaults:
-
-```yaml
-spec:
-    metrics:
-      receiverConfiguration:
-        caSecretName: receiver-tls # secret containing CA cert. Secret key is 'ca.crt'. Optional
-        requestNumSamples: 10000 # maximum number of samples in each request from device to receiver. Optional
-        timeoutSeconds: 10 # timeout for requests to receiver. Optional
-        url: https://receiver:19291/api/v1/receive # the receiver's URL. Used to indicate HTTP/HTTPS. Set to empty in order to disable writing to receiver
-```
-
-### Example receiver
-
-We prepared an example for deploying a [Thanos](https://thanos.io) receiver.
-Example includes deployment with and without TLS. The receiver listens on port
-`19291` for incoming writes. The deployment's pod includes a container that
-executes a Thanos querier. You can use it for querying the received metrics. It
-listens on port `9090`.
-
-Without TLS:
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: thanos-receiver
-  labels:
-    app: thanos-receiver
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: thanos-receiver
-  template:
-    metadata:
-      labels:
-        app: thanos-receiver
-    spec:
-      containers:
-      - name: receive
-        image: quay.io/thanos/thanos:v0.24.0
-        command:
-        - /bin/thanos
-        - receive
-        - --label
-        - "receiver=\"0\""
-      - name: query
-        image: quay.io/thanos/thanos:v0.24.0
-        command:
-        - /bin/thanos
-        - query
-        - --http-address
-        - 0.0.0.0:9090
-        - --grpc-address
-        - 0.0.0.0:11901
-        - --endpoint
-        - 127.0.0.1:10901
-```
-
-With TLS:
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: thanos-receiver
-  labels:
-    app: thanos-receiver
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: thanos-receiver
-  template:
-    metadata:
-      labels:
-        app: thanos-receiver
-    spec:
-      initContainers:
-      - name: http-config
-        image: fedora
-        command: ["/bin/sh"]
-        args: ["-c", "echo -e \"tls_server_config:\\n  cert_file: /etc/server-tls/tls.crt\\n  key_file: /etc/server-tls/tls.key\" > /etc/shared/http.config"]
-        volumeMounts:
-        - name: shared
-          mountPath: /etc/shared
-      containers:
-      - name: receive
-        image: quay.io/thanos/thanos:v0.24.0
-        command:
-        - /bin/thanos
-        - receive
-        - --label
-        - "receiver=\"0\""
-        - --remote-write.server-tls-cert
-        - /etc/server-tls/tls.crt
-        - --remote-write.server-tls-key
-        - /etc/server-tls/tls.key
-        volumeMounts:
-        - name: server-tls
-          mountPath: /etc/server-tls
-      - name: query
-        image: quay.io/thanos/thanos:v0.24.0
-        command:
-        - /bin/thanos
-        - query
-        - --http-address
-        - 0.0.0.0:9090
-        - --grpc-address
-        - 0.0.0.0:11901
-        - --endpoint
-        - 127.0.0.1:10901
-        - --http.config
-        - /etc/shared/http.config
-        volumeMounts:
-        - name: server-tls
-          mountPath: /etc/server-tls
-        - name: shared
-          mountPath: /etc/shared
-      volumes:
-      - name: server-tls
-        secret:
-          secretName: thanos-receiver-tls
-      - name: shared
-        emptyDir: {}
-```
-
-## Operator Metrics
-
-In order to publish the metrics to Openshift, the following step yaml need to to
-be applied:
-
-```bash
-kubectl apply -f - <<EOF
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: cluster-monitoring-config
-  namespace: openshift-monitoring
-data:
-  config.yaml: |
-EOF
-```
-
-## Grafana dashboard 
-In order to install Grafana in flotta namespace, the use the following script
-which will install the Grafana and Grafana Dashboard.
-
-```shell
-export KUBECONFIG=your-kubeconfig-file
-tools/deploy_grafana.sh -d contrib/metrics/flotta-dashboard.json
-```
-
-To import any additional Grafana dashboard to existing Grafana in flotta
-namespace, use following script:
-```shell
-export KUBECONFIG=your-kubeconfig-file
-tools/import_grafana_dashboards.sh -d <dashboard file>
-```
-
-Specifically, it can be used to install edge device health monitoring
-dashboard (flotta-operator/docs/metrics/flotta-devices-health.json):
-
-```shell
-tools/import_grafana_dashboards.sh -d contrib/metrics/flotta-devices-health.json
-```
-
-All these scripts are part of flotta-operator github repo.
+At the moment, notification service does not have any special metric.

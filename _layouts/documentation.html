@@ -9,7 +9,7 @@ layout: default
         {% assign urlParts = page.url | split: "/" %}
         {% assign version = urlParts[2] %}
         <ul class="list-group list-group-collapse border-0">
-          {% for item in site.data.documentation[version] %}
+          {% for item in site.data.documentation[version].menu %}
           <li class="list-group-item border-0">
             <h5>
               {% if item.Link %}
@@ -36,7 +36,7 @@ layout: default
 
             <ul class="list-group border-0">
               {% for item in site.data.documentation %}
-              {% assign target = item[1] | first %}
+              {% assign target = item[1].menu | first %}
               {% assign targetChild = target.Childs | first %}
               {% capture BaseLink %}documentation/{{item[0]}}/{{targetChild.Link}}{% endcapture%}
               <li class="list-group-item border-0"> <a href="{% link {{ BaseLink }} %}"> {{ item[0] | replace: "_",
