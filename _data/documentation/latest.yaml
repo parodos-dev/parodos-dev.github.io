@@ -1,7 +1,7 @@
 parodos:
   version: 1.0
   git_branch: main
-  git_repo: https://github.com/parodos-dev/parodos.git
+  git_repo: https://github.com/parodos-dev/parodos
 menu:
 - Name: Intro
   Childs:
@@ -27,6 +27,8 @@ menu:
   Childs:
   - Name: System Requirements
     Link: "operations/requirements.md"
+  - Name: WorkFlow Definitions
+    Link: "operations/workflows.md"
   - Name: Deployment options
     Link: "operations/deployment_options.md"
   - Name: Configuration
