@@ -2,6 +2,11 @@ parodos:
   version: 1.0
   git_branch: main
   git_repo: https://github.com/parodos-dev/parodos
+  mermaid_class: |
+    classDef dot fill:#fff,stroke:#000,stroke-width:1px;
+    classDef task fill:#2374f7,stroke:#000,stroke-width:2px,color:#fff
+    classDef checker fill:#fc822b,stroke:#000,stroke-width:2px,color:#fff
+
 menu:
 - Name: Intro
   Childs:
