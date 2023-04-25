@@ -3,9 +3,7 @@ layout: documentation
 title: System Requirements
 ---
 
-
-
-# Workflow service
+## Workflow service
 
 | Requirement   | Min version | Optional  | Comment                                  |
 |---------------|-------------|-----------|------------------------------------------|
@@ -14,9 +12,7 @@ title: System Requirements
 | OpenLdap      | 1.5         | yes       | Only if Ldap integration is enabled      |
 {: .table }
 
-
-
-# Notification service
+## Notification service
 
 | Requirement   | Min version | Optional  | Comment                                   |
 |---------------|-------------|-----------|-------------------------------------------|
@@ -25,8 +21,7 @@ title: System Requirements
 | OpenLdap      | 1.5         | yes       | Only if Ldap integration is enabled       |
 {: .table }
 
-
-# Backstage plugin
+## Backstage plugin
 
 | Requirement   | Min version | Optional  | Comment |
 |---------------|-------------|-----------|---------|

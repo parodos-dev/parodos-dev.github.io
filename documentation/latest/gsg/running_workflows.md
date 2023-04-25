@@ -33,7 +33,6 @@ spec:
           image: quay.io/project-flotta/nginx:1.21.6
 ```
 
-
 This workload will look for devices that has the label `app=camera`, so we need
 to tag our device (camera-ny) with the application tag:
 
@@ -57,7 +56,6 @@ The result of the edgedevice will be like this:
 --->
 ```
 
-
 After that, we need to apply our workload:
 
 ```shell
@@ -68,7 +66,6 @@ edgeworkload.management.project-flotta.io/workload created
 When the device get the next hearbeat, it'll retrieve the config, and from there
 will deploy it. Edge administratior can review workload status in the device
 status:
-
 
 ```shell
 ---> kubectl get edgedevice camera-ny -o json | jq .status.workloads

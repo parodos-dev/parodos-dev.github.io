@@ -8,4 +8,3 @@ title: Troubleshooting Guide
 ## Notification-service
 
 ## Backstage plugin
-

@@ -15,7 +15,6 @@ enterprise software development/delivery team members can consume (through our
 Backstage plugins or by your own interfaces calling these backing services) to
 get the outcomes they need with fewer tickets/meetings/frustration.
 
-
 ## Building Developer Platforms In Enterprise Environments
 
 Building an IDP provides a centralized place to improve the experience for
@@ -34,20 +33,18 @@ For more thoughts and opinions on the challenges in making changes to an
 existing software culture in an enterprise environment, please review the
 following blog:
 
-[https://www.redhat.com/en/blog/modernization-why-is-it-hard]()
+[https://www.redhat.com/en/blog/modernization-why-is-it-hard](https://www.redhat.com/en/blog/modernization-why-is-it-hard)
 
 For more information about building IDPs in regulated enterprise environments,
 review the following:
 
-[https://www.redhat.com/en/blog/considerations-when-implementing-developer-portals-regulated-enterprise-environments]()
+[https://www.redhat.com/en/blog/considerations-when-implementing-developer-portals-regulated-enterprise-environments](https://www.redhat.com/en/blog/considerations-when-implementing-developer-portals-regulated-enterprise-environments)
 
 Parodos is focused on building solutions based on technical stacks that are
 both familiar, and have a history of success for enterprises described in the
 preceding articles.
 
-
 ## The Focus of parodos
-
 
 Although frameworks and ecosystems might exist to help build developer portals,
 getting some of these approved for production use in certain enterprises,
@@ -92,7 +89,6 @@ approved blueprints for that specific use case.
 All the logic of Parodos can be maintained in a seperate Java project using
 Spring beans as a means of creating and configuring workflows (future versions
 of Parodos will support other means of configuration).
-
 
 ## Who Is Parodos For?
 
