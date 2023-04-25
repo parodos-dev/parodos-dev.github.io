@@ -170,3 +170,69 @@ and the parameters are the following:
 {: .table }
 
 ### WorkTask Outputs
+
+## WorkFlow Checker
+
+{% mermaid %}
+flowchart LR
+    classDef task fill:#2374f7,stroke:#000,stroke-width:2px,color:#fff
+    classDef checker fill:#fc822b,stroke:#000,stroke-width:2px,color:#fff
+
+    jiraTicket[[Create ticket for OCP access]]:::task
+    SendEmail[[Send email to the approval]]:::task
+
+    approved{Is ticket approved}:::task
+    needEscalated{Needs to escalate}:::checker
+    ManagerApproval[[Manager to approve the ticket]]:::task
+
+    SendNotification[[Send notification to user]]:::task
+
+    jiraTicket -->SendEmail;
+    SendEmail -->approved;
+    approved -->|No|needEscalated;
+    approved --->|Yes|SendNotification
+
+    needEscalated -->|Yes|ManagerApproval;
+    ManagerApproval -->approved
+{% endmermaid %}
+
+In the diagram above, we can see that some task needs the human's input. For
+this case, Parodos implement a checker solution where it can be used to
+escalate a workflow to a specific person if somethind does not happens in a
+time constraint.
+
+Folowing that diagram, each blue node is a task, and we can see that the orange
+box is checker that can be implemented like the workflow adminsitrator. A
+checker can be defined like this:
+
+    ```java
+        @Bean(name = "namespaceApprovalWorkFlowChecker")
+        @Checker(cronExpression = "*/5 * * * * ?")
+        WorkFlow namespaceApprovalWorkFlowChecker(
+                @Qualifier("namespaceApprovalWorkFlowCheckerTask") NamespaceApprovalWorkFlowCheckerTask namespaceApprovalWorkFlowCheckerTask) {
+            return SequentialFlow.Builder.aNewSequentialFlow().named("namespaceApprovalWorkFlowChecker")
+                    .execute(namespaceApprovalWorkFlowCheckerTask).build();
+        }
+    ```
+
+So, in this case, the checker will execute each five minutes to check if the
+work need to be escalate to a higher level. To define an escalation, it's as
+simple to use the `@escalation` annotation.
+
+Here you can see an example:
+
+    ```java
+        @Bean
+        @Escalation
+        public WorkFlow simpleTaskOneEscalatorWorkflow(
+                @Qualifier("simpleTaskOneEscalator") SimpleTaskOneEscalator simpleTaskOneEscalator) {
+            // @formatter:off
+            return SequentialFlow.Builder
+                    .aNewSequentialFlow()
+                    .named("simpleTaskOneEscalatorWorkflow")
+                    .execute(simpleTaskOneEscalator)
+                    .build();
+            // @formatter:on
+
+        }
+    ```
