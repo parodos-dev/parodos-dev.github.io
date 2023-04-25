@@ -81,6 +81,23 @@ of the work)
 Returned from Work after its execution, useful in determining if the Work
 execution was successful
 
+### WorkFlow Task Checker
+
+Some Workflows inside the enterprises needs some kind of "Check" that something
+happens, this is normally a human interaction. The checker is a abstraction on
+a task which empower Workflows administrator to validate that something happens
+by a human.
+
+
+### WorkFlow Escalation
+
+When a checker is needed, normally needs this human interaction. Some many
+issues may occur, like the human which needs to sign the paper is away. To fix
+this issue Parodos introduces WorkFlow escalations. Where the user Workflow
+adminsitration can escalate the WorkFlow if the checker is not fullfilled by
+the time defined.
+
+
 # Pattern Detection Library
 
 A java library that can be used in AssessmentTasks to identify
