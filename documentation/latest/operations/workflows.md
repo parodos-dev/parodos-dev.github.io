@@ -17,9 +17,7 @@ workflow-task can be find in the following diagram:
 
 flowchart TB
   direction LR
-
-  classDef dot fill:#fff,stroke:#000,stroke-width:1px;
-  classDef task fill:#326ce5,stroke:#fff,stroke-width:4px,color:#fff;
+  {{ page.parodos.mermaid_class }}
 
   User(Create User)
   class User task;
@@ -176,8 +174,7 @@ and the parameters are the following:
 
 {% mermaid %}
 flowchart LR
-    classDef task fill:#2374f7,stroke:#000,stroke-width:2px,color:#fff
-    classDef checker fill:#fc822b,stroke:#000,stroke-width:2px,color:#fff
+    {{page.parodos.mermaid_class}}
 
     jiraTicket[[Create ticket for OCP access]]:::task
     SendEmail[[Send email to the approval]]:::task
