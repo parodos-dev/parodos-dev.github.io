@@ -41,37 +41,37 @@ flowchart TB
 
 ### Create kind cluster
 
-    ```
-    $ --> kind create cluster
-    Creating cluster "kind" ...
-     ✓ Ensuring node image (kindest/node:v1.21.1) 🖼
-     ✓ Preparing nodes 📦
-     ✓ Writing configuration 📜
-    ⢎⠁ Starting control-plane 🕹️
-     ✓ Starting control-plane 🕹️
-     ✓ Installing CNI 🔌
-     ✓ Installing StorageClass 💾
-    Set kubectl context to "kind-kind"
-    You can now use your cluster with:
+```bash
+$ --> kind create cluster
+Creating cluster "kind" ...
+ ✓ Ensuring node image (kindest/node:v1.21.1) 🖼
+ ✓ Preparing nodes 📦
+ ✓ Writing configuration 📜
+⢎⠁ Starting control-plane 🕹️
+ ✓ Starting control-plane 🕹️
+ ✓ Installing CNI 🔌
+ ✓ Installing StorageClass 💾
+Set kubectl context to "kind-kind"
+You can now use your cluster with:
 
-    kubectl cluster-info --context kind-kind
+kubectl cluster-info --context kind-kind
 
-    Have a nice day! 👋
-    ```
+Have a nice day! 👋
+```
 
 ### Cloning parodos repo
 
 For installation, at the moment, only kustomize deployments are supported.
 
-    ```
-    git clone {{ page.parodos.git_repo }} -b {{ page.parodos.git_branch }}
-    ```
+```bash
+git clone {{ page.parodos.git_repo }} -b {{ page.parodos.git_branch }}
+```
 
 ### Installing Parodos and Backstage
 
-    ```
-    kubectl kustomize hack/manifests/backstage | kubectl apply -f -
-    ```
+```bash
+kubectl kustomize hack/manifests/backstage | kubectl apply -f -
+```
 
 This will install all deployments for Parodos services and Backstage with
 Parodos plugin. For AuthN a fake Openldap server and a mock database will be
@@ -79,23 +79,23 @@ used.
 
 The following deployments are for Parodos services:
 
-    ```
-    $ --> kubectl get deployments
-    NAME                   READY   UP-TO-DATE   AVAILABLE   AGE
-    ldap-deployment        1/1     1            1           31d
-    notification-service   1/1     1            1           31d
-    postgres-deployment    1/1     1            1           31d
-    workflow-service       1/1     1            1           31d
-    ```
+```bash
+$ --> kubectl get deployments
+NAME                   READY   UP-TO-DATE   AVAILABLE   AGE
+ldap-deployment        1/1     1            1           31d
+notification-service   1/1     1            1           31d
+postgres-deployment    1/1     1            1           31d
+workflow-service       1/1     1            1           31d
+```
 
 And the following deployments for Backstage
 
-    ```
-    $ --> kubectl get deployment -n backstage
-    NAME        READY   UP-TO-DATE   AVAILABLE   AGE
-    backstage   1/1     1            1           2m53s
-    postgres    1/1     1            1           2m53s
-    ```
+```bash
+$ --> kubectl get deployment -n backstage
+NAME        READY   UP-TO-DATE   AVAILABLE   AGE
+backstage   1/1     1            1           2m53s
+postgres    1/1     1            1           2m53s
+```
 
 ### Backstage port-forwarding
 
@@ -103,9 +103,9 @@ Because there is no domain, to test without domains, we neeed to forward a few
 ports to localhost, in the near future we'll figure it out a solution with
 gateway-api.
 
-    ```
-    kubectl port-forward --namespace=backstage svc/backstage 7007:7007
-    ```
+```bash
+kubectl port-forward --namespace=backstage svc/backstage 7007:7007
+```
 
 Now, start adding workflows using `http://localhost:7007/parodos/`
 
