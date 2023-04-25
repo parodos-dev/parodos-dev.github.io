@@ -10,7 +10,8 @@ be used by the workflow-service, the workflow-interface can be found
 }}/workflow-engine/src/main/java/com/redhat/parodos/workflows/workflow/WorkFlow.java).
 
 A workflow example can be found in the workflow-examples directory inside the
-[Git  repository]({{ page.parodos.git_repo }}). An example workflow, workflow-task can be find in the following diagram:
+[Git  repository]({{ page.parodos.git_repo }}). An example workflow,
+workflow-task can be find in the following diagram:
 
 {% mermaid %}
 
@@ -68,41 +69,40 @@ moment some workflow-properties can be added. These properties are metadata
 base content that may is useful for the end users to append in the workflow. To
 register metadata, the following example can be used:
 
+    ```java
+    import com.redhat.parodos.workflow.annotation.WorkFlowProperties;
 
-```java
-import com.redhat.parodos.workflow.annotation.WorkFlowProperties;
+    ....
+    ....
 
-....
-....
+    public class SimpleWorkFlowConfiguration {
 
-public class SimpleWorkFlowConfiguration {
+        @Bean(name = "simpleSequentialWorkFlow" + WorkFlowConstants.INFRASTRUCTURE_WORKFLOW)
+        @WorkFlowProperties(version = "${git.commit.id}")
+        WorkFlow simpleSequentialWorkFlowTask(@Qualifier("restCallTask") RestAPIWorkFlowTask restCallTask,
+            return SequentialFlow
+                    .Builder.aNewSequentialFlow()
+                    .named("simpleSequentialWorkFlow" + WorkFlowConstants.INFRASTRUCTURE_WORKFLOW)
+                    .execute(restCallTask)
+                    .then(loggingTask)
+                    .build();
+        }
 
-	@Bean(name = "simpleSequentialWorkFlow" + WorkFlowConstants.INFRASTRUCTURE_WORKFLOW)
-	@WorkFlowProperties(version = "${git.commit.id}")
-	WorkFlow simpleSequentialWorkFlowTask(@Qualifier("restCallTask") RestAPIWorkFlowTask restCallTask,
-		return SequentialFlow
-				.Builder.aNewSequentialFlow()
-				.named("simpleSequentialWorkFlow" + WorkFlowConstants.INFRASTRUCTURE_WORKFLOW)
-				.execute(restCallTask)
-				.then(loggingTask)
-				.build();
-	}
-
-```
+    ```
 
 In this case, we're using
 [maven-git-plugin](https://dzone.com/articles/maven-git-commit-id-plugin) to
 inject the git commit id inside the WorkFlow configuration, the properties can
 be retrieved on the workflow definition API endpoint, as an example:
 
-```bash
-$ --> curl $AUTH \
-    "http://localhost:8080/api/v1/workflowdefinitions/b1ef2356-37bb-45e9-99cd-1e97a13a1ac9" | \
-    jq .properties -r
-{
-  "version": "\"a673364e13c4dfe8e1d357991ff284d2419ca41c\","
-}
-```
+    ```bash
+    $ --> curl $AUTH \
+        "http://localhost:8080/api/v1/workflowdefinitions/b1ef2356-37bb-45e9-99cd-1e97a13a1ac9" | \
+        jq .properties -r
+    {
+      "version": "\"a673364e13c4dfe8e1d357991ff284d2419ca41c\","
+    }
+    ```
 
 At the moment, the list of properties are the following:
 
@@ -111,10 +111,9 @@ At the moment, the list of properties are the following:
 | version         | String | ""             | A way to append a version to the workFlow |
 {: .table }
 
+## WorkflowTask Definition
 
-# WorkflowTask Definition
-
-## WorkTask parameters
+### WorkTask parameters
 
 Each WorkTask can accept parameters, these parameters is what the end user will
 use to give some information to the workflow. Workflow Administrator is the one
@@ -123,32 +122,31 @@ that define in each Workflow the parameters needed.
 Each parameter can be defined inside the Java Bean, and an example can be the
 following one:
 
-```java
+    ```java
+    public class LoggingWorkFlowTask extends BaseInfrastructureWorkFlowTask {
+        ....
+        ....
+        @Override
+        public WorkReport execute(WorkContext workContext) {
+            ...
+        }
 
-public class LoggingWorkFlowTask extends BaseInfrastructureWorkFlowTask {
-    ....
-    ....
-	@Override
-	public WorkReport execute(WorkContext workContext) {
-        ...
-	}
+        @Override
+        public List<WorkParameter> getWorkFlowTaskParameters() {
+            return List.of(
+                    WorkParameter.builder().key("api-server").description("The api server").type(WorkParameterType.URL)
+                            .optional(false).build(),
+                    WorkParameter.builder()
+                            .key("user-id")
+                            .description("The user id")
+                            .type(WorkParameterType.TEXT)
+                            .optional(false)
+                            .jsonSchemaOptions(Map.of("minLength", "1", "maxLength", "64"))
+                            .build())
+        }
 
-	@Override
-	public List<WorkParameter> getWorkFlowTaskParameters() {
-		return List.of(
-				WorkParameter.builder().key("api-server").description("The api server").type(WorkParameterType.URL)
-						.optional(false).build(),
-				WorkParameter.builder()
-						.key("user-id")
-						.description("The user id")
-						.type(WorkParameterType.TEXT)
-						.optional(false)
-						.jsonSchemaOptions(Map.of("minLength", "1", "maxLength", "64"))
-						.build())
-	}
-
-}
-```
+    }
+    ```
 
 So, each WorkParameter has a key name, with some description and some values.
 If WorkFlow Administrator wants to add some custom validation can extend the
@@ -156,8 +154,8 @@ Parameter with the JsonSchemaOptions, that it will append the value to the
 parameter at the frontend.
 
 The list of parameters can be find
-[here]({{page.parodos.git_repo}}/blob/{{page.parados.git_branch}}/parodos-model-api/src/main/java/com/redhat/parodos/workflow/parameter/WorkParameterType.java), and the parameters are the following:
-
+[here]({{page.parodos.git_repo}}/blob/{{page.parados.git_branch}}/parodos-model-api/src/main/java/com/redhat/parodos/workflow/parameter/WorkParameterType.java),
+and the parameters are the following:
 
 |Parameter Name | Type |  JsonSchem options |
 |---------------|------|--------------------|
@@ -171,6 +169,4 @@ The list of parameters can be find
 |MULTI_SELECT   | multi-select  | { "type": "array", "items": { "type": "string", "enum": [] } } |
 {: .table }
 
-
-## WorkTask Outputs
-
+### WorkTask Outputs

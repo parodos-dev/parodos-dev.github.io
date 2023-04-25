@@ -18,3 +18,13 @@ jobs:
         run: |
           sudo chmod 777 .
           make check-links
+
+  checkMarkdown:
+    name: Linux
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Check Markdown
+        run: |
+          make check-markdown

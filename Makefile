@@ -32,9 +32,12 @@ build:  ## build the site
 build: build-container
 	$(DOCKER) run --rm --volume="$(PWD):/srv/jekyll" $(IMG) jekyll build
 
-check-links: ## Check that all links are working
+check-links: ## Check that all INTERNAL links are working correctly
 check-links: build
 	$(DOCKER) run --rm -v $(PWD)/_site:/src klakegg/html-proofer:3.19.2 --allow-hash-href --empty-alt-ignore --disable-external
+
+check-markdown: ## Check that all markdown is correctly formatted.
+	$(DOCKER) run --rm -v $(PWD):/work tmknom/markdownlint -- ./documentation/
 
 run: build ## run the site on localhost:4000
 	$(DOCKER) run --rm --name $(CONTAINER_NAME) --volume="$(PWD):/srv/jekyll" -p 4000:4000 -it $(IMG) jekyll serve --watch --drafts 
