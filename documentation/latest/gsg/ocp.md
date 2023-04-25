@@ -44,27 +44,27 @@ flowchart TB
 
 ### Cloning parodos repo
 
-    ```bash
-    git clone {{ page.parodos.git_repo }} -b {{ page.parodos.git_branch }}
-    ```
+```bash
+git clone {{ page.parodos.git_repo }} -b {{ page.parodos.git_branch }}
+```
 
 ### Installing Parodos
 
-    ```bash
-    cd parodos
-    kubectl kustomize hack/manifests/openshift/ | kubecl apply -f -
-    ```
+```bash
+cd parodos
+kubectl kustomize hack/manifests/openshift/ | kubecl apply -f -
+```
 
 This will install all Parodos microservices on top of Openshift, where the
 deployment should looks like this:
 
-    ```bash
-    $ --> oc get deployments
-    NAME                   READY   UP-TO-DATE   AVAILABLE   AGE
-    notification-service   1/1     1            1           2d23h
-    workflow-service       1/1     1            1           2d23h
-    $ --> oc get pods
-    NAME                                    READY   STATUS    RESTARTS   AGE
-    notification-service-6f5b444b8f-nclpq   2/2     Running   0          2d22h
-    workflow-service-764cd6f666-9dhwz       2/2     Running   0          2d23h
-    ```
+```bash
+$ --> oc get deployments
+NAME                   READY   UP-TO-DATE   AVAILABLE   AGE
+notification-service   1/1     1            1           2d23h
+workflow-service       1/1     1            1           2d23h
+$ --> oc get pods
+NAME                                    READY   STATUS    RESTARTS   AGE
+notification-service-6f5b444b8f-nclpq   2/2     Running   0          2d22h
+workflow-service-764cd6f666-9dhwz       2/2     Running   0          2d23h
+```
