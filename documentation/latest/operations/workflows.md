@@ -43,84 +43,80 @@ workflow-task can be find in the following diagram:
 
 {% mermaid %}
 
-flowchart TB
-direction LR
-{{ page.parodos.mermaid_class }}
-
-User(Create User)
-class User task;
-
-subgraph "Openshift"[Openshift WorkFlow]
-Oinit(( )):::myCircleNode;
-
+    flowchart TB
     direction LR
-    addSA(Add Service Account)
-    addRBACPolicies(Add Rbac for user)
-    class addSA,addRBACPolicies task;
-    Oinit -->addSA;
-    addSA --> addRBACPolicies;
-    addRBACPolicies -->Ofinish;
-    Ofinish(( )):::myCircleNode;
+    {{ page.parodos.mermaid_class }}
 
-end
+    User(Create User)
+    class User task;
 
-subgraph "Vault"[Vault WorkFlow]
-Vinit(( )):::myCircleNode;
+    subgraph "Openshift"[Openshift WorkFlow]
+    Oinit(( )):::myCircleNode;
+        direction LR
+        addSA(Add Service Account)
+        addRBACPolicies(Add Rbac for user)
+        class addSA,addRBACPolicies task;
+        Oinit -->addSA;
+        addSA --> addRBACPolicies;
+        addRBACPolicies -->Ofinish;
+        Ofinish(( )):::myCircleNode;
 
-    addUser(Add User to Vault)
-    addToAws(Add User to aws project)
-    class addUser,addToAws task;
-    Vfinish(( )):::myCircleNode;
+    end
 
-    Vinit -->addUser;
-    Vinit -->addToAws;
-    addUser -->Vfinish;
-    addToAws -->Vfinish;
+    subgraph "Vault"[Vault WorkFlow]
+    Vinit(( )):::myCircleNode;
 
-end
+        addUser(Add User to Vault)
+        addToAws(Add User to aws project)
+        class addUser,addToAws task;
+        Vfinish(( )):::myCircleNode;
 
-User -->  Openshift
-User --> Vault
+        Vinit -->addUser;
+        Vinit -->addToAws;
+        addUser -->Vfinish;
+        addToAws -->Vfinish;
 
-checker(( )):::myCircleNode;
+    end
 
-Ofinish --> checker
-Vfinish --> checker
-checker --> Send(Email to user)
+    User -->  Openshift
+    User --> Vault
+
+    checker(( )):::myCircleNode;
+
+    Ofinish --> checker
+    Vfinish --> checker
+    checker --> Send(Email to user)
 
 {% endmermaid %}
 
-the example workflow above has three child works sequentially:
+The example workflow above has three child sequentially works:
 
-1. workflow-task `Create User`
-2. Parallel workflow of two child workflows: `Openshift WorkFlow`
-   and `Vault WorkFlow`. `Openshift WorkFlow` is a
-   sequential workflow that consists of two
-   workflow-tasks: `Add Service Account` and `Add Rbac for user`. On the other
-   hand, `Vault WorkFlow` is a parallel workflow comprises `Add User to Vault`
-   and `Add User to aws project`
-   workflow-tasks.
-3. workflow-task `Email to user`.
+1. workflow-task *Create User*
+2. Parallel workflow of two child workflows: **Openshift WorkFlow**
+   and **Vault WorkFlow**.
+    * Openshift WorkFlow is a sequential workflow that consists of two
+      workflow-tasks: *Add Service Account* and *Add Rbac for user*.
+    * Vault WorkFlow is a parallel workflow comprises *Add User to Vault* and
+      *Add User to aws project* workflow-tasks.
+3. workflow-task *Email to user*.
 
 ## Concepts and Components of Workflow
 
 ### How to compose workflows
 
-Details of steps to write workflows can be found
-in [workflow-example README](https://github.com/parodos-dev/parodos/blob/main/workflow-examples/README.md)
-. A typical
-workflow configuration module will have a configuration class for defining
-workflow and multiple classes for defining
-workflow-tasks. Parodos workflow server will detect and load the workflow/tasks
-by bean registration when bootstrapping.
+Details of steps to write workflows can be found in [workflow-example
+README]({{page.parodos.git_repo}}/blob/main/workflow-examples/README.md) . A
+typical workflow configuration module will have a configuration class for
+defining workflow and multiple classes for defining workflow-tasks. Parodos
+workflow server will detect and load the workflow/tasks by bean registration
+when bootstrapping.
 
 ## Workflow Configuration
 
-Workflows are configured in a class with the `@Configuration` annotation. It is
-expected there will be at least
-one `@Bean` method returning a Workflow reference. Usually one configuration
-class should only contain one main workflow
-and all of its child works.
+Workflows are configured in a class with the ***@Configuration***, annotation.
+It is expected there will be at least one ***@Bean*** method returning a
+Workflow reference. Usually one configuration class should only contain one
+main workflow and all of its child works.
 
 ```java
 @Configuration
@@ -156,22 +152,20 @@ In this sample below, one workflow with its task can be seen:
 
 ```
 
-For the Workflow, the second argument(loggingTask) is not defined in a @Bean
-method. This is because that WorkflowTask
-has the @Component annotation and can be created by Spring's bean factory using
-the default constructor. In contrast,
-RestAPIWorkFlowTask needs a value supplied in the constructor to be created. As
-a result it is created in a method
-using the @Bean annotation. It's best practise to create a unique name for this
-Bean as there might be multiple version
-of Bean of this type created. In that example the default name is used (method
-name) to identify the Bean.
+For the Workflow, the second argument(loggingTask) is not defined in a *@Bean*
+method. This is because that WorkflowTask has the *@Component* annotation and
+can be created by Spring's bean factory using the default constructor. In
+contrast, *RestAPIWorkFlowTask*o needs a value supplied in the constructor to
+be created. As a result it is created in a method using the *@Bean* annotation.
+It's best practise to create a unique name for this Bean as there might be
+multiple version of Bean of this type created. In that example the default name
+is used (method name) to identify the Bean.
 
-The workflow example above is annotated with `@Infrastructure`. This is the most
-common type of workflows that run
-executions of its tasks. It runs to complete and stops if any tasks fail. The
-Other two types of workflow(`@Assessment`
-and `@Checker` will be explained in sections below)
+The workflow example above is annotated with ***@Infrastructure.*** This is the
+most common type of workflows that run executions of its tasks. It runs to
+complete and stops if any tasks fail. The Other two types of
+***workflow(@Assessment*** and ***@Checker*** will be explained in sections
+below)
 
 ### Workflow properties
 
@@ -224,7 +218,6 @@ At the moment, the list of properties are the following:
 | Property Nane   | Kind   | Default Value  | Comment                                   |
 |-----------------|--------|----------------|-------------------------------------------|
 | version         | String | ""             | A way to append a version to the workFlow |
-
 {: .table }
 
 ### Workflow parameters
@@ -322,7 +315,7 @@ return WorkflowOption.
 
 ```
 
-The WorkflowOption references a specific `@Infrastructure` Workflow bean
+The WorkflowOption references a specific ***@Infrastructure*** Workflow bean
 definition defined in the same file as `"onboardingWorkFlow" +
 WorkFlowConstants.INFRASTRUCTURE_WORKFLOW`.
 
@@ -348,11 +341,10 @@ can be seen in the following example
 
 ```
 
-The execute section does the 'work' required by the task.
-It also needs to return a WorkReport indicating the
-WorkStatus (ie: COMPLETED, FAILED). In the case of a Sequential Workflow,
-the workflow will stop executing if the
-returned WorkReport has a WorkStatus of FAILED.
+The execute section does the 'work' required by the task. It also needs to
+return a *WorkReport* indicating the *WorkStatus* (ie: COMPLETED, FAILED). In the
+case of a Sequential Workflow, the workflow will stop executing if the returned
+WorkReport has a WorkStatus of *FAILED.*
 
 ### WorkflowTask Parameters
 
@@ -361,7 +353,7 @@ WorkflowTask Parameter has the same properties as
 The only difference is that WorkflowTask Parameters are defined
 in the method `getWorkFlowTaskParameters` in each Task class
 
-example of workflow-task parameter
+An example of workflow-task parameter is written like this:
 
 ```java
 
@@ -420,8 +412,8 @@ flowchart LR
 
 In the diagram above, we can see that some task needs the human's input. For
 this case, Parodos implement a checker solution where it can be used to
-escalate a workflow to a specific person if somethind does not happens in a
-time constraint.
+escalate a workflow to a specific person if something does not happens in a
+defined time constraint.
 
 Folowing that diagram, each blue node is a task, and we can see that the orange
 box is checker that can be implemented like the workflow adminsitrator. A
@@ -441,7 +433,7 @@ checker can be defined like this:
 
 So, in this case, the checker will execute each five minutes to check if the
 work need to be escalate to a higher level. To define an escalation, it's as
-simple to use the `@escalation` annotation.
+simple to use the ***@escalation*** annotation.
 
 Here you can see an example:
 
