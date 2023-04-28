@@ -1,79 +1,114 @@
 ---
 layout: documentation
-title: Run workloads
+title: Run workflows
 ---
 
-Now that the devices are running, we need to run some container workloads on
-them. The first thing to do is to make sure that devices are online:
+Once Parodos and Backstage is already installed, user can start running
+workflows. As soon you have access to Backstage, in the leff hand you can see
+the Parodos entry.
 
-```shell
----> kubectl get edgedevices
-NAME        AGE
-camera-ny   33m
---->
+Once in there, a new workflow can be executed, but first, you need to create a
+project.
+
+![New project](./../images/project.jpg){: width="100%" }
+
+As soon as the project is created, you need to execute a new assesment, where
+the workflow admin defined the inputs:
+
+![assesment](./../images/assesment.jpg){: width="100%" }
+
+This example assesment definitinon can be retrieved using the API with the
+following command:
+
+```bash
+curl "http://localhost:7007/api/proxy/parodos/workflowdefinitions?name=onboardingAssessment_ASSESSMENT_WORKFLOW" | jq .
 ```
 
-To run a workload, we need to create a EdgeWorkload config, that looks like
-this:
+And the output for the given assesment will be like this:
 
-```yaml
-apiVersion: management.project-flotta.io/v1alpha1
-kind: EdgeWorkload
-metadata:
-  name: workload
-spec:
-  deviceSelector:
-    matchLabels:
-      app: camera
-  type: pod
-  pod:
-    spec:
-      containers:
-        - name: workload
-          image: quay.io/project-flotta/nginx:1.21.6
+```json
+[ {
+  "id" : "2041b61e-1307-41b7-aa95-06ab50b2f8b7",
+  "name" : "onboardingAssessment_ASSESSMENT_WORKFLOW",
+  "type" : "ASSESSMENT",
+  "processingType" : "SEQUENTIAL",
+  "author" : null,
+  "createDate" : "2023-04-28T10:22:34.680+00:00",
+  "modifyDate" : "2023-04-28T10:22:34.680+00:00",
+  "properties" : {
+    "version" : null
+  },
+  "works" : [ {
+    "id" : "aa660b4f-eaea-4652-9958-0b59f3ba5a04",
+    "name" : "onboardingAssessmentTask",
+    "workType" : "TASK",
+    "parameters" : {
+      "GIT_REPO_URL" : {
+        "format" : "text",
+        "description" : "Enter some information to use for the Assessment to determine if they can onboard",
+        "type" : "string",
+        "required" : true
+      }
+    }
+  } ]
+} ]
 ```
 
-This workload will look for devices that has the label `app=camera`, so we need
-to tag our device (camera-ny) with the application tag:
+The execution of that assesment give to the user a few more workflow, that can
+be trigger based on the parent assesment:
 
-```shell
-kubectl label edgedevice camera-ny app=camera
-```
+This is the example in the UI:
 
-The result of the edgedevice will be like this:
+![subworkflows](./../images/subworkflows.jpg){: width="100%" }
 
-```shell
----> kubectl get edgedevice camera-ny -o json | jq .metadata.labels
+And here is the output as API call:
+
+```json
 {
-  "app": "camera",
-  "device.cpu-architecture": "x86_64",
-  "device.cpu-model": "intelrcoretmi7-8650ucpu1.90ghz",
-  "device.hostname": "localhost.localdomain",
-  "device.system-manufacturer": "lenovo",
-  "device.system-product": "20l8s2n80p",
-  "device.system-serial": "pc14lwfg"
+  "workFlowExecutionId" : "4a0797ea-a368-47da-94f7-e4c1f772d4f3",
+  "workFlowOptions" : {
+    "currentVersion" : null,
+    "upgradeOptions" : [ ],
+    "migrationOptions" : [ ],
+    "newOptions" : [ {
+      "identifier" : "ocpOnboarding",
+      "displayName" : "Onboarding to OCP",
+      "description" : "this is for the app to deploy on OCP",
+      "details" : [ "this is for the app to deploy on OCP" ],
+      "workFlowName" : "ocpOnboardingWorkFlow"
+    }, {
+      "identifier" : "badRepoOption",
+      "displayName" : "Training Required",
+      "description" : "Container Fundamentals Training Required",
+      "details" : [ "Container Fundamentals Training Required" ],
+      "workFlowName" : "simpleSequentialWorkFlow_INFRASTRUCTURE_WORKFLOW"
+    }, {
+      "identifier" : "notSupportOption",
+      "displayName" : "Not Supported",
+      "description" : "Non-Supported Workflow Steps",
+      "details" : [ "Non-Supported Workflow Steps" ],
+      "workFlowName" : "simpleSequentialWorkFlow_INFRASTRUCTURE_WORKFLOW"
+    } ],
+    "continuationOptions" : [ ],
+    "otherOptions" : [ ],
+    "optionsAvailable" : false
+  },
+  "workStatus" : "COMPLETED"
 }
---->
 ```
 
-After that, we need to apply our workload:
+So, a few workflows can be executed, and checked via API, as example:
 
-```shell
----> kubectl apply -f /tmp/deploy.yaml
-edgeworkload.management.project-flotta.io/workload created
+```bash
+curl "http://localhost:7007/api/proxy/parodos/workflowdefinitions?name=ocpOnboardingWorkFlow" | jq .
+curl "http://localhost:7007/api/proxy/parodos/workflowdefinitions?name=simpleSequentialWorkFlow_INFRASTRUCTURE_WORKFLOW" | jq .
+curl "http://localhost:7007/api/proxy/parodos/workflowdefinitions?name=simpleSequentialWorkFlow_INFRASTRUCTURE_WORKFLOW" | jq .
 ```
 
-When the device get the next hearbeat, it'll retrieve the config, and from there
-will deploy it. Edge administratior can review workload status in the device
-status:
+This will help users to run the workflows that needs to be approved to approve
+the assesment.
 
-```shell
----> kubectl get edgedevice camera-ny -o json | jq .status.workloads
-[
-  {
-    "lastTransitionTime": "2022-05-04T15:32:07Z",
-    "name": "workload",
-    "phase": "Running"
-  }
-]
-```
+With this, the execution of the workflow is already explained, the next steps are:
+
+- Writting a custom workflow
+- [Understanding Workflows Definitions](../operations/workflows.md)

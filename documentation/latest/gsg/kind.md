@@ -74,8 +74,8 @@ kubectl kustomize hack/manifests/backstage | kubectl apply -f -
 ```
 
 This will install all deployments for Parodos services and Backstage with
-Parodos plugin. For AuthN a fake Openldap server and a mock database will be
-used.
+Parodos plugin. For AuthN a fake Openldap server and a mock
+[H2](https://www.h2database.com/html/main.html) database will be used.
 
 The following deployments are for Parodos services:
 
