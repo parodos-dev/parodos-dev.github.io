@@ -126,6 +126,9 @@ You can also specify the server IP and server port by setting the environment va
 SERVER_IP=1.2.3.4 SERVER_PORT=9999 mvn verify -pl integration-tests -P integration-test
 ```
 
+The `integration-test` profile uses fake `LDAP` server and `Postgres` database.\
+The `local` profile has `LDAP` disabled and uses `h2` database.
+
 ## CI Jobs
 Coverage and E2E tests running on each PR, are defined in `.github/workflows/test.yaml`.
 Available jobs are
