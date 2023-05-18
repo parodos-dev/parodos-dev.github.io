@@ -27,6 +27,8 @@ mvn verify -pl integration-tests -P integration-test
 
 #### Execute integration test against Kind cluster
 
+##### Create and set up the cluster
+
 To execute integration test again a `Kind` cluster, you need first to create the
 cluster:
 
@@ -86,6 +88,28 @@ You can execute the integration tests by running the following command:
 ```bash
 SERVER_PORT=80 mvn verify -pl integration-tests -P integration-test -Dspring.profiles.active=dev
 ```
+
+##### Update the cluster
+
+If you want to apply a local change to the already running cluster you can execute:
+
+```bash
+kubectl kustomize hack/manifests/testing | kubectl delete -f -
+make build-images
+make tag-images
+make push-images-to-kind
+kubectl kustomize hack/manifests/testing | kubectl apply -f -
+```
+
+##### Delete and recreate the cluster
+
+If you want to have a clean cluster, you can delete completely it by executing:
+
+```bash
+kind delete cluster
+```
+
+and then recreate the cluster from scratch as described [here](#create-and-set-up-the-cluster).
 
 #### Execute a specific integration test
 
