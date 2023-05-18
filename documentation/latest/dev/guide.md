@@ -101,6 +101,91 @@ Refer to
 [maven-failsafe-plugin](https://maven.apache.org/surefire/maven-failsafe-plugin/examples/single-test.html)
 documentation for additional examples.
 
+#### How to test a workflow that is delivered by workflow-example projects
+
+The workflow-example module contains pre-built workflow examples to simplify
+the development of new workflows.
+
+To create a new workflow example, navigate to the
+`workflow-example/src/main/java/com/redhat/parodos/examples` directory and
+create a new folder named `newexample`.
+To define a workflow, you need to define the tasks (in the example
+`LoggingWorkFlowTask`, `RestAPIWorkFlowTask`) and the workflow configuration
+(`NewExampleFlowConfiguration`).
+
+```bash
+src/main/java/com/redhat/parodos/examples/newexample
+├── NewExampleFlowConfiguration.java
+└── task
+    ├── LoggingWorkFlowTask.java
+    └── RestAPIWorkFlowTask.java
+```
+
+You will need to specify the tasks (such as `LoggingWorkFlowTask` and
+`RestAPIWorkFlowTask`) along with the workflow configuration
+(`NewExampleFlowConfiguration`). The workflow configuration determines how the
+tasks are executed.
+
+Once you have defined a workflow within the workflow-examples package, you can
+proceed to test it using integration tests.
+
+To create a new integration tests, go to the
+`integration-tests/src/test/java/com/redhat/parodos/flows` directory and create
+a new file there. Let's call it `NewExampleFlowTest`. The folder structure
+should look like this:
+
+```bash
+integration-tests/src/test/java/com/redhat/parodos/flows
+├── base
+│   └── BaseIntegrationTest.java
+└── NewExampleFlowTest.java
+```
+
+Once your new example is ready, execute `mvn install`.
+If you're executing the integration tests locally then you must restart the
+services. Otherwise, if you're using a `Kind` cluster, you need to update the
+resources already deployed (see [Update the cluster](#update-the-cluster) section).
+
+For each integration test related to the example defined in `workflow-example`,
+make sure to extend the `BaseIntegrationTest` class.
+
+The `BaseIntegrationTest` class sets up the necessary environment for the test
+to interact correctly with the `workflow-service` and `notification-service`.
+It provides access to `apiClient` object, that is needed to interact with
+`workflow-service`.
+
+In the provided code snippet, you can see an example of `NewExampleFlowTest`,
+which extends `BaseIntegrationTest`. It demonstrates how to use the `apiClient`
+object to interact with the `workflow-service`.
+
+```java
+@Slf4j
+public class NewExampleFlowTest extends BaseIntegrationTest {
+
+    private static final String projectName = "project-1";
+
+    private static final String projectDescription = "an example project";
+
+    @Test
+    public void runNewExampleFlow() throws ApiException, InterruptedException {
+        log.info("Running new example flow");
+        //Example on how to use apiClient object
+        ProjectApi projectApi = new ProjectApi(apiClient);
+        List<ProjectResponseDTO> projects = projectApi.getProjects();
+        log.info("Available projects are: {} ", projects);
+
+        // Add your logic test here
+    }
+}
+```
+
+`Parodos` also offers a utility class called `SDKUtils` that simplifies
+interaction with the `workflow-service`, especially when writing integration
+tests. For instance, you can use the `SDKUtils.waitWorkflowStatusAsync` method
+to asynchronously wait for a workflow to reach a specific status.
+
+Feel free to add your own logic tests within the `runNewExampleFlow` method.
+
 #### Troubleshooting
 
 ##### 404 Not found - nginx
