@@ -154,13 +154,17 @@ execute the integration tests is:
 mvn verify -pl integration-tests -P integration-test
 ```
 
-You can also specify the server IP and server port by setting the environment
-variables `SERVERIP` and `SERVERPORT`. By default, the values are `localhost`
-and `8080`, respectively. For instance, you can run the following command to
-specify custom values for the server IP and port:
+You can set the server IP and port by using specific environment variables.
+For the `workflow-service`, you can set `SERVER_IP` and `SERVER_PORT`, and for
+the `notification-service`, you can set `NOTIFICATION_SERVER_IP` and
+`NOTIFICATION_SERVER_PORT`. The default values for the IP addresses are
+`localhost`, and the default port is `8080`. If you want to customize the
+values, run the following command, replacing `1.2.3.4` with the desired server
+IP and `9999` with the desired port for the `workflow-service` and `5555` with
+the desired port for the `notification-service`:
 
 ```bash
-SERVER_IP=1.2.3.4 SERVER_PORT=9999 mvn verify -pl integration-tests -P integration-test
+SERVER_IP=1.2.3.4 SERVER_PORT=9999 NOTIFICATION_SERVER_PORT=5555 mvn verify -pl integration-tests -P integration-test
 ```
 
 The `integration-test` profile uses fake `LDAP` server and `Postgres` database.\
