@@ -37,14 +37,7 @@ cluster:
 Then, you can create all the required resource executing:
 
 ```bash
-make install-kubernetes-dependencies
-sleep 10
-make wait-kubernetes-dependencies
-make build-images
-make tag-images
-make push-images-to-kind
-kubectl kustomize hack/manifests/testing | kubectl apply -f -
-kubectl wait --timeout=300s --for=condition=Ready pods --all -n default
+make deploy-to-kind
 ```
 
 Verify if all the resources has been correctly create and if they are running,
