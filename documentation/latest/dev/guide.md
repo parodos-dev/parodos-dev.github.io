@@ -40,7 +40,7 @@ Then, you can create all the required resource executing:
 make deploy-to-kind
 ```
 
-Verify if all the resources has been correctly create and if they are running,
+Verify if all the resources has been correctly created and if they are running,
 execute:
 
 ```bash
