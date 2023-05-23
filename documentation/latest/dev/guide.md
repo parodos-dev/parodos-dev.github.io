@@ -153,8 +153,8 @@ should look like this:
 
 ```bash
 integration-tests/src/test/java/com/redhat/parodos/flows
-├── base
-│   └── BaseIntegrationTest.java
+├── common
+│   └── WorkFlowTestBuilder.java
 └── NewExampleFlowTest.java
 ```
 
@@ -163,33 +163,57 @@ If you're executing the integration tests locally then you must restart the
 services. Otherwise, if you're using a `Kind` cluster, you need to update the
 resources already deployed (see [Update the cluster](#update-the-cluster) section).
 
-For each integration test related to the example defined in `workflow-example`,
-make sure to extend the `BaseIntegrationTest` class.
+The `WorkFlowTestBuilder` class is a utility class for building test scenarios
+in the context of workflow definitions. It provides methods to set up projects
+and retrieve workflow definitions. Through methods such as `withDefaultProject()`
+and `withWorkFlowDefinition()`, users can easily define test parameters and
+customize test cases. The class ensures the availability of the required
+resources by employing error handling and assertion checks. Additionally,
+it offers a nested `TestComponents` record that encapsulates the essential
+components, simplifying access to the API client and project response.
+Overall, the `WorkFlowTestBuilder` class provides a streamlined and reusable
+approach for workflow testing scenarios, empowering developers to write more
+concise, maintainable, and efficient test cases. This, in turn, enhances the
+quality and reliability of their applications while improving efficiency and
+maintainability.
 
-The `BaseIntegrationTest` class sets up the necessary environment for the test
-to interact correctly with the `workflow-service` and `notification-service`.
-It provides access to `apiClient` object, that is needed to interact with
-`workflow-service`.
-
-In the provided code snippet, you can see an example of `NewExampleFlowTest`,
-which extends `BaseIntegrationTest`. It demonstrates how to use the `apiClient`
-object to interact with the `workflow-service`.
+In the provided code snippet, you can see an example of `NewExampleFlowTest`.
 
 ```java
 @Slf4j
 public class NewExampleFlowTest extends BaseIntegrationTest {
 
-    private static final String projectName = "project-1";
+    private static final String WORKFLOW_NAME = "simpleSequentialWorkFlow" + WorkFlowConstants.INFRASTRUCTURE_WORKFLOW;
 
-    private static final String projectDescription = "an example project";
 
     @Test
     public void runNewExampleFlow() throws ApiException, InterruptedException {
         log.info("Running new example flow");
-        //Example on how to use apiClient object
-        ProjectApi projectApi = new ProjectApi(apiClient);
-        List<ProjectResponseDTO> projects = projectApi.getProjects();
-        log.info("Available projects are: {} ", projects);
+        //Example on how to use WorkFlowTestBuilder class
+        TestComponents components = new WorkFlowTestBuilder()
+            .withDefaultProject()
+            .withWorkFlowDefinition(WORKFLOW_NAME, getWorkFlowDefinitionResponseConsumer())
+            .build();
+        // Define a WorkRequest
+        WorkRequestDTO work = new WorkRequestDTO();
+        work.setWorkName("restCallTask");
+        work.setArguments(
+            Collections.singletonList(
+                new ArgumentRequestDTO()
+                    .key("url")
+                    .value("http://localhost:8080/actuator/health")
+            )
+        );
+
+        // Define WorkFlowRequest
+        WorkFlowRequestDTO workFlowRequestDTO = new WorkFlowRequestDTO();
+        workFlowRequestDTO.setProjectId(components.project().getId());
+        workFlowRequestDTO.setWorkFlowName(WORKFLOW_NAME);
+        workFlowRequestDTO.setWorks(Collections.singletonList(work));
+
+        log.info("******** Running The Simple Sequence Flow ********");
+        WorkflowApi workflowApi = new WorkflowApi(components.apiClient());
+        WorkFlowResponseDTO workFlowResponseDTO = workflowApi.execute(workFlowRequestDTO);
 
         // Add your logic test here
     }
