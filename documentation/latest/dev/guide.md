@@ -230,8 +230,9 @@ Feel free to add your own logic tests within the `runNewExampleFlow` method.
 #### Troubleshooting
 
 ##### 404 Not found - nginx
-  
-If you get this error:
+
+If you encounter a `404 Not Found` error while executing the
+[mvn verify](#execute-integration-test-against-kind-cluster) command:
 
 ```bash
 [OkHttp http://172.19.0.2/...] INFO com.redhat.parodos.sdkutils.SdkUtils - onFailure Message: Not Found
@@ -245,12 +246,20 @@ HTTP response body: <html>
 </html>
 ```
 
-verify that the ingress ``parodos-ingress` is available in your cluster:
+To troubleshoot this issue, you should verify the availability of the
+`parodos-ingress` in your cluster. You can use the command `kubectl get ingress`
+to check if the ingress is present.
 
 ```bash
 > kubectl get ingress
 NAME              CLASS    HOSTS   ADDRESS   PORTS   AGE
 parodos-ingress   <none>   *                 80      9s
+```
+
+If the ingress is missing, you can manually apply it using the command:
+
+```bash
+kubectl apply -f hack/manifests/testing/ingress.yaml
 ```
 
 ## Details
