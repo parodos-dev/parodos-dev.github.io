@@ -291,7 +291,7 @@ mvn verify -pl integration-tests -P integration-test
 
 You can set the server IP and port by using specific environment variables.
 For the `workflow-service`, you can set `SERVER_IP` and `SERVER_PORT`, and for
-the `notification-service`, you can set `NOTIFICATION_SERVER_IP` and
+the `notification-service`, you can set `NOTIFICATION_SERVER_ADDRESS` and
 `NOTIFICATION_SERVER_PORT`. The default values for the IP addresses are
 `localhost`, and the default port is `8080`. If you want to customize the
 values, run the following command, replacing `1.2.3.4` with the desired server
