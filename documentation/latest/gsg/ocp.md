@@ -50,9 +50,13 @@ git clone {{ page.parodos.git_repo }} -b {{ page.parodos.git_branch }}
 
 ### Installing Parodos
 
+Before appling the manifests please make sure you have a [storage class](https://kubernetes.io/docs/concepts/storage/storage-classes/)
+configured and set as default. It is needed to bind persistent volume
+claim used by postgresql. More information on how to do it can be found [here](https://docs.openshift.com/container-platform/4.13/post_installation_configuration/storage-configuration.html)
+
 ```bash
 cd parodos
-kubectl kustomize hack/manifests/openshift/ | kubecl apply -f -
+kubectl kustomize hack/manifests/openshift/ | kubectl apply -f -
 ```
 
 This will install all Parodos microservices on top of Openshift, where the
