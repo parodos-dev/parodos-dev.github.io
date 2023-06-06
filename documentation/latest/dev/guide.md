@@ -97,24 +97,35 @@ kube-system          kube-scheduler-kind-control-plane            1/1     Runnin
 local-path-storage   local-path-provisioner-75f5b54ffd-9kzhm      1/1     Running     0              3h5m
 ```
 
-Finally, retrieve and export the cluster IP address:
+Retrieve and export the cluster IP address:
 
 ```bash
 export SERVER_IP=$(kubectl get nodes kind-control-plane -o json  |  jq -r '[.status.addresses[] | select(.type=="InternalIP")] | .[0].address')
 ```
 
+Finally, use the value of `$SERVER_IP` to configure services hosts in your
+`/etc/hosts` file:
+
+```bash
+echo "$SERVER_IP workflow-service.parodos-dev" | sudo tee -a /etc/hosts
+echo "$SERVER_IP notification-service.parodos-dev" | sudo tee -a /etc/hosts
+```
+
+The hostnames `workflow-service.parodos-dev` and
+`notification-service.parodos-dev` are defined in [ingress.yaml](https://github.com/parodos-dev/parodos/blob/main/hack/manifests/testing/ingress.yaml).
+
 You can execute the integration tests by running the following command:
 
 ```bash
-WORKFLOW_SERVICE_PATH=/workflow-service \
-NOTIFICATION_SERVICE_PATH=/notification-service \
+WORKFLOW_SERVICE_HOST=workflow-service.parodos-dev \
+NOTIFICATION_SERVICE_HOST=notification-service.parodos-dev \
 NOTIFICATION_SERVER_PORT=8081 \
 SERVER_PORT=80 \
 mvn verify -pl integration-tests -P integration-test -Dspring.profiles.active=dev
 ```
 
-Please note that `WORKFLOW_SERVICE_PATH` and `NOTIFICATION_SERVICE_PATH` are
-the `Ingress` paths defined in [ingress.yaml](https://github.com/parodos-dev/parodos/blob/main/hack/manifests/testing/ingress.yaml).
+Please note that `WORKFLOW_SERVICE_HOST` and `NOTIFICATION_SERVICE_HOST` are
+the `Ingress` hosts defined in your `/tct/hosts` and in [ingress.yaml](https://github.com/parodos-dev/parodos/blob/main/hack/manifests/testing/ingress.yaml).
 They ensure that the integration tests communicate with the correct services.
 
 By combining the `integration-test` Maven profile with the `dev` Spring
