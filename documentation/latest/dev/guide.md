@@ -2,6 +2,33 @@
 layout: documentation
 title: Developer guide
 ---
+## Spring profiles
+
+The configuration of the `workflow-service` plays a crucial role in its
+functionality and behavior. In this section, we will explore the main differences
+between `dev` and `local` spring profiles and discuss their implications.
+
+Profile `dev`:
+
+- use a `Postgres` database.
+- use a `LDAP` server.
+
+Profile `local`:
+
+- use a `H2` database.
+- `LDAP` is disabled.
+
+## Maven profiles
+
+The `integration-test` Maven profile is designed to facilitate integration testing.
+This profile is specifically triggered when using the `-P integrationtest`
+command-line option.
+
+The `integration-test` profile is responsible for executing integration tests
+and performing verification tasks using the `maven-failsafe-plugin`.
+
+The profile includes only files that match `*IntegrationTest.java`,
+`*FlowTest.java`, and `**/integration/**/*.java` patterns.
 
 ## Integration tests
 
@@ -89,6 +116,10 @@ mvn verify -pl integration-tests -P integration-test -Dspring.profiles.active=de
 Please note that `WORKFLOW_SERVICE_PATH` and `NOTIFICATION_SERVICE_PATH` are
 the `Ingress` paths defined in [ingress.yaml](https://github.com/parodos-dev/parodos/blob/main/hack/manifests/testing/ingress.yaml).
 They ensure that the integration tests communicate with the correct services.
+
+By combining the `integration-test` Maven profile with the `dev` Spring
+profile, developers can effectively test the workflow service in a realistic
+environment, validating its functionality and behavior in real-world scenarios.
 
 ##### Update the cluster
 
@@ -309,9 +340,6 @@ the desired port for the `notification-service`:
 ```bash
 SERVER_IP=1.2.3.4 SERVER_PORT=9999 NOTIFICATION_SERVER_PORT=5555 mvn verify -pl integration-tests -P integration-test
 ```
-
-The `integration-test` profile uses fake `LDAP` server and `Postgres` database.\
-The `local` profile has `LDAP` disabled and uses `h2` database.
 
 ## CI Jobs
 
