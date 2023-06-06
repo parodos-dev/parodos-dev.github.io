@@ -285,7 +285,7 @@ If you encounter a `404 Not Found` error while executing the
 [mvn verify](#execute-integration-test-against-kind-cluster) command:
 
 ```bash
-[OkHttp http://172.19.0.2/...] INFO com.redhat.parodos.sdkutils.SdkUtils - onFailure Message: Not Found
+[OkHttp http://172.19.0.2/...] INFO com.redhat.parodos.sdkutils.WorkFlowServiceUtils - onFailure Message: Not Found
 HTTP response code: 404
 HTTP response body: <html>
 <head><title>404 Not Found</title></head>
@@ -297,13 +297,15 @@ HTTP response body: <html>
 ```
 
 To troubleshoot this issue, you should verify the availability of the
-`parodos-ingress` in your cluster. You can use the command `kubectl get ingress`
-to check if the ingress is present.
+`parodos-notification-ingress` and `parodos-workflow-ingress` in your cluster.
+You can use the command `kubectl get ingress` to check if the ingresses
+are present.
 
 ```bash
 > kubectl get ingress
-NAME              CLASS    HOSTS   ADDRESS   PORTS   AGE
-parodos-ingress   <none>   *                 80      9s
+NAME                           CLASS    HOSTS                              ADDRESS     PORTS   AGE
+parodos-notification-ingress   <none>   notification-service.parodos-dev               80      5s
+parodos-workflow-ingress       <none>   workflow-service.parodos-dev                   80      5s
 ```
 
 If the ingress is missing, you can manually apply it using the command:
