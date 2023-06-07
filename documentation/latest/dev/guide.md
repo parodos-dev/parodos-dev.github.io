@@ -21,7 +21,7 @@ Profile `local`:
 ## Maven profiles
 
 The `integration-test` Maven profile is designed to facilitate integration testing.
-This profile is specifically triggered when using the `-P integrationtest`
+This profile is specifically triggered when using the `-P integration-test`
 command-line option.
 
 The `integration-test` profile is responsible for executing integration tests
