@@ -97,24 +97,35 @@ kube-system          kube-scheduler-kind-control-plane            1/1     Runnin
 local-path-storage   local-path-provisioner-75f5b54ffd-9kzhm      1/1     Running     0              3h5m
 ```
 
-Finally, retrieve and export the cluster IP address:
+Retrieve and export the cluster IP address:
 
 ```bash
 export SERVER_IP=$(kubectl get nodes kind-control-plane -o json  |  jq -r '[.status.addresses[] | select(.type=="InternalIP")] | .[0].address')
 ```
 
+Finally, use the value of `$SERVER_IP` to configure services hosts in your
+`/etc/hosts` file:
+
+```bash
+echo "$SERVER_IP workflow-service.parodos-dev" | sudo tee -a /etc/hosts
+echo "$SERVER_IP notification-service.parodos-dev" | sudo tee -a /etc/hosts
+```
+
+The hostnames `workflow-service.parodos-dev` and
+`notification-service.parodos-dev` are defined in [ingress.yaml](https://github.com/parodos-dev/parodos/blob/main/hack/manifests/testing/ingress.yaml).
+
 You can execute the integration tests by running the following command:
 
 ```bash
-WORKFLOW_SERVICE_PATH=/workflow-service \
-NOTIFICATION_SERVICE_PATH=/notification-service \
+WORKFLOW_SERVICE_HOST=workflow-service.parodos-dev \
+NOTIFICATION_SERVICE_HOST=notification-service.parodos-dev \
 NOTIFICATION_SERVER_PORT=8081 \
 SERVER_PORT=80 \
 mvn verify -pl integration-tests -P integration-test -Dspring.profiles.active=dev
 ```
 
-Please note that `WORKFLOW_SERVICE_PATH` and `NOTIFICATION_SERVICE_PATH` are
-the `Ingress` paths defined in [ingress.yaml](https://github.com/parodos-dev/parodos/blob/main/hack/manifests/testing/ingress.yaml).
+Please note that `WORKFLOW_SERVICE_HOST` and `NOTIFICATION_SERVICE_HOST` are
+the `Ingress` hosts defined in your `/etc/hosts` and in [ingress.yaml](https://github.com/parodos-dev/parodos/blob/main/hack/manifests/testing/ingress.yaml).
 They ensure that the integration tests communicate with the correct services.
 
 By combining the `integration-test` Maven profile with the `dev` Spring
@@ -274,7 +285,7 @@ If you encounter a `404 Not Found` error while executing the
 [mvn verify](#execute-integration-test-against-kind-cluster) command:
 
 ```bash
-[OkHttp http://172.19.0.2/...] INFO com.redhat.parodos.sdkutils.SdkUtils - onFailure Message: Not Found
+[OkHttp http://172.19.0.2/...] INFO com.redhat.parodos.sdkutils.WorkFlowServiceUtils - onFailure Message: Not Found
 HTTP response code: 404
 HTTP response body: <html>
 <head><title>404 Not Found</title></head>
@@ -286,13 +297,15 @@ HTTP response body: <html>
 ```
 
 To troubleshoot this issue, you should verify the availability of the
-`parodos-ingress` in your cluster. You can use the command `kubectl get ingress`
-to check if the ingress is present.
+`parodos-notification-ingress` and `parodos-workflow-ingress` in your cluster.
+You can use the command `kubectl get ingress` to check if the ingresses
+are present.
 
 ```bash
 > kubectl get ingress
-NAME              CLASS    HOSTS   ADDRESS   PORTS   AGE
-parodos-ingress   <none>   *                 80      9s
+NAME                           CLASS    HOSTS                              ADDRESS     PORTS   AGE
+parodos-notification-ingress   <none>   notification-service.parodos-dev               80      5s
+parodos-workflow-ingress       <none>   workflow-service.parodos-dev                   80      5s
 ```
 
 If the ingress is missing, you can manually apply it using the command:
