@@ -125,7 +125,7 @@ mvn verify -pl integration-tests -P integration-test -Dspring.profiles.active=de
 ```
 
 Please note that `WORKFLOW_SERVICE_HOST` and `NOTIFICATION_SERVICE_HOST` are
-the `Ingress` hosts defined in your `/tct/hosts` and in [ingress.yaml](https://github.com/parodos-dev/parodos/blob/main/hack/manifests/testing/ingress.yaml).
+the `Ingress` hosts defined in your `/etc/hosts` and in [ingress.yaml](https://github.com/parodos-dev/parodos/blob/main/hack/manifests/testing/ingress.yaml).
 They ensure that the integration tests communicate with the correct services.
 
 By combining the `integration-test` Maven profile with the `dev` Spring
