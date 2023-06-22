@@ -44,6 +44,8 @@ menu:
     Link: "operations/troubleshooting.md"
   - Name: API reference
     Link: "operations/api.html"
+  - Name: Prebuilt WorkFlow tasks
+    Link: "operations/prebuilt.md"
 
 - Name: For developers
   Childs:
