@@ -230,8 +230,11 @@ maintainability.
 In the provided code snippet, you can see an example of `NewExampleFlowTest`.
 
 ```java
+import com.redhat.parodos.flows.common.WorkFlowTestBuilder.TestComponents;
+
+
 @Slf4j
-public class NewExampleFlowTest extends BaseIntegrationTest {
+public class NewExampleFlowTest{
 
     private static final String WORKFLOW_NAME = "simpleSequentialWorkFlow" + WorkFlowConstants.INFRASTRUCTURE_WORKFLOW;
 
@@ -270,9 +273,11 @@ public class NewExampleFlowTest extends BaseIntegrationTest {
 }
 ```
 
-`Parodos` also offers a utility class called `SDKUtils` that simplifies
-interaction with the `workflow-service`, especially when writing integration
-tests. For instance, you can use the `SDKUtils.waitWorkflowStatusAsync` method
+`Parodos` also offers two utility classes called `WorkFlowServiceUtils` and
+`NotificationServiceUtils` that simplify interaction with the `workflow-service`
+and `notification-service`, respectively.
+These utility classes are useful especially when writing integration tests.
+For instance, you can use the `WorkFlowServiceUtils.waitWorkflowStatusAsync` method
 to asynchronously wait for a workflow to reach a specific status.
 
 Feel free to add your own logic tests within the `runNewExampleFlow` method.
