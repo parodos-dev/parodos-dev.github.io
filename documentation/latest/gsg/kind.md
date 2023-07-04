@@ -74,27 +74,18 @@ kubectl kustomize hack/manifests/backstage | kubectl apply -f -
 ```
 
 This will install all deployments for Parodos services and Backstage with
-Parodos plugin. For AuthN a fake Openldap server and a mock
-[H2](https://www.h2database.com/html/main.html) database will be used.
+Parodos plugin. For AuthN a fake Openldap server will be created and a simple
+non-production ready postgres database will be used.
 
-The following deployments are for Parodos services:
+The following deployments are in place:
 
 ```bash
-$ --> kubectl get deployments
+$ --> kubectl get deployment
 NAME                   READY   UP-TO-DATE   AVAILABLE   AGE
-ldap-deployment        1/1     1            1           31d
-notification-service   1/1     1            1           31d
-postgres-deployment    1/1     1            1           31d
-workflow-service       1/1     1            1           31d
-```
-
-And the following deployments for Backstage
-
-```bash
-$ --> kubectl get deployment -n backstage
-NAME        READY   UP-TO-DATE   AVAILABLE   AGE
-backstage   1/1     1            1           2m53s
-postgres    1/1     1            1           2m53s
+backstage              1/1     1            1           42m
+notification-service   1/1     1            1           42m
+postgres               1/1     1            1           42m
+workflow-service       1/1     1            1           42m
 ```
 
 ### Backstage port-forwarding
@@ -104,7 +95,7 @@ ports to localhost, in the near future we'll figure it out a solution with
 gateway-api.
 
 ```bash
-kubectl port-forward --namespace=backstage svc/backstage 7007:7007
+kubectl port-forward --namespace=default svc/backstage 7007:7007
 ```
 
 Now, start adding workflows using `http://localhost:7007/parodos/`
