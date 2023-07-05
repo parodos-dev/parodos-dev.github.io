@@ -233,3 +233,25 @@ These are the arguments for each resource:
 { "key":"resource-json", "value": "pipelineRunJson" }
 ]
 ```
+
+## VM Migration using the Forklift Operator
+
+This set of tasks allows you to migrate a VM hosted in a vSphere environment
+to an OCP cluster with OCP Virtualization installed using the [forklift](https://github.com/kubev2v/forklift)
+operator, which is part of the [Konveyor Tool Kit](https://www.konveyor.io/).
+The task requires to have the forklift operator configured in the target
+platform and with valid credentials to communicate with the vSphere server.
+Additionally, the operator requires to have configured network and storage
+objects in the target cluster to perform the migration successfully.
+
+To perform the migration, the workflow requires the following items:
+
+- The OCP API server URL
+- A valid token OCP token
+- Name of the VM in vSphere to migrate
+- Namespace in the target OCP host to migrate the VM to (same cluster where
+the operator is installed)
+- Name of the storage provider instance to use to perform the migration
+- Name of the network provider instance to use exclusivelly for the migration
+- Name of the source provider instance linking to the vSphere server
+- Name of the destination provider instance linking to the OCP Virtualization
