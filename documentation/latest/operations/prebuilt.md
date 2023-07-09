@@ -31,7 +31,6 @@ We have a collection of Git operation tasks:
 - GitArchiveTask
 - GitCloneTask
 - GitCommitTask
-- GitPushTask
 
 User can, optionally, provide Git credentials.
 
