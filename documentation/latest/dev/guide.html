@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script id="dpal" src="//www.redhat.com/ma/dpal.js" type="text/javascript"></script>
+  <meta charset="utf-8">
+  <title>Developer guide</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="this is meta description">
+
+  
+
+  <!-- ** Plugins Needed for the Project ** -->
+  
+  <link rel="stylesheet" href="/assets/plugins/bootstrap/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="/assets/plugins/themify-icons/themify-icons.css">
+  
+  <link rel="stylesheet" href="/assets/plugins/slick/slick.css">
+  
+
+  <link href="/assets/scss/syntax_monokai.css" rel="stylesheet">
+  <!-- Main Stylesheet -->
+  <link href="/assets/scss/style.css" rel="stylesheet">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="/assets/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="/assets/images/flotta-logo-stacked.ico " type="image/x-icon">
+
+  <!-- google analytics -->
+  
+
+</head>
+
+
+<body>
+
+  <header class="navigation fixed-top nav-bg">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand font-tertiary h3" href="/">
+      
+        <img src="/assets/images/flotta-logo.png" alt="Parodos" style="height: 60px;">
+        
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navigation">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        
+          <li class="nav-item ">
+            <a class="nav-link" href="/blog.html">Blog</a>
+          </li>
+        
+          <li class="nav-item ">
+            <a class="nav-link" href="/documentation/latest/intro/overview.html">Documentation</a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+  <section class="section skip_top">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        
+        
+        <ul class="list-group list-group-collapse border-0">
+          
+          <li class="list-group-item border-0">
+            <h5>
+              
+              Intro
+              
+            </h5>
+            
+            <ul class="list-group border-0">
+              
+              
+              <li class="list-group-item border-0"> <a href="/documentation/latest/intro/overview.html">What is Parados</a> </li>
+              
+              
+              <li class="list-group-item border-0"> <a href="/documentation/latest/intro/usecases.html">Use cases</a> </li>
+              
+              
+              <li class="list-group-item border-0"> <a href="/documentation/latest/intro/vs.html">Parados vs others</a> </li>
+              
+              
+              <li class="list-group-item border-0"> <a href="/documentation/latest/intro/concepts.html">Parados Concepts</a> </li>
+              
+            </ul>
+            
+          </li>
+          
+          <li class="list-group-item border-0">
+            <h5>
+              
+              Getting started
+              
+            </h5>
+            
+            <ul class="list-group border-0">
+              
+              
+              <li class="list-group-item border-0"> <a href="/documentation/latest/gsg/kind.html">Kind</a> </li>
+              
+              
+              <li class="list-group-item border-0"> <a href="/documentation/latest/gsg/ocp.html">Openshift</a> </li>
+              
+              
+              <li class="list-group-item border-0"> <a href="/documentation/latest/gsg/running_workflows.html">Running WorkFlows</a> </li>
+              
+            </ul>
+            
+          </li>
+          
+          <li class="list-group-item border-0">
+            <h5>
+              
+              Operations
+              
+            </h5>
+            
+            <ul class="list-group border-0">
+              
+              
+              <li class="list-group-item border-0"> <a href="/documentation/latest/operations/requirements.html">System Requirements</a> </li>
+              
+              
+              <li class="list-group-item border-0"> <a href="/documentation/latest/operations/workflows.html">WorkFlow Definitions</a> </li>
+              
+              
+              <li class="list-group-item border-0"> <a href="/documentation/latest/operations/deployment_options.html">Deployment options</a> </li>
+              
+              
+              <li class="list-group-item border-0"> <a href="/documentation/latest/operations/configuration.html">Configuration</a> </li>
+              
+              
+              <li class="list-group-item border-0"> <a href="/documentation/latest/operations/observability.html">Observability</a> </li>
+              
+              
+              <li class="list-group-item border-0"> <a href="/documentation/latest/operations/troubleshooting.html">Troubleshooting</a> </li>
+              
+              
+              <li class="list-group-item border-0"> <a href="/documentation/latest/operations/api.html">API reference</a> </li>
+              
+              
+              <li class="list-group-item border-0"> <a href="/documentation/latest/operations/prebuilt.html">Prebuilt WorkFlow tasks</a> </li>
+              
+            </ul>
+            
+          </li>
+          
+          <li class="list-group-item border-0">
+            <h5>
+              
+              For developers
+              
+            </h5>
+            
+            <ul class="list-group border-0">
+              
+              
+              <li class="list-group-item border-0"> <a href="/documentation/latest/dev/installation.html">Manual installation & tips</a> </li>
+              
+              
+              <li class="list-group-item border-0"> <a href="/documentation/latest/dev/guide.html">Development Guide</a> </li>
+              
+            </ul>
+            
+          </li>
+          
+        </ul>
+        <p>Documentation for version: <b>latest</b></p>
+        <ul class="list-group list-group-collapse border-0">
+          <li class="list-group-item border-0">
+            <h5>Other versions</h5>
+
+            <ul class="list-group border-0">
+              
+              
+              
+              
+              <li class="list-group-item border-0"> <a href="/documentation/latest/intro/overview.html"> latest</a> </li>
+              
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="col-lg-8">
+        <div class="documentation content">
+          
+          <!-- Some cases we don't want to show the title -->
+          <h1 class="font-tertiary mb-5">Developer guide</h1>
+          
+          
+
+          <h2 id="spring-profiles">Spring profiles</h2>
+
+<p>The configuration of the <code class="language-plaintext highlighter-rouge">workflow-service</code> plays a crucial role in its
+functionality and behavior. In this section, we will explore the main differences
+between <code class="language-plaintext highlighter-rouge">dev</code> and <code class="language-plaintext highlighter-rouge">local</code> spring profiles and discuss their implications.</p>
+
+<p>Profile <code class="language-plaintext highlighter-rouge">dev</code>:</p>
+
+<ul>
+  <li>use a <code class="language-plaintext highlighter-rouge">Postgres</code> database.</li>
+  <li>use a <code class="language-plaintext highlighter-rouge">LDAP</code> server.</li>
+</ul>
+
+<p>Profile <code class="language-plaintext highlighter-rouge">local</code>:</p>
+
+<ul>
+  <li>use a <code class="language-plaintext highlighter-rouge">H2</code> database.</li>
+  <li><code class="language-plaintext highlighter-rouge">LDAP</code> is disabled.</li>
+</ul>
+
+<h2 id="maven-profiles">Maven profiles</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">integration-test</code> Maven profile is designed to facilitate integration testing.
+This profile is specifically triggered when using the <code class="language-plaintext highlighter-rouge">-P integration-test</code>
+command-line option.</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">integration-test</code> profile is responsible for executing integration tests
+and performing verification tasks using the <code class="language-plaintext highlighter-rouge">maven-failsafe-plugin</code>.</p>
+
+<p>The profile includes only files that match <code class="language-plaintext highlighter-rouge">*IntegrationTest.java</code>,
+<code class="language-plaintext highlighter-rouge">*FlowTest.java</code>, and <code class="language-plaintext highlighter-rouge">**/integration/**/*.java</code> patterns.</p>
+
+<h2 id="integration-tests">Integration tests</h2>
+
+<h3 id="quick-start">Quick start</h3>
+
+<h4 id="execute-integration-tests-locally">Execute integration tests locally</h4>
+
+<p>To execute integration tests locally, you need to first start the
+<code class="language-plaintext highlighter-rouge">workflow-service</code> and <code class="language-plaintext highlighter-rouge">notification-service</code> services by running the following
+commands:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./start_workflow_service.sh &amp;
+./start_notification_service.sh &amp;
+</code></pre></div></div>
+
+<p>Once the services are up and running, you can execute the integration tests by
+running the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn verify <span class="nt">-pl</span> integration-tests <span class="nt">-P</span> integration-test
+</code></pre></div></div>
+
+<h4 id="execute-integration-test-against-kind-cluster">Execute integration test against Kind cluster</h4>
+
+<h5 id="create-and-set-up-the-cluster">Create and set up the cluster</h5>
+
+<p>To execute integration test again a <code class="language-plaintext highlighter-rouge">Kind</code> cluster, you need first to create the
+cluster:</p>
+
+<p><code class="language-plaintext highlighter-rouge">kind create cluster</code></p>
+
+<p>Then, you can create all the required resource executing:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make deploy-to-kind
+</code></pre></div></div>
+
+<p>Verify if all the resources has been correctly created and if they are running,
+execute:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl get pods <span class="nt">-A</span>
+</code></pre></div></div>
+
+<p>The output should be similar to:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="o">&gt;</span> kubectl get pods <span class="nt">-A</span>
+NAMESPACE            NAME                                         READY   STATUS      RESTARTS       AGE
+default              ldap-deployment-5bc598d86f-r7276             1/1     Running     0              3h5m
+default              notification-service-b87d5f696-ddnwg         1/1     Running     0              3h5m
+default              postgres-deployment-546b89d79c-pgz7n         1/1     Running     0              3h5m
+default              workflow-service-64c57dd6b8-vft8f            1/1     Running     6 <span class="o">(</span>3h1m ago<span class="o">)</span>   3h5m
+ingress-nginx        ingress-nginx-admission-create-c4dt7         0/1     Completed   0              3h5m
+ingress-nginx        ingress-nginx-admission-patch-hb8xb          0/1     Completed   2              3h5m
+ingress-nginx        ingress-nginx-controller-6bfb7f5798-cr7jk    1/1     Running     0              3h5m
+kube-system          coredns-787d4945fb-2hbtb                     1/1     Running     0              3h5m
+kube-system          coredns-787d4945fb-z8zqd                     1/1     Running     0              3h5m
+kube-system          etcd-kind-control-plane                      1/1     Running     0              3h5m
+kube-system          kindnet-cbxgn                                1/1     Running     0              3h5m
+kube-system          kube-apiserver-kind-control-plane            1/1     Running     0              3h5m
+kube-system          kube-controller-manager-kind-control-plane   1/1     Running     0              3h5m
+kube-system          kube-proxy-mt9hm                             1/1     Running     0              3h5m
+kube-system          kube-scheduler-kind-control-plane            1/1     Running     0              3h5m
+local-path-storage   local-path-provisioner-75f5b54ffd-9kzhm      1/1     Running     0              3h5m
+</code></pre></div></div>
+
+<p>Retrieve and export the cluster IP address:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">SERVER_IP</span><span class="o">=</span><span class="si">$(</span>kubectl get nodes kind-control-plane <span class="nt">-o</span> json  |  jq <span class="nt">-r</span> <span class="s1">'[.status.addresses[] | select(.type=="InternalIP")] | .[0].address'</span><span class="si">)</span>
+</code></pre></div></div>
+
+<p>Finally, use the value of <code class="language-plaintext highlighter-rouge">$SERVER_IP</code> to configure services hosts in your
+<code class="language-plaintext highlighter-rouge">/etc/hosts</code> file:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s2">"</span><span class="nv">$SERVER_IP</span><span class="s2"> workflow-service.parodos-dev"</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/hosts
+<span class="nb">echo</span> <span class="s2">"</span><span class="nv">$SERVER_IP</span><span class="s2"> notification-service.parodos-dev"</span> | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/hosts
+</code></pre></div></div>
+
+<p>The hostnames <code class="language-plaintext highlighter-rouge">workflow-service.parodos-dev</code> and
+<code class="language-plaintext highlighter-rouge">notification-service.parodos-dev</code> are defined in <a href="https://github.com/parodos-dev/parodos/blob/main/hack/manifests/testing/ingress.yaml">ingress.yaml</a>.</p>
+
+<p>You can execute the integration tests by running the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">WORKFLOW_SERVICE_HOST</span><span class="o">=</span>workflow-service.parodos-dev <span class="se">\</span>
+<span class="nv">NOTIFICATION_SERVICE_HOST</span><span class="o">=</span>notification-service.parodos-dev <span class="se">\</span>
+<span class="nv">NOTIFICATION_SERVER_PORT</span><span class="o">=</span>8081 <span class="se">\</span>
+<span class="nv">SERVER_PORT</span><span class="o">=</span>80 <span class="se">\</span>
+mvn verify <span class="nt">-pl</span> integration-tests <span class="nt">-P</span> integration-test <span class="nt">-Dspring</span>.profiles.active<span class="o">=</span>dev
+</code></pre></div></div>
+
+<p>Please note that <code class="language-plaintext highlighter-rouge">WORKFLOW_SERVICE_HOST</code> and <code class="language-plaintext highlighter-rouge">NOTIFICATION_SERVICE_HOST</code> are
+the <code class="language-plaintext highlighter-rouge">Ingress</code> hosts defined in your <code class="language-plaintext highlighter-rouge">/etc/hosts</code> and in <a href="https://github.com/parodos-dev/parodos/blob/main/hack/manifests/testing/ingress.yaml">ingress.yaml</a>.
+They ensure that the integration tests communicate with the correct services.</p>
+
+<p>By combining the <code class="language-plaintext highlighter-rouge">integration-test</code> Maven profile with the <code class="language-plaintext highlighter-rouge">dev</code> Spring
+profile, developers can effectively test the workflow service in a realistic
+environment, validating its functionality and behavior in real-world scenarios.</p>
+
+<h5 id="update-the-cluster">Update the cluster</h5>
+
+<p>If you want to apply a local change to the already running cluster you can execute:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl kustomize hack/manifests/testing | kubectl delete <span class="nt">-f</span> -
+make build-images
+make tag-images
+make push-images-to-kind
+kubectl kustomize hack/manifests/testing | kubectl apply <span class="nt">-f</span> -
+</code></pre></div></div>
+
+<h5 id="delete-and-recreate-the-cluster">Delete and recreate the cluster</h5>
+
+<p>If you want to have a clean cluster, you can delete completely it by executing:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kind delete cluster
+</code></pre></div></div>
+
+<p>and then recreate the cluster from scratch as described <a href="#create-and-set-up-the-cluster">here</a>.</p>
+
+<h4 id="execute-a-specific-integration-test">Execute a specific integration test</h4>
+
+<p>If you want to execute a specific integration test, e.g. <code class="language-plaintext highlighter-rouge">SimpleWorkFlowTest</code>,
+you can set the <code class="language-plaintext highlighter-rouge">it.test</code> property equals to the integration test class name you
+want to execute. For example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">SERVER_IP</span><span class="o">=</span>172.19.0.2 <span class="nv">SERVER_PORT</span><span class="o">=</span>80 mvn <span class="nt">-Dit</span>.test<span class="o">=</span>SimpleWorkFlowTest verify <span class="nt">-pl</span> integration-tests <span class="nt">-P</span> integration-test <span class="nt">-Dspring</span>.profiles.active<span class="o">=</span>dev
+</code></pre></div></div>
+
+<p>Refer to
+<a href="https://maven.apache.org/surefire/maven-failsafe-plugin/examples/single-test.html">maven-failsafe-plugin</a>
+documentation for additional examples.</p>
+
+<h4 id="how-to-test-a-workflow-that-is-delivered-by-workflow-example-projects">How to test a workflow that is delivered by workflow-example projects</h4>
+
+<p>The workflow-example module contains pre-built workflow examples to simplify
+the development of new workflows.</p>
+
+<p>To create a new workflow example, navigate to the
+<code class="language-plaintext highlighter-rouge">workflow-example/src/main/java/com/redhat/parodos/examples</code> directory and
+create a new folder named <code class="language-plaintext highlighter-rouge">newexample</code>.
+To define a workflow, you need to define the tasks (in the example
+<code class="language-plaintext highlighter-rouge">LoggingWorkFlowTask</code>, <code class="language-plaintext highlighter-rouge">RestAPIWorkFlowTask</code>) and the workflow configuration
+(<code class="language-plaintext highlighter-rouge">NewExampleFlowConfiguration</code>).</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>src/main/java/com/redhat/parodos/examples/newexample
+├── NewExampleFlowConfiguration.java
+└── task
+    ├── LoggingWorkFlowTask.java
+    └── RestAPIWorkFlowTask.java
+</code></pre></div></div>
+
+<p>You will need to specify the tasks (such as <code class="language-plaintext highlighter-rouge">LoggingWorkFlowTask</code> and
+<code class="language-plaintext highlighter-rouge">RestAPIWorkFlowTask</code>) along with the workflow configuration
+(<code class="language-plaintext highlighter-rouge">NewExampleFlowConfiguration</code>). The workflow configuration determines how the
+tasks are executed.</p>
+
+<p>Once you have defined a workflow within the workflow-examples package, you can
+proceed to test it using integration tests.</p>
+
+<p>To create a new integration tests, go to the
+<code class="language-plaintext highlighter-rouge">integration-tests/src/test/java/com/redhat/parodos/flows</code> directory and create
+a new file there. Let’s call it <code class="language-plaintext highlighter-rouge">NewExampleFlowTest</code>. The folder structure
+should look like this:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>integration-tests/src/test/java/com/redhat/parodos/flows
+├── common
+│   └── WorkFlowTestBuilder.java
+└── NewExampleFlowTest.java
+</code></pre></div></div>
+
+<p>Once your new example is ready, execute <code class="language-plaintext highlighter-rouge">mvn install</code>.
+If you’re executing the integration tests locally then you must restart the
+services. Otherwise, if you’re using a <code class="language-plaintext highlighter-rouge">Kind</code> cluster, you need to update the
+resources already deployed (see <a href="#update-the-cluster">Update the cluster</a> section).</p>
+
+<p>The <code class="language-plaintext highlighter-rouge">WorkFlowTestBuilder</code> class is a utility class for building test scenarios
+in the context of workflow definitions. It provides methods to set up projects
+and retrieve workflow definitions. Through methods such as <code class="language-plaintext highlighter-rouge">withDefaultProject()</code>
+and <code class="language-plaintext highlighter-rouge">withWorkFlowDefinition()</code>, users can easily define test parameters and
+customize test cases. The class ensures the availability of the required
+resources by employing error handling and assertion checks. Additionally,
+it offers a nested <code class="language-plaintext highlighter-rouge">TestComponents</code> record that encapsulates the essential
+components, simplifying access to the API client and project response.
+Overall, the <code class="language-plaintext highlighter-rouge">WorkFlowTestBuilder</code> class provides a streamlined and reusable
+approach for workflow testing scenarios, empowering developers to write more
+concise, maintainable, and efficient test cases. This, in turn, enhances the
+quality and reliability of their applications while improving efficiency and
+maintainability.</p>
+
+<p>In the provided code snippet, you can see an example of <code class="language-plaintext highlighter-rouge">NewExampleFlowTest</code>.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">com.redhat.parodos.flows.common.WorkFlowTestBuilder.TestComponents</span><span class="o">;</span>
+
+
+<span class="nd">@Slf4j</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">NewExampleFlowTest</span><span class="o">{</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">String</span> <span class="no">WORKFLOW_NAME</span> <span class="o">=</span> <span class="s">"simpleSequentialWorkFlow"</span> <span class="o">+</span> <span class="nc">WorkFlowConstants</span><span class="o">.</span><span class="na">INFRASTRUCTURE_WORKFLOW</span><span class="o">;</span>
+
+
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">runNewExampleFlow</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">ApiException</span><span class="o">,</span> <span class="nc">InterruptedException</span> <span class="o">{</span>
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"Running new example flow"</span><span class="o">);</span>
+        <span class="c1">//Example on how to use WorkFlowTestBuilder class</span>
+        <span class="nc">TestComponents</span> <span class="n">components</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">WorkFlowTestBuilder</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">withDefaultProject</span><span class="o">()</span>
+            <span class="o">.</span><span class="na">withWorkFlowDefinition</span><span class="o">(</span><span class="no">WORKFLOW_NAME</span><span class="o">,</span> <span class="n">getWorkFlowDefinitionResponseConsumer</span><span class="o">())</span>
+            <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+        <span class="c1">// Define a WorkRequest</span>
+        <span class="nc">WorkRequestDTO</span> <span class="n">work</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">WorkRequestDTO</span><span class="o">();</span>
+        <span class="n">work</span><span class="o">.</span><span class="na">setWorkName</span><span class="o">(</span><span class="s">"restCallTask"</span><span class="o">);</span>
+        <span class="n">work</span><span class="o">.</span><span class="na">setArguments</span><span class="o">(</span>
+            <span class="nc">Collections</span><span class="o">.</span><span class="na">singletonList</span><span class="o">(</span>
+                <span class="k">new</span> <span class="nf">ArgumentRequestDTO</span><span class="o">()</span>
+                    <span class="o">.</span><span class="na">key</span><span class="o">(</span><span class="s">"url"</span><span class="o">)</span>
+                    <span class="o">.</span><span class="na">value</span><span class="o">(</span><span class="s">"http://localhost:8080/actuator/health"</span><span class="o">)</span>
+            <span class="o">)</span>
+        <span class="o">);</span>
+
+        <span class="c1">// Define WorkFlowRequest</span>
+        <span class="nc">WorkFlowRequestDTO</span> <span class="n">workFlowRequestDTO</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">WorkFlowRequestDTO</span><span class="o">();</span>
+        <span class="n">workFlowRequestDTO</span><span class="o">.</span><span class="na">setProjectId</span><span class="o">(</span><span class="n">components</span><span class="o">.</span><span class="na">project</span><span class="o">().</span><span class="na">getId</span><span class="o">());</span>
+        <span class="n">workFlowRequestDTO</span><span class="o">.</span><span class="na">setWorkFlowName</span><span class="o">(</span><span class="no">WORKFLOW_NAME</span><span class="o">);</span>
+        <span class="n">workFlowRequestDTO</span><span class="o">.</span><span class="na">setWorks</span><span class="o">(</span><span class="nc">Collections</span><span class="o">.</span><span class="na">singletonList</span><span class="o">(</span><span class="n">work</span><span class="o">));</span>
+
+        <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"******** Running The Simple Sequence Flow ********"</span><span class="o">);</span>
+        <span class="nc">WorkflowApi</span> <span class="n">workflowApi</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">WorkflowApi</span><span class="o">(</span><span class="n">components</span><span class="o">.</span><span class="na">apiClient</span><span class="o">());</span>
+        <span class="nc">WorkFlowResponseDTO</span> <span class="n">workFlowResponseDTO</span> <span class="o">=</span> <span class="n">workflowApi</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="n">workFlowRequestDTO</span><span class="o">);</span>
+
+        <span class="c1">// Add your logic test here</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p><code class="language-plaintext highlighter-rouge">Parodos</code> also offers two utility classes called <code class="language-plaintext highlighter-rouge">WorkFlowServiceUtils</code> and
+<code class="language-plaintext highlighter-rouge">NotificationServiceUtils</code> that simplify interaction with the <code class="language-plaintext highlighter-rouge">workflow-service</code>
+and <code class="language-plaintext highlighter-rouge">notification-service</code>, respectively.
+These utility classes are useful especially when writing integration tests.
+For instance, you can use the <code class="language-plaintext highlighter-rouge">WorkFlowServiceUtils.waitWorkflowStatusAsync</code> method
+to asynchronously wait for a workflow to reach a specific status.</p>
+
+<p>Feel free to add your own logic tests within the <code class="language-plaintext highlighter-rouge">runNewExampleFlow</code> method.</p>
+
+<h4 id="troubleshooting">Troubleshooting</h4>
+
+<h5 id="404-not-found---nginx">404 Not found - nginx</h5>
+
+<p>If you encounter a <code class="language-plaintext highlighter-rouge">404 Not Found</code> error while executing the
+<a href="#execute-integration-test-against-kind-cluster">mvn verify</a> command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>OkHttp http://172.19.0.2/...] INFO com.redhat.parodos.sdkutils.WorkFlowServiceUtils - onFailure Message: Not Found
+HTTP response code: 404
+HTTP response body: &lt;html&gt;
+&lt;<span class="nb">head</span><span class="o">&gt;</span>&lt;title&gt;404 Not Found&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;center&gt;&lt;h1&gt;404 Not Found&lt;/h1&gt;&lt;/center&gt;
+&lt;hr&gt;&lt;center&gt;nginx&lt;/center&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></div></div>
+
+<p>To troubleshoot this issue, you should verify the availability of the
+<code class="language-plaintext highlighter-rouge">parodos-notification-ingress</code> and <code class="language-plaintext highlighter-rouge">parodos-workflow-ingress</code> in your cluster.
+You can use the command <code class="language-plaintext highlighter-rouge">kubectl get ingress</code> to check if the ingresses
+are present.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;</span> kubectl get ingress
+NAME                           CLASS    HOSTS                              ADDRESS     PORTS   AGE
+parodos-notification-ingress   &lt;none&gt;   notification-service.parodos-dev               80      5s
+parodos-workflow-ingress       &lt;none&gt;   workflow-service.parodos-dev                   80      5s
+</code></pre></div></div>
+
+<p>If the ingress is missing, you can manually apply it using the command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>kubectl apply <span class="nt">-f</span> hack/manifests/testing/ingress.yaml
+</code></pre></div></div>
+
+<h2 id="details">Details</h2>
+
+<p><em>Parodos</em> treats integration tests as unit tests and executes them independently
+using the Maven <em>Failsafe</em> plugin instead of the classic <em>Surefire</em> plugin.</p>
+
+<p>The Maven <em>Surefire</em> and <em>Failsafe</em> plugins are two widely used plugins for
+executing tests during a Maven build. These two plugins differ in the build
+lifecycle phase in which they operate. While the <em>Surefire</em> plugin runs tests
+during the test phase, the <em>Failsafe</em> plugin executes tests during the
+integration-test phase.</p>
+
+<p>The <em>Failsafe</em> plugin is designed to execute integration tests that require more
+elaborate setup, such as tests that rely on a running application server or
+database connection. Integration tests run in the same JVM instance as the
+application, and the plugin includes a default naming convention for identifying
+integration test classes. <em>Failsafe</em> generates reports that provide insight into
+the overall health of the application, as well as any integration issues that
+may exist.</p>
+
+<p>To facilitate running integration tests during the Maven build process,
+<em>Parodos</em> defines a Maven profile named <code class="language-plaintext highlighter-rouge">integration-test</code>. The command to
+execute the integration tests is:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn verify <span class="nt">-pl</span> integration-tests <span class="nt">-P</span> integration-test
+</code></pre></div></div>
+
+<p>You can set the server IP and port by using specific environment variables.
+For the <code class="language-plaintext highlighter-rouge">workflow-service</code>, you can set <code class="language-plaintext highlighter-rouge">SERVER_IP</code> and <code class="language-plaintext highlighter-rouge">SERVER_PORT</code>, and for
+the <code class="language-plaintext highlighter-rouge">notification-service</code>, you can set <code class="language-plaintext highlighter-rouge">NOTIFICATION_SERVER_ADDRESS</code> and
+<code class="language-plaintext highlighter-rouge">NOTIFICATION_SERVER_PORT</code>. The default values for the IP addresses are
+<code class="language-plaintext highlighter-rouge">localhost</code>, and the default port is <code class="language-plaintext highlighter-rouge">8080</code>. If you want to customize the
+values, run the following command, replacing <code class="language-plaintext highlighter-rouge">1.2.3.4</code> with the desired server
+IP and <code class="language-plaintext highlighter-rouge">9999</code> with the desired port for the <code class="language-plaintext highlighter-rouge">workflow-service</code> and <code class="language-plaintext highlighter-rouge">5555</code> with
+the desired port for the <code class="language-plaintext highlighter-rouge">notification-service</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">SERVER_IP</span><span class="o">=</span>1.2.3.4 <span class="nv">SERVER_PORT</span><span class="o">=</span>9999 <span class="nv">NOTIFICATION_SERVER_PORT</span><span class="o">=</span>5555 mvn verify <span class="nt">-pl</span> integration-tests <span class="nt">-P</span> integration-test
+</code></pre></div></div>
+
+<h2 id="ci-jobs">CI Jobs</h2>
+
+<p>Coverage and E2E tests running on each PR, are defined in
+<code class="language-plaintext highlighter-rouge">.github/workflows/test.yaml</code>. Available jobs are:</p>
+
+<ul>
+  <li>build</li>
+  <li>coverage</li>
+  <li>containers</li>
+  <li>integration</li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- footer -->
+<footer class="bg-dark footer-section">
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5 class="text-light">Email</h5>
+          <p class="text-white paragraph-lg font-secondary">parodos@redhat.com</p>
+        </div>
+        <div class="col-md-4">
+          <h5><a href="http://www.redhat.com"><img id="sponsorship" class="footerLogo" src="/assets/images/Logo-Red_Hat-Supported_By-A-Reverse-RGB.svg"></a>.</h5>
+        </div>
+        <!-- <div class="col-md-4"> -->
+        <!--   <h5 class="text-light">Address</h5> -->
+        <!--   <p class="text-white paragraph-lg font-secondary"></p> -->
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+  <div class="border-top text-center border-dark py-5">
+    <p class="mb-0 text-light"><p>Copyright © 2020 Designed by <a href="https://themefisher.com">Themefisher</a> &amp; Developed by <a href="https://getjekyllthemes.com">Getjekyllthemes</a></p>
+</p>
+  </div>
+</footer>
+<!-- /footer -->
+
+
+<!-- JS Plugins -->
+
+<script src="/assets/plugins/jQuery/jquery.min.js"></script>
+
+<script src="/assets/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="/assets/plugins/shuffle/shuffle.min.js"></script>
+
+<script src="/assets/plugins/slick/slick.min.js"></script>
+
+
+<!-- Main Script -->
+<script src="/assets/js/script.js"></script>
+
+<!-- This comes from DTM/DPAL and must be latest entry in body-->
+<script type="text/javascript">
+  if (("undefined" !== typeof _satellite) && ("function" === typeof _satellite.pageBottom)) {
+      _satellite.pageBottom();
+  }
+</script>
+
+
+<script>
+  $(function() {
+    return $("h2, h3, h4, h5, h6").each(function(i, el) {
+      var $el, icon, id;
+      $el = $(el);
+      id = $el.attr('id');
+      icon = '<i class="ti-link"></i>';
+      console.log("test test"+id)
+      if (id) {
+        return $el.prepend($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
+      }
+    });
+  });
+</script>
+
+
+</body>
+
+</html>

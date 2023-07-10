@@ -1,0 +1,25 @@
+@startuml
+
+@startuml
+
+frame Kubernetes {
+    component "Flotta Operator" as operator
+    component "Flotta Edge API" as edgeAPI
+    database "Object Bucket Claim" as buckets
+    interface S3
+}
+
+frame "Edge Device" {
+    node "Flotta Agent" as deviceAgent
+}
+
+buckets <--> S3: API
+deviceAgent <--> S3: Upload/Download files
+deviceAgent -up---> edgeAPI : Get configuration
+
+operator --> buckets: Provision
+
+@enduml
+
+
+@enduml

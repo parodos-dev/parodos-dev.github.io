@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="507.8125px" preserveAspectRatio="none" style="width:765px;height:507px;background:#00000000;" version="1.1" viewBox="0 0 765 507" width="765.1042px" zoomAndPan="magnify"><defs><linearGradient id="gad5s8t0o3q8f0" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="100%" stop-color="#F5F5F5"/></linearGradient><linearGradient id="gad5s8t0o3q8f1" x1="50%" x2="50%" y1="0%" y2="100%"><stop offset="0%" stop-color="#33B2E2"/><stop offset="100%" stop-color="#009FDB"/></linearGradient></defs><g><!--MD5=[91efb92ffc2a0d6ad641d23e07e1ea54]
+cluster Edge Cluster--><g id="cluster_Edge Cluster"><polygon points="106.7422,17.6042,113.513,10.8333,750.6484,10.8333,750.6484,225.4688,743.8776,232.2396,106.7422,232.2396,106.7422,17.6042" style="stroke:#C2C2C2;stroke-width:0.6770833333333334;fill:none;"/><line style="stroke:#C2C2C2;stroke-width:0.6770833333333334;fill:none;" x1="743.8776" x2="750.6484" y1="17.6042" y2="10.8333"/><line style="stroke:#C2C2C2;stroke-width:0.6770833333333334;fill:none;" x1="106.7422" x2="743.8776" y1="17.6042" y2="17.6042"/><line style="stroke:#C2C2C2;stroke-width:0.6770833333333334;fill:none;" x1="743.8776" x2="743.8776" y1="17.6042" y2="232.2396"/><text fill="#009FDB" font-family="DejaVu Serif" font-size="10.8333" font-weight="bold" lengthAdjust="spacing" textLength="81.9271" x="385.0234" y="35.2242">Edge Cluster</text></g><!--MD5=[30afa6242ed7a9da9c35c8eba5ba651d]
+cluster Kubernetes--><g id="cluster_Kubernetes"><rect fill="url(#gad5s8t0o3q8f0)" height="160.4688" rx="6.7708" ry="6.7708" style="stroke:#0568AE;stroke-width:1.3541666666666667;" width="611.4063" x="122.9922" y="55.5208"/><path d="M214.3984,55.5208 L214.3984,74.3416 L207.6276,81.1125 L122.9922,81.1125 " fill="none" style="stroke:#0568AE;stroke-width:1.3541666666666667;"/><text fill="#009FDB" font-family="DejaVu Serif" font-size="10.8333" font-weight="bold" lengthAdjust="spacing" textLength="73.8021" x="130.4401" y="71.7867">Kubernetes</text></g><!--MD5=[d381e6152f6bf88e62ece4b16fa98976]
+cluster Edge Device--><g id="cluster_Edge Device"><polygon points="109.7891,255.2604,116.5599,248.4896,744.5547,248.4896,744.5547,486.1458,737.7839,492.9167,109.7891,492.9167,109.7891,255.2604" style="stroke:#C2C2C2;stroke-width:0.6770833333333334;fill:none;"/><line style="stroke:#C2C2C2;stroke-width:0.6770833333333334;fill:none;" x1="737.7839" x2="744.5547" y1="255.2604" y2="248.4896"/><line style="stroke:#C2C2C2;stroke-width:0.6770833333333334;fill:none;" x1="109.7891" x2="737.7839" y1="255.2604" y2="255.2604"/><line style="stroke:#C2C2C2;stroke-width:0.6770833333333334;fill:none;" x1="737.7839" x2="737.7839" y1="255.2604" y2="492.9167"/><text fill="#009FDB" font-family="DejaVu Serif" font-size="10.8333" font-weight="bold" lengthAdjust="spacing" textLength="76.5104" x="386.2083" y="272.8805">Edge Device</text></g><!--MD5=[760ac7811c0e50a8b864cd053ed2d880]
+cluster deviceAgent--><g id="cluster_deviceAgent"><rect fill="url(#gad5s8t0o3q8f0)" height="183.4896" rx="6.7708" ry="6.7708" style="stroke:#0568AE;stroke-width:1.3541666666666667;" width="602.2656" x="126.0391" y="293.1771"/><path d="M221.5078,293.1771 L221.5078,311.9979 L214.737,318.7687 L126.0391,318.7687 " fill="none" style="stroke:#0568AE;stroke-width:1.3541666666666667;"/><text fill="#009FDB" font-family="DejaVu Serif" font-size="10.8333" font-weight="bold" lengthAdjust="spacing" textLength="77.8646" x="133.487" y="309.443">Flotta Agent</text></g><!--MD5=[945fddd4f3043d80c81775f1e4c1eeb3]
+entity etcd--><g id="elem_etcd"><path d="M613.2005,98.1771 C613.2005,91.4063 668.3828,91.4063 668.3828,91.4063 C668.3828,91.4063 723.5651,91.4063 723.5651,98.1771 L723.5651,198.0469 C723.5651,204.8177 668.3828,204.8177 668.3828,204.8177 C668.3828,204.8177 613.2005,204.8177 613.2005,198.0469 L613.2005,98.1771 " fill="url(#gad5s8t0o3q8f1)" style="stroke:#007FAF;stroke-width:0.6770833333333334;"/><path d="M613.2005,98.1771 C613.2005,104.9479 668.3828,104.9479 668.3828,104.9479 C668.3828,104.9479 723.5651,104.9479 723.5651,98.1771 " fill="none" style="stroke:#007FAF;stroke-width:0.6770833333333334;"/><text fill="#FFFFFF" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="32.5" x="625.388" y="123.1287">ETCD</text><path d="M613.2005,127.7148 C613.2005,134.4857 668.3828,134.4857 668.3828,134.4857 C668.3828,134.4857 723.5651,134.4857 723.5651,127.7148 " fill="none" style="stroke:#007FAF;stroke-width:0.6770833333333334;"/><path d="M613.2005,129.069 C613.2005,135.8398 668.3828,135.8398 668.3828,135.8398 C668.3828,135.8398 723.5651,135.8398 723.5651,129.069 " fill="none" style="stroke:#007FAF;stroke-width:0.6770833333333334;"/><text fill="#FFFFFF" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="67.7083" x="625.388" y="149.281">EdgeDevice</text><text fill="#FFFFFF" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="85.9896" x="625.388" y="161.8917">EdgeDeviceSet</text><text fill="#FFFFFF" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="83.9583" x="625.388" y="174.5024">EdgeWorkload</text><path d="M613.2005,181.7969 C613.2005,188.5677 668.3828,188.5677 668.3828,188.5677 C668.3828,188.5677 723.5651,188.5677 723.5651,181.7969 " fill="none" style="stroke:#007FAF;stroke-width:0.6770833333333334;"/></g><!--MD5=[b13e54d031a663708e0e363fc0c559a8]
+entity apiserver--><g id="elem_apiserver"><rect fill="url(#gad5s8t0o3q8f1)" height="43.7565" rx="6.7708" ry="6.7708" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="97.5" x="394.5026" y="126.276"/><rect fill="url(#gad5s8t0o3q8f1)" height="6.7708" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="10.1563" x="478.4609" y="129.6615"/><rect fill="url(#gad5s8t0o3q8f1)" height="1.3542" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="2.7083" x="477.1068" y="131.0156"/><rect fill="url(#gad5s8t0o3q8f1)" height="1.3542" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="2.7083" x="477.1068" y="133.724"/><text fill="#FFFFFF" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="59.5833" x="410.0755" y="155.2901">API Server</text></g><!--MD5=[5fb2d01be3bc6d42cbc5b2c713ee9994]
+entity edgeAPI--><g id="elem_edgeAPI"><rect fill="url(#gad5s8t0o3q8f1)" height="43.7565" rx="6.7708" ry="6.7708" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="127.2917" x="133.8255" y="93.099"/><rect fill="url(#gad5s8t0o3q8f1)" height="6.7708" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="10.1563" x="247.5755" y="96.4844"/><rect fill="url(#gad5s8t0o3q8f1)" height="1.3542" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="2.7083" x="246.2214" y="97.8385"/><rect fill="url(#gad5s8t0o3q8f1)" height="1.3542" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="2.7083" x="246.2214" y="100.5469"/><text fill="#FFFFFF" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="89.375" x="149.3984" y="122.113">Flotta Edge API</text></g><!--MD5=[0050c6625e3b42e2857ba4d8ed699679]
+entity operator--><g id="elem_operator"><rect fill="url(#gad5s8t0o3q8f1)" height="43.7565" rx="6.7708" ry="6.7708" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="127.2917" x="133.8255" y="160.8073"/><rect fill="url(#gad5s8t0o3q8f1)" height="6.7708" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="10.1563" x="247.5755" y="164.1927"/><rect fill="url(#gad5s8t0o3q8f1)" height="1.3542" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="2.7083" x="246.2214" y="165.5469"/><rect fill="url(#gad5s8t0o3q8f1)" height="1.3542" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="2.7083" x="246.2214" y="168.2552"/><text fill="#FFFFFF" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="89.375" x="149.3984" y="189.8214">Flotta Operator</text></g><!--MD5=[dd7a509b9dfcc19c9f7b96323abee52b]
+entity device_worker--><g id="elem_device_worker"><rect fill="url(#gad5s8t0o3q8f1)" height="43.7565" rx="6.7708" ry="6.7708" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="121.1979" x="136.8724" y="329.401"/><rect fill="url(#gad5s8t0o3q8f1)" height="6.7708" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="10.1563" x="244.5286" y="332.7865"/><rect fill="url(#gad5s8t0o3q8f1)" height="1.3542" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="2.7083" x="243.1745" y="334.1406"/><rect fill="url(#gad5s8t0o3q8f1)" height="1.3542" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="2.7083" x="243.1745" y="336.849"/><text fill="#FFFFFF" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="83.2813" x="152.4453" y="358.4151">Device Worker</text></g><!--MD5=[f6a3e69c34ebdfee8c30c02eff3c948d]
+entity podman--><g id="elem_podman"><rect fill="url(#gad5s8t0o3q8f1)" height="43.7565" rx="6.7708" ry="6.7708" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="83.9583" x="155.4922" y="421.4844"/><rect fill="url(#gad5s8t0o3q8f1)" height="6.7708" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="10.1563" x="225.9089" y="424.8698"/><rect fill="url(#gad5s8t0o3q8f1)" height="1.3542" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="2.7083" x="224.5547" y="426.224"/><rect fill="url(#gad5s8t0o3q8f1)" height="1.3542" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="2.7083" x="224.5547" y="428.9323"/><text fill="#FFFFFF" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="46.0417" x="171.0651" y="450.4985">Podman</text></g><!--MD5=[c45c25246028dcb2f25a58c9a29627ca]
+entity systemd--><g id="elem_systemd"><rect fill="url(#gad5s8t0o3q8f1)" height="43.7565" rx="6.7708" ry="6.7708" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="85.9896" x="400.2578" y="371.3802"/><rect fill="url(#gad5s8t0o3q8f1)" height="6.7708" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="10.1563" x="472.7057" y="374.7656"/><rect fill="url(#gad5s8t0o3q8f1)" height="1.3542" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="2.7083" x="471.3516" y="376.1198"/><rect fill="url(#gad5s8t0o3q8f1)" height="1.3542" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="2.7083" x="471.3516" y="378.8281"/><text fill="#FFFFFF" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="48.0729" x="415.8307" y="400.3943">Systemd</text></g><!--MD5=[844cd90f62679355492660e28b726d49]
+entity workloads--><g id="elem_workloads"><rect fill="url(#gad5s8t0o3q8f1)" height="43.7565" rx="6.7708" ry="6.7708" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="98.1771" x="619.2943" y="371.3802"/><rect fill="url(#gad5s8t0o3q8f1)" height="6.7708" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="10.1563" x="703.9297" y="374.7656"/><rect fill="url(#gad5s8t0o3q8f1)" height="1.3542" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="2.7083" x="702.5755" y="376.1198"/><rect fill="url(#gad5s8t0o3q8f1)" height="1.3542" style="stroke:#33B2E2;stroke-width:0.6770833333333334;" width="2.7083" x="702.5755" y="378.8281"/><text fill="#FFFFFF" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="60.2604" x="634.8672" y="400.3943">Workloads</text></g><!--MD5=[1c5f4bfc259c2bff9f9fd0097214f0dd]
+link device_worker to edgeAPI--><g id="link_device_worker_edgeAPI"><path d="M163.326,329.3063 C108.2656,290.9698 10.8333,210.2141 60.7005,147.2656 C77.1875,126.4521 104.3859,117.5214 130.2031,114.1359 " fill="none" id="device_worker-to-edgeAPI" style="stroke:#009FDB;stroke-width:2.03125;"/><polygon fill="#009FDB" points="133.6698,113.7094,127.2954,111.7507,130.3088,114.115,127.9445,117.1284,133.6698,113.7094" style="stroke:#009FDB;stroke-width:2.03125;"/><text fill="#5A5A5A" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="26.4063" x="51.5599" y="163.4151">Gets</text><text fill="#5A5A5A" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="50.1042" x="39.7109" y="176.0258">updates/</text><text fill="#5A5A5A" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="34.5313" x="47.4974" y="188.6365">Sends</text><text fill="#5A5A5A" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="35.8854" x="46.8203" y="201.2472">status</text><text fill="#5A5A5A" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="38.5938" x="45.4661" y="213.8578">[https]</text></g><!--MD5=[a5c3eef11ef1d2137cf827918d9dd3a0]
+link operator to apiserver--><g id="link_operator_apiserver"><path d="M264.6922,180.7068 C297.8219,178.8313 338.3453,175.2901 374.1901,168.5938 C379.688,167.5646 385.3688,166.2714 391.0021,164.8359 " fill="none" id="operator-apiserver" style="stroke:#009FDB;stroke-width:2.03125;"/><polygon fill="#009FDB" points="394.5026,163.9219,387.9231,162.8363,391.2264,164.7748,389.2878,168.0782,394.5026,163.9219" style="stroke:#009FDB;stroke-width:2.03125;"/><polygon fill="#009FDB" points="261.3068,180.8964,267.5451,183.2526,264.6867,180.7032,267.2361,177.8448,261.3068,180.8964" style="stroke:#009FDB;stroke-width:2.03125;"/><text fill="#5A5A5A" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="52.1354" x="301.7422" y="160.3682">reconcile</text></g><!--MD5=[c10526c2d12601f76c601df2122a51c8]
+link edgeAPI to apiserver--><g id="link_edgeAPI_apiserver"><path d="M264.8411,124.1568 C304.5589,129.5464 354.2026,136.2833 390.9276,141.2734 " fill="none" id="edgeAPI-apiserver" style="stroke:#009FDB;stroke-width:2.03125;"/><polygon fill="#009FDB" points="394.4349,141.7474,388.7598,138.2457,391.0801,141.293,388.0328,143.6133,394.4349,141.7474" style="stroke:#009FDB;stroke-width:2.03125;"/><polygon fill="#009FDB" points="261.4151,123.6896,267.0902,127.1913,264.7699,124.144,267.8172,121.8237,261.4151,123.6896" style="stroke:#009FDB;stroke-width:2.03125;"/><text fill="#5A5A5A" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="49.4271" x="303.0964" y="106.2016">register/</text><text fill="#5A5A5A" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="80.5729" x="287.5234" y="118.8123">update device</text></g><!--MD5=[8c266bb03677132717cd9caec2e75120]
+link apiserver to etcd--><g id="link_apiserver_etcd"><path d="M495.7875,148.2813 C529.7635,148.2813 574.2344,148.2813 609.4292,148.2813 " fill="none" id="apiserver-etcd" style="stroke:#009FDB;stroke-width:2.03125;"/><polygon fill="#009FDB" points="613.0245,148.2813,606.9307,145.5729,609.6391,148.2813,606.9307,150.9896,613.0245,148.2813" style="stroke:#009FDB;stroke-width:2.03125;"/><polygon fill="#009FDB" points="492.2125,148.2813,498.3063,150.9896,495.5979,148.2813,498.3063,145.5729,492.2125,148.2813" style="stroke:#009FDB;stroke-width:2.03125;"/><text fill="#5A5A5A" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="68.3854" x="518.4089" y="140.0557">Flotta CRDs</text></g><!--MD5=[a4e1eb3edbcbfe50eaeb8830b3ecf461]
+reverse link podman to device_worker--><g id="link_podman_device_worker"><path d="M197.4714,417.9635 C197.4714,404.0427 197.4714,386.9667 197.4714,373.601 " fill="none" id="podman-backto-device_worker" style="stroke:#009FDB;stroke-width:2.03125;"/><polygon fill="#009FDB" points="197.4714,421.4302,200.1797,415.3365,197.4714,418.0448,194.763,415.3365,197.4714,421.4302" style="stroke:#009FDB;stroke-width:2.03125;"/><text fill="#5A5A5A" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="79.8958" x="143.3047" y="401.4099">interacts with</text></g><!--MD5=[08c88cca38a8a48deb41fa8712e811e2]
+link podman to systemd--><g id="link_podman_systemd"><path d="M239.5724,436.6781 C275.3495,430.5979 328.3651,421.1052 374.1901,410.9896 C381.5094,409.3714 389.2349,407.5229 396.7505,405.6474 " fill="none" id="podman-to-systemd" style="stroke:#009FDB;stroke-width:2.03125;"/><polygon fill="#009FDB" points="400.1901,404.7875,393.6206,403.6425,396.9063,405.6109,394.938,408.8966,400.1901,404.7875" style="stroke:#009FDB;stroke-width:2.03125;"/><text fill="#5A5A5A" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="59.5833" x="298.0182" y="402.7641">Generates</text></g><!--MD5=[b2b2c50c043ec64de84f6613d799edd1]
+link device_worker to systemd--><g id="link_device_worker_systemd"><path d="M258.2531,361.7318 C300.9974,369.0714 357.5406,378.7807 396.676,385.5042 " fill="none" id="device_worker-to-systemd" style="stroke:#009FDB;stroke-width:2.03125;"/><polygon fill="#009FDB" points="400.1698,386.1,394.6198,382.4032,396.8328,385.5293,393.7067,387.7424,400.1698,386.1" style="stroke:#009FDB;stroke-width:2.03125;"/><text fill="#5A5A5A" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="62.9688" x="296.3255" y="358.0766">Configures</text></g><!--MD5=[bc9650e6516323f4199c6924f67dc660]
+link systemd to workloads--><g id="link_systemd_workloads"><path d="M486.2813,393.3854 C522.9995,393.3854 576.2589,393.3854 615.5839,393.3854 " fill="none" id="systemd-to-workloads" style="stroke:#009FDB;stroke-width:2.03125;"/><polygon fill="#009FDB" points="619.1047,393.3854,613.0109,390.6771,615.7193,393.3854,613.0109,396.0938,619.1047,393.3854" style="stroke:#009FDB;stroke-width:2.03125;"/><text fill="#5A5A5A" font-family="DejaVu Serif" font-size="10.8333" lengthAdjust="spacing" textLength="29.1146" x="538.0443" y="385.1599">Runs</text></g><!--MD5=[5efd11b3978cbff088970a706a88b6c7]
+@startuml
+!theme bluegray
+skinparam dpi 65
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName DejaVu Serif
+skinparam defaultFontSize 16
+left to right direction
+
+node "Edge Cluster" {
+    frame Kubernetes {
+        database etcd [
+            ETCD
+            ====
+            EdgeDevice
+            EdgeDeviceSet
+            EdgeWorkload
+            - - - -
+        ]
+        component "API Server" as apiserver
+        component "Flotta Edge API" as edgeAPI
+        component "Flotta Operator" as operator
+    }
+}
+
+node "Edge Device" {
+    frame "Flotta Agent" as deviceAgent {
+        component "Device Worker" as device_worker
+        component "Podman" as podman
+        component "Systemd" as systemd
+        component "Workloads" as workloads
+    }
+}
+
+device_worker -r-> edgeAPI : Gets\nupdates/\nSends\nstatus\n[https]
+
+operator <- -> apiserver: reconcile
+edgeAPI <- -> apiserver: register/\nupdate device
+apiserver <- -> etcd: "Flotta CRDs"
+
+device_worker - -l- -> podman : interacts with
+podman - -> systemd : Generates
+device_worker - -> systemd : Configures
+systemd - -> workloads : Runs
+
+@enduml
+
+@startuml
+
+
+
+skinparam backgroundColor transparent
+skinparam useBetaStyle false
+
+
+
+
+
+
+
+
+<style>
+  root {
+    BackgroundColor transparent
+    FontColor #fff
+    HyperLinkColor $ORANGE
+    LineColor #007faf
+    LineThickness 1
+    Margin 10
+    Padding 6
+    Shadowing 0.0
+  }
+  node {
+   Padding 15
+   roundcorner 20
+   BackgroundColor #009fdb-#007faf
+  }
+  caption {
+    LineThickness 0
+  }
+  footer {
+    LineThickness 0
+  }
+  groupHeader {
+    BackgroundColor #f2f2f2
+    FontColor #0568ae
+    FontStyle bold
+  }
+  header {
+    LineThickness 0
+  }
+  referenceHeader {
+    BackgroundColor transparent
+    FontColor #5a5a5a
+    FontStyle bold
+  }
+  separator {
+    BackgroundColor #5a5a5a
+    FontColor transparent
+    FontStyle bold
+  }
+  title {
+	FontSize 20
+	BorderRoundCorner            8
+	BorderThickness 	         1
+	BackgroundColor  #f5f5f5-#f2f2f2
+	FontColor #009fdb
+	BorderColor #f2f2f2
+  }
+  nwdiagDiagram {
+	network {
+		
+	FontColor #fff
+	BorderColor #33b2e2
+	BackgroundColor #33b2e2-#009fdb
+    
+		LineColor #009fdb
+		LineThickness 1.0
+		FontColor #007faf
+	}
+	server {
+		
+	FontColor #fff
+	BorderColor #33b2e2
+	BackgroundColor #33b2e2-#009fdb
+
+	}
+	arrow {
+		FontColor #007faf
+		LineColor #007faf
+	}
+	group {
+		BackGroundColor #d2d2d2
+		LineColor $LIGHT_DARK
+		LineThickness 2.0
+		Margin 5
+		Padding 5
+	}
+  }
+  ganttDiagram {
+	task {
+		
+	FontColor #fff
+	BorderColor #33b2e2
+	BackgroundColor #33b2e2-#009fdb
+
+		LineColor #009fdb
+		Margin 10
+		Padding 6
+	}
+	note {
+		FontColor #fff
+		LineColor #04538b
+		BackGroundColor #0568ae
+	}
+	separator {
+		LineColor #f2f2f2
+		BackGroundColor #f2f2f2-#c2c2c2
+		FontColor #5a5a5a
+	}
+	milestone {
+		FontColor #0568ae
+		FontSize 16
+		FontStyle italic
+		BackGroundColor #f2f2f2
+		LineColor #c2c2c2
+	}
+	timeline {
+		BackgroundColor #f2f2f2
+		FontColor #5a5a5a
+	}
+	closed {
+		BackgroundColor #bb5d00
+		FontColor #fff
+	}
+  }
+</style>
+skinparam defaultFontName        "Verdana"
+skinparam defaultFontSize        12
+skinparam dpi                    100
+skinparam shadowing              false
+skinparam roundcorner            20
+skinparam ParticipantPadding     30
+skinparam BoxPadding             40
+skinparam Padding                8
+skinparam ArrowColor             #959595
+skinparam stereotype {
+    CBackgroundColor #f5f5f5
+    CBorderColor #c2c2c2
+    ABackgroundColor #c4ca33
+    ABorderColor #919700
+    IBackgroundColor #d95555
+    IBorderColor #a62222
+    EBackgroundColor #ee9033
+    EBorderColor #bb5d00
+    NBackgroundColor #3786be
+    NBorderColor #04538b
+}
+skinparam title {
+	FontColor	                 #009fdb
+	BorderColor	                 #c2c2c2
+	FontSize	    	         20
+	BorderRoundCorner            8
+	BorderThickness 	         1
+	BackgroundColor              #f5f5f5-#f2f2f2
+}
+
+
+skinparam legend {
+	BackgroundColor #f2f2f2
+	BorderColor #c2c2c2
+	FontColor #5a5a5a
+}
+
+skinparam swimlane {
+	BorderColor #0568ae
+	BorderThickness 2
+	TitleBackgroundColor  #f5f5f5-#f2f2f2
+	TitleFontColor #009fdb
+}
+
+
+skinparam activity {
+	FontColor #fff
+	BorderColor #009fdb
+	BackgroundColor #33b2e2-#009fdb
+	BarColor #b5bd00
+	StartColor #0568ae
+	EndColor #0568ae
+	DiamondBackgroundColor #f5f5f5-#c2c2c2
+  	DiamondBorderColor #c2c2c2
+	DiamondFontColor #5a5a5a
+}
+
+
+skinparam participant {
+	
+	FontColor #fff
+	BorderColor #33b2e2
+	BackgroundColor #33b2e2-#009fdb
+
+	ParticipantBorderThickness 2
+}
+
+
+skinparam actor {
+	
+	FontColor #fff
+	BorderColor #33b2e2
+	BackgroundColor #33b2e2-#009fdb
+
+	FontColor #009fdb
+}
+
+
+skinparam arrow {
+	Thickness 3
+	Color #009fdb
+	FontColor #5a5a5a
+}
+
+
+skinparam sequence {
+	BorderColor #009fdb
+	TitleFontColor #009fdb
+	BackgroundColor transparent
+	StartColor #009fdb
+	EndColor #009fdb
+	BoxBackgroundColor #d2d2d2
+	BoxBorderColor #959595
+	BoxFontColor #5a5a5a
+	DelayFontColor #5a5a5a
+	LifeLineBorderColor #c2c2c2
+	LifeLineBorderThickness 2
+	LifeLineBackgroundColor #f5f5f5
+	GroupBorderColor #959595
+	GroupFontColor #5a5a5a
+	GroupHeaderFontColor #0568ae
+	DividerBackgroundColor #fff-#d2d2d2
+    DividerBorderColor #959595
+    DividerBorderThickness 2
+    DividerFontColor #5a5a5a
+	ReferenceBackgroundColor transparent
+	ReferenceBorderColor #959595
+	ReferenceFontColor #5a5a5a
+	ReferenceHeaderFontColor #0568ae
+	StereotypeFontColor #fff
+}
+
+
+skinparam partition {
+	BorderColor #009fdb
+	FontColor #009fdb
+	BackgroundColor transparent
+}
+
+
+skinparam collections {
+	
+	FontColor #fff
+	BorderColor #33b2e2
+	BackgroundColor #33b2e2-#009fdb
+
+}
+
+
+skinparam control {
+	
+	FontColor #fff
+	BorderColor #33b2e2
+	BackgroundColor #33b2e2-#009fdb
+
+	FontColor #009fdb
+}
+
+
+skinparam entity {
+	
+	FontColor #fff
+	BorderColor #33b2e2
+	BackgroundColor #33b2e2-#009fdb
+
+	FontColor #009fdb
+}
+
+
+skinparam boundary {
+	
+	FontColor #fff
+	BorderColor #33b2e2
+	BackgroundColor #33b2e2-#009fdb
+
+	FontColor #009fdb
+}
+
+
+skinparam agent {
+	BackgroundColor #orange
+	BorderColor #999999
+	FontColor #333333
+}
+
+
+skinparam note {
+	BorderThickness 1
+	BackgroundColor #3786be-#0568ae
+	BorderColor #0568ae
+	FontColor #fff
+}
+
+
+skinparam artifact {
+	BackgroundColor #fff-#d2d2d2
+	BorderColor #c2c2c2
+	FontColor #5a5a5a
+}
+
+
+skinparam component {
+	
+	FontColor #fff
+	BorderColor #33b2e2
+	BackgroundColor #33b2e2-#009fdb
+
+}
+
+
+skinparam interface {
+	BackgroundColor  #d95555
+	BorderColor  #cf2a2a
+	FontColor #5a5a5a
+}
+
+
+skinparam storage {
+	BackgroundColor #ee9033-#ea7400
+  	BorderColor #ea7400
+	FontColor #fff
+}
+
+
+skinparam node {
+	BackgroundColor #f5f5f5-#f2f2f2
+	BorderColor #c2c2c2
+	FontColor #009fdb
+}
+
+
+skinparam cloud {
+	BackgroundColor #F2FCFE-#eeeeee
+	BorderColor #F2FCFE
+	FontColor #009fdb
+}
+
+
+skinparam database {
+	
+	FontColor #fff
+	BorderColor #33b2e2
+	BackgroundColor #33b2e2-#009fdb
+
+	BorderColor #007faf
+}
+
+
+skinparam class {
+	
+	FontColor #fff
+	BorderColor #33b2e2
+	BackgroundColor #33b2e2-#009fdb
+
+	HeaderBackgroundColor #33b2e2-#009fdb
+	StereotypeFontColor #5a5a5a
+	BorderThickness 1
+	AttributeFontColor #d2d2d2
+	AttributeFontSize 11
+}
+
+
+skinparam object {
+	
+	FontColor #fff
+	BorderColor #33b2e2
+	BackgroundColor #33b2e2-#009fdb
+
+	StereotypeFontColor #5a5a5a
+	BorderThickness 1
+	AttributeFontColor #d2d2d2
+	AttributeFontSize 11
+}
+
+
+skinparam usecase {
+	
+	FontColor #fff
+	BorderColor #33b2e2
+	BackgroundColor #33b2e2-#009fdb
+
+	BorderThickness 2
+	StereotypeFontColor #009fdb
+}
+
+
+skinparam rectangle {
+		FontColor #5a5a5a
+	BorderColor #c2c2c2
+	BackgroundColor #fff-#fefefe
+	BorderThickness 2
+	StereotypeFontColor #009fdb
+}
+
+
+skinparam package {
+	FontColor #009fdb
+	BorderColor #33b2e2
+	BackgroundColor transparent
+	BorderThickness 2
+}
+
+
+skinparam folder {
+	BackgroundColor #fff-#f5f5f5
+  	BorderColor #ea7400
+	FontColor #ea7400
+	BorderThickness 2
+}
+
+
+skinparam frame {
+	BackgroundColor #fff-#f5f5f5
+  	BorderColor #0568ae
+	FontColor #0568ae
+	BorderThickness 2
+}
+
+
+skinparam state {
+	
+	FontColor #fff
+	BorderColor #33b2e2
+	BackgroundColor #33b2e2-#009fdb
+
+	BorderColor #007faf
+	StartColor #0568ae
+	EndColor #0568ae
+	AttributeFontColor #d2d2d2
+	AttributeFontSize 11
+}
+
+
+skinparam queue {
+	
+	FontColor #fff
+	BorderColor #33b2e2
+	BackgroundColor #33b2e2-#009fdb
+
+}
+
+
+skinparam card {
+	BackgroundColor #3786be-#0568ae
+	BorderColor #0568ae
+	FontColor #fff
+}
+
+
+skinparam file {
+	BackgroundColor #f5f5f5-#f2f2f2
+	BorderColor #0568ae
+	FontColor #5a5a5a
+
+}
+
+
+skinparam stack {
+	
+	FontColor #fff
+	BorderColor #33b2e2
+	BackgroundColor #33b2e2-#009fdb
+
+}
+skinparam dpi 65
+skinparam backgroundColor transparent
+skinparam shadowing false
+skinparam defaultFontName DejaVu Serif
+skinparam defaultFontSize 16
+left to right direction
+
+node "Edge Cluster" {
+    frame Kubernetes {
+        database etcd [
+            ETCD
+            ====
+            EdgeDevice
+            EdgeDeviceSet
+            EdgeWorkload
+            - - - -
+        ]
+        component "API Server" as apiserver
+        component "Flotta Edge API" as edgeAPI
+        component "Flotta Operator" as operator
+    }
+}
+
+node "Edge Device" {
+    frame "Flotta Agent" as deviceAgent {
+        component "Device Worker" as device_worker
+        component "Podman" as podman
+        component "Systemd" as systemd
+        component "Workloads" as workloads
+    }
+}
+
+device_worker -r-> edgeAPI : Gets\nupdates/\nSends\nstatus\n[https]
+
+operator <- -> apiserver: reconcile
+edgeAPI <- -> apiserver: register/\nupdate device
+apiserver <- -> etcd: "Flotta CRDs"
+
+device_worker - -l- -> podman : interacts with
+podman - -> systemd : Generates
+device_worker - -> systemd : Configures
+systemd - -> workloads : Runs
+
+@enduml
+
+PlantUML version 1.2022.5(Sat Apr 30 05:55:52 CDT 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>

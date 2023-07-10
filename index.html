@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script id="dpal" src="//www.redhat.com/ma/dpal.js" type="text/javascript"></script>
+  <meta charset="utf-8">
+  <title>Parodos</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="this is meta description">
+
+  
+
+  <!-- ** Plugins Needed for the Project ** -->
+  
+  <link rel="stylesheet" href="/assets/plugins/bootstrap/bootstrap.min.css">
+  
+  <link rel="stylesheet" href="/assets/plugins/themify-icons/themify-icons.css">
+  
+  <link rel="stylesheet" href="/assets/plugins/slick/slick.css">
+  
+
+  <link href="/assets/scss/syntax_monokai.css" rel="stylesheet">
+  <!-- Main Stylesheet -->
+  <link href="/assets/scss/style.css" rel="stylesheet">
+
+  <!--Favicon-->
+  <link rel="shortcut icon" href="/assets/images/favicon.png " type="image/x-icon">
+  <link rel="icon" href="/assets/images/flotta-logo-stacked.ico " type="image/x-icon">
+
+  <!-- google analytics -->
+  
+
+</head>
+
+
+<body>
+
+  <header class="navigation fixed-top nav-bg">
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand font-tertiary h3" href="/">
+      
+        <img src="/assets/images/flotta-logo.png" alt="Parodos" style="height: 60px;">
+        
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+      aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse text-center" id="navigation">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        
+          <li class="nav-item ">
+            <a class="nav-link" href="/blog.html">Blog</a>
+          </li>
+        
+          <li class="nav-item ">
+            <a class="nav-link" href="/documentation/latest/intro/overview.html">Documentation</a>
+          </li>
+        
+      </ul>
+    </div>
+  </nav>
+</header>
+
+
+  <!-- hero area -->
+<section class="hero-area bg-primary" id="parallax">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mx-auto">
+        <h1 class="text-white font-tertiary">Parados: <br>
+The internal developer platform for Enterprises with legacy applications
+</h1>
+        <p><b>Empower Your developers with Parodos: Streamline Workflow Management with a simple Java Toolkit</b></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-5 mx-auto">
+        <img class="img-fluid w-100" src="assets/images/flotta-device-diagram.png" alt="bg-shape">
+      </div>
+    </div>
+  </div>
+  <div class="layer-bg w-100">
+    <ul class="list-unstyled ml-5 mt-3 position-relative zindex-1">
+      
+      <li class="mb-3"><a class="text-white" href="https://www.linkedin.com/company/project-flotta/about/"><i class="ti-linkedin"></i></a></li>
+      
+      <li class="mb-3"><a class="text-white" href="https://twitter.com/project_flotta"><i class="ti-twitter"></i></a></li>
+      
+      <li class="mb-3"><a class="text-white" href="https://github.com/project-flotta/"><i class="ti-github"></i></a></li>
+      
+    </ul>
+  </div>
+</section>
+<!-- /hero area -->
+
+
+<!-- about -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto text-center">
+        <p class="font-secondary paragraph-lg text-dark">Parodos is a Java toolkit to help enterprise's with a legacy footprint build
+internal developer platforms (IDP) that enable their developers to get access
+to the tools and environments required to start coding with less time, friction
+and frustration. <br><br>
+
+The project consist in two parts. The user interface for Parodos is <a
+href="https://backstage.io/">Backstage</a> plugin that will be contributed to
+Red Hat's Janus-IDP initiative soon. And some backend services base on Java
+Spring where anyone can write workflows.<br><br>
+
+The focus of Parodos is around Workflows (composed of WorkflowTasks) that bring
+together the existing tools and processes of the enterpise in an end-to-end
+experience that developers, quality assurance, production support and other
+enterprise software development/delivery team members can consume (through our
+Backstage plugin or by your own interfaces calling these backing services) to
+get the outcomes they need with fewer tickets/meetings/frustration.
+</p>
+        <a href="/documentation/latest/intro/overview.html" class="btn btn-transparent">know more</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /about -->
+
+
+
+<!-- features -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">Features</h2>
+      </div>
+      
+      <div class="col-md-4 mb-4 mb-md-0 card hover-shadow shadow card-body ">
+        <div class=" text-center px-4 py-5">
+          <i class="ti-package icon mb-5 d-inline-block"></i>
+          <h4 class="mb-4">OS Management</h4>
+          <p>Manage Operating system lifecycle using RPM ostree technology and manage the current state of the device.</p>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4 mb-md-0 card hover-shadow shadow card-body active-bg-primary">
+        <div class=" text-center px-4 py-5">
+          <i class="ti-search icon mb-5 d-inline-block"></i>
+          <h4 class="mb-4">Observability</h4>
+          <p>Get any information on the workloads running in the Edgedevice and export it to a central Prometheus instance with limited bandwidth, at the same time export all logs to a central device in case it’s needed.</p>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4 mb-md-0 card hover-shadow shadow card-body ">
+        <div class=" text-center px-4 py-5">
+          <i class="ti-shield icon mb-5 d-inline-block"></i>
+          <h4 class="mb-4">Identity aware</h4>
+          <p>All devices have their own identity managed by X509 certificates and all communication with the Flotta Edge API is secured by MTLS connection, which also managed the device approval to enrol into the fleet.</p>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4 mb-md-0 card hover-shadow shadow card-body active-bg-primary">
+        <div class=" text-center px-4 py-5">
+          <i class="ti-wand icon mb-5 d-inline-block"></i>
+          <h4 class="mb-4">Low footprint</h4>
+          <p>Flotta device is a lightweight daemon that is able to run on disconnected environments or not reliable networks, also managed to limit the control-plane bandwidth.</p>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4 mb-md-0 card hover-shadow shadow card-body ">
+        <div class=" text-center px-4 py-5">
+          <i class="ti-upload icon mb-5 d-inline-block"></i>
+          <h4 class="mb-4">Data Upload</h4>
+          <p>Upload any data produced by your workload to a centralized location from all of your devices</p>
+        </div>
+      </div>
+      
+      <div class="col-md-4 mb-4 mb-md-0 card hover-shadow shadow card-body active-bg-primary">
+        <div class=" text-center px-4 py-5">
+          <i class="ti-plug icon mb-5 d-inline-block"></i>
+          <h4 class="mb-4">Ansible integration</h4>
+          <p>Execute Ansible playbooks on specific subset of Flotta devices and check their execution status</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<!-- /features -->
+
+
+<section class="section">
+
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-10 mx-auto text-center">
+          <h3>Demo</h3>
+          <script id="asciicast-492335" src="https://asciinema.org/a/492335.js" async></script>
+        </div>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- blog -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 text-center">
+        <h2 class="section-title">Blog</h2>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<!-- /blog -->
+
+
+
+  <!-- footer -->
+<footer class="bg-dark footer-section">
+  <div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5 class="text-light">Email</h5>
+          <p class="text-white paragraph-lg font-secondary">parodos@redhat.com</p>
+        </div>
+        <div class="col-md-4">
+          <h5><a href="http://www.redhat.com"><img id="sponsorship" class="footerLogo" src="/assets/images/Logo-Red_Hat-Supported_By-A-Reverse-RGB.svg"></a>.</h5>
+        </div>
+        <!-- <div class="col-md-4"> -->
+        <!--   <h5 class="text-light">Address</h5> -->
+        <!--   <p class="text-white paragraph-lg font-secondary"></p> -->
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+  <div class="border-top text-center border-dark py-5">
+    <p class="mb-0 text-light"><p>Copyright © 2020 Designed by <a href="https://themefisher.com">Themefisher</a> &amp; Developed by <a href="https://getjekyllthemes.com">Getjekyllthemes</a></p>
+</p>
+  </div>
+</footer>
+<!-- /footer -->
+
+
+<!-- JS Plugins -->
+
+<script src="/assets/plugins/jQuery/jquery.min.js"></script>
+
+<script src="/assets/plugins/bootstrap/bootstrap.min.js"></script>
+
+<script src="/assets/plugins/shuffle/shuffle.min.js"></script>
+
+<script src="/assets/plugins/slick/slick.min.js"></script>
+
+
+<!-- Main Script -->
+<script src="/assets/js/script.js"></script>
+
+<!-- This comes from DTM/DPAL and must be latest entry in body-->
+<script type="text/javascript">
+  if (("undefined" !== typeof _satellite) && ("function" === typeof _satellite.pageBottom)) {
+      _satellite.pageBottom();
+  }
+</script>
+
+
+<script>
+  $(function() {
+    return $("h2, h3, h4, h5, h6").each(function(i, el) {
+      var $el, icon, id;
+      $el = $(el);
+      id = $el.attr('id');
+      icon = '<i class="ti-link"></i>';
+      console.log("test test"+id)
+      if (id) {
+        return $el.prepend($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
+      }
+    });
+  });
+</script>
+
+
+</body>
+
+</html>
