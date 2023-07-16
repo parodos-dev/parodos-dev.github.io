@@ -2,7 +2,7 @@
 # General Site Settings
 
 title: Parodos
-logo: assets/images/flotta-logo.png
+logo: assets/images/parodos-logo-horizontal-darkbg.png
 author: themefisher
 description: this is meta description
 email: parodos@redhat.com
@@ -43,11 +43,11 @@ hero:
     Parados: <br>
     The internal developer platform for Enterprises with legacy applications
   hero-text: "Empower Your developers with Parodos: Streamline Workflow Management with a simple Java Toolkit"
-  hero-image: assets/images/flotta-device-diagram.png
+  hero-image: assets/images/parodos-logo-darkbg.png
 social:
-- {icon: "ti-linkedin", link: "https://www.linkedin.com/company/project-flotta/about/"}
-- {icon: "ti-twitter", link: "https://twitter.com/project_flotta"}
-- {icon: "ti-github", link: "https://github.com/project-flotta/"}
+- {icon: "ti-github", link: "https://github.com/parodos-dev/"}
+  #- {icon: "ti-linkedin", link: "https://www.linkedin.com/company/.../about/"}
+  #- {icon: "ti-twitter", link: "https://twitter.com/..."}
 
 
 #-------------------------------
@@ -134,44 +134,44 @@ education:
 
 features-title: Features
 features:
-- {
-    name: OS Management,
-    icon: ti-package,
-    description: 'Manage Operating system lifecycle using RPM ostree technology and manage the current state of the device.',
-    active: # Add true to select section
-  }
-- {
-    name: Observability,
-    icon: ti-search,
-    description: 'Get any information on the workloads running in the Edgedevice and export it to a central Prometheus instance with limited bandwidth, at the same time export all logs to a central device in case it’s needed.',
-    active: true # Add true to select section
-  }
+  #- {
+  #    name: OS Management,
+  #    icon: ti-package,
+  #    description: 'Manage Operating system lifecycle using RPM ostree technology and manage the current state of the device.',
+  #    active: # Add true to select section
+  #  }
+  #- {
+  #    name: Observability,
+  #    icon: ti-search,
+  #    description: 'Get any information on the workloads running in the Edgedevice and export it to a central Prometheus instance with limited bandwidth, at the same time export all logs to a central device in case it’s needed.',
+  #    active: true # Add true to select section
+  #  }
 
-- {
-    name: Identity aware,
-    icon:  ti-shield,
-    description: 'All devices have their own identity managed by X509 certificates and all communication with the Flotta Edge API is secured by MTLS connection, which also managed the device approval to enrol into the fleet.',
-    active: # Add true to select section
-  }
+  #- {
+  #    name: Identity aware,
+  #    icon:  ti-shield,
+  #    description: 'All devices have their own identity managed by X509 certificates and all communication with the Flotta Edge API is secured by MTLS connection, which also managed the device approval to enrol into the fleet.',
+  #    active: # Add true to select section
+  #  }
 
-- {
-    name: Low footprint,
-    icon: ti-wand,
-    description: 'Flotta device is a lightweight daemon that is able to run on disconnected environments or not reliable networks, also managed to limit the control-plane bandwidth.',
-    active: true # Add true to select section
-  }
-- {
-    name: Data Upload,
-    icon: ti-upload,
-    description: 'Upload any data produced by your workload to a centralized location from all of your devices',
-    active: false # Add true to select section
-  }
-- {
-    name: Ansible integration,
-    icon: ti-plug,
-    description: 'Execute Ansible playbooks on specific subset of Flotta devices and check their execution status',
-    active: true # Add true to select section
-  }
+  #- {
+  #    name: Low footprint,
+  #    icon: ti-wand,
+  #    description: 'Flotta device is a lightweight daemon that is able to run on disconnected environments or not reliable networks, also managed to limit the control-plane bandwidth.',
+  #    active: true # Add true to select section
+  #  }
+  #- {
+  #    name: Data Upload,
+  #    icon: ti-upload,
+  #    description: 'Upload any data produced by your workload to a centralized location from all of your devices',
+  #    active: false # Add true to select section
+  #  }
+  #- {
+  #    name: Ansible integration,
+  #    icon: ti-plug,
+  #    description: 'Execute Ansible playbooks on specific subset of Flotta devices and check their execution status',
+  #  active: true # Add true to select section
+  #  }
 
 # - {
 #     name: FDO,
@@ -332,5 +332,5 @@ client-slider-items:
 #-------------------------------
 # Contact Section
 
-contact-title: Contact Info
-contact-email: flotta@redhat.com
+  #contact-title: Contact Info
+  #contact-email: parodos@redhat.com
