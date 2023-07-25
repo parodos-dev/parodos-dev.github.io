@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: Run Parodos on OpenShift
+title: Run Parodos on OpenShift with OAuth
 ---
 
 ## How it works
@@ -56,7 +56,7 @@ kubectl kustomize hack/manifests/openshift/ | kubecl apply -f -
 ```
 
 This will install all Parodos microservices on top of Openshift, where the
-deployment should looks like this:
+deployment should look like this:
 
 ```bash
 $ --> oc get deployments

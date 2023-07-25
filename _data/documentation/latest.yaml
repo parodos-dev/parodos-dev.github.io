@@ -21,9 +21,9 @@ menu:
 
 - Name: Getting started
   Childs:
-  - Name: Kind
+  - Name: Kind or OpenShift
     Link: "gsg/kind.md"
-  - Name: Openshift
+  - Name: Openshift with OAuth
     Link: "gsg/ocp.md"
   - Name: Running WorkFlows
     Link: "gsg/running_workflows.md"
