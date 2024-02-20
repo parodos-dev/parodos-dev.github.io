@@ -6,3 +6,8 @@ Gemfile.lock
 .idea/
 .vscode/
 uml
+
+# Hugo
+public/
+resoures/
+resources/

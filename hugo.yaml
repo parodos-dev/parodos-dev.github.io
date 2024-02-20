@@ -1,0 +1,54 @@
+baseURL: https://parodos.dev
+languageCode: en-us
+title: Parodos Dev
+ 
+theme: 
+  - github.com/google/docsy
+module:
+  imports:
+    - path: github.com/google/docsy
+
+params:
+  offlineSearch: true
+  links:
+    user:
+      - name: User mailing list
+        url: 'https://example.org/mail'
+        icon: fa fa-envelope
+        desc: Discussion and help from your fellow users
+      - name: Twitter
+        url: 'https://example.org/twitter'
+        icon: fab fa-x-twitter
+        desc: Follow us on Twitter to get the latest news!
+      - name: Stack Overflow
+        url: 'https://example.org/stack'
+        icon: fab fa-stack-overflow
+        desc: Practical questions and curated answers
+    developer:
+      - name: GitHub
+        url: 'https://github.com/parodos-dev/'
+        icon: fab fa-github
+        desc: Development takes place here!
+      - name: Slack
+        url: 'https://example.org/slack'
+        icon: fab fa-slack
+        desc: Chat with other project developers
+      - name: Developer mailing list
+        url: 'https://example.org/mail'
+        icon: fa fa-envelope
+        desc: Discuss development issues around the project
+
+menu:
+  main:
+    - name: GitHub
+      weight: 50
+      url: 'https://github.com/parodos-dev/parodos-dev.github.io'
+      pre: <i class='fa-brands fa-github'></i>
+      post: <span class='alert'>New!</span>
+
+outputs:
+  home:
+    - HTML
+    - RSS
+SectionPagesMenu : "main"
+enableRobotsTXT : true

@@ -1,0 +1,9 @@
+{{ with resources.GetRemote (.Get 0) }}
+  {{ with .Err }}
+    {{ errorf "%s" . }}
+  {{ else }}
+    {{ .Content | markdownify}}
+  {{ end }}
+{{ else }}
+  {{ errorf "Unable to get remote resource %q" (.Get 0) }}
+{{ end }}

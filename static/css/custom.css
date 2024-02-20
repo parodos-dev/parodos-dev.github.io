@@ -1,0 +1,22 @@
+article *  {
+     font-size: 16px;
+     text-align: justify;
+}
+
+details[open] > summary:after {
+    display: inline;
+}
+details[close] > summary {
+    display: inline;
+}
+
+/* for about page */
+.about-img {
+    margin-left: 0;
+    margin-top: 1rem;
+}
+
+/* fix the scroll showing on the title next to logo */
+#headertitle {
+    overflow: hidden;
+}
