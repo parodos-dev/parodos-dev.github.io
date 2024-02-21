@@ -1,33 +1,27 @@
-# parodos-dev.github.io webpage
+parodos-dev.github.io 
 
-## Build
+This site is built by hugo static site generater and published using a github action to https://parodos.dev
 
-```bash
-make build
-```
+# Devleopment
+- Requiremens
+    - go
+    - git
+    - Download `hugo` *extended* version from [hugo releases page](https://github.com/gohugoio/hugo/releases/)
 
-## Check links
+- Run it 
+    ```bash
+    hugo server
+    ```
 
-```bash
-make check-link
-```
+# Content Organization
 
-## Run site locally
+- content/docs \
+  The main directory for the project document 
+- content/docs/workflows \
+  Document for the selected set of workflows, for https://parodos-dev/serverless-workflows
+- content/docs/workflows-examples \
+  Document for the examples workflows, for https://parodos-dev/serverless-workflow-examples
+- content/post \
+  Articles, blog posts, etc.
 
-```bash
-make run
-```
-
-The site is available at `http://localhost:4000/`
-
-## Contrib
-
-Template based on `github.com/themefisher/kross-jekyll` project.
-
-## Documentation version update
-
-On documentation version change, the following changes need to be done:
-
-- [ ] `cp _data/documentation/latest.yaml _data/documentation/$VERSION.yaml`
-- [ ] `cp -rfv /documentation/latest /documentation/$VERSION`
-- [ ] edit /documentation/$VERSION/operations/api.html and change the swagger URL
+Read more the on hugo documentation https://gohugo.io/documentation/
