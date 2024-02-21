@@ -1,0 +1,8 @@
+{
+  "name": "parods-dev.github.io",
+  "version": "0.0.0",
+  "dependencies": {
+    "autoprefixer": "^10.4.17",
+    "postcss-cli": "^11.0.0"
+  }
+}
