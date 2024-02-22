@@ -1,54 +1,107 @@
 baseURL: https://parodos.dev
 languageCode: en-us
 title: Parodos Dev
- 
+SectionPagesMenu : "main"
+enableRobotsTXT : true
 theme: 
   - github.com/google/docsy
 module:
   imports:
     - path: github.com/google/docsy
+enableGitInfo: true
 
-params:
-  offlineSearch: true
-  links:
-    user:
-      - name: User mailing list
-        url: 'https://example.org/mail'
-        icon: fa fa-envelope
-        desc: Discussion and help from your fellow users
-      - name: Twitter
-        url: 'https://example.org/twitter'
-        icon: fab fa-x-twitter
-        desc: Follow us on Twitter to get the latest news!
-      - name: Stack Overflow
-        url: 'https://example.org/stack'
-        icon: fab fa-stack-overflow
-        desc: Practical questions and curated answers
-    developer:
-      - name: GitHub
-        url: 'https://github.com/parodos-dev/'
-        icon: fab fa-github
-        desc: Development takes place here!
-      - name: Slack
-        url: 'https://example.org/slack'
-        icon: fab fa-slack
-        desc: Chat with other project developers
-      - name: Developer mailing list
-        url: 'https://example.org/mail'
-        icon: fa fa-envelope
-        desc: Discuss development issues around the project
-
-menu:
-  main:
-    - name: GitHub
-      weight: 50
-      url: 'https://github.com/parodos-dev/parodos-dev.github.io'
-      pre: <i class='fa-brands fa-github'></i>
-      post: <span class='alert'>New!</span>
 
 outputs:
-  home:
-    - HTML
-    - RSS
-SectionPagesMenu : "main"
-enableRobotsTXT : true
+  home: [HTML]
+  page: [HTML]
+  section: [HTML, RSS, print]
+
+imaging:
+  resampleFilter: CatmullRom
+  quality: 75
+  anchor: Smart
+
+markup:
+  goldmark:
+    parser:
+      attribute:
+        block: true
+    renderer:
+      unsafe: true
+  highlight:
+    style: rose-pine-moon
+
+params:
+  copyright:
+    authors: >-
+      Parodos Authors|
+      [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) |
+    from_year: 2023
+      #privacy_policy: link to privacy policy
+  version_menu: Releases
+  url_latest_version: https://parodos.dev
+  github_repo: https://github.com/parodos-dev/parodos-dev.github.io
+  github_project_repo: https://github.com/parodos-dev/parodos-dev.github.io
+  time_format_blog: Monday, January 02, 2006
+  time_format_default: January 2, 2006
+  offlineSearch: true
+  offlineSearchSummaryLength: 70
+  offlineSearchMaxResults: 10
+  prism_syntax_highlighting: false
+  ui:
+    sidebar_cache_limit: 10
+    sidebar_menu_compact: true
+    sidebar_menu_foldable: false
+    sidebar_search_disable: false
+    feedback:
+      enable: true
+      'yes': >-
+        Glad to hear it! Please <a
+        href="https://github.com/parodos-dev/parodos-dev.github.io/issues/new">tell us how we can
+        improve</a>.
+      'no': >-
+        Sorry to hear that. Please <a
+        href="https://github.com/parodos-dev/parodos-dev.github.io/issues/new">tell us how we can
+        improve</a>.
+    readingtime:
+      enable: true
+  links:
+    user:
+      #     - name: GitHub Discussions
+      #  url: https://github.com//docsy/discussions
+      #  icon: fa-brands fa-github
+      #  desc: Discussion and help from your fellow users
+      #- name: User mailing list
+      #  url: https://groups.google.com/forum/#!forum/docsy-users
+      #  icon: fa-solid fa-envelope
+      #  desc: Sign up for Docsy announcements
+      #- name: Twitter
+      #  url: https://twitter.com/docsydocs
+      #  icon: fa-brands fa-x-twitter
+      #  desc: Follow us on Twitter to get the latest news!
+      #- name: Stack Overflow
+      #  url: https://stackoverflow.com/questions/tagged/docsy
+      #  icon: fa-brands fa-stack-overflow
+      #  desc: Practical questions and curated answers
+    developer:
+      - name: GitHub
+        url: https://github.com/parodos-dev/parodos-dev.github.io
+        icon: fa-brands fa-github
+        desc: Development takes place here!
+
+  plantuml:
+    enable: true
+    theme: default
+    svg_image_url: https://www.plantuml.com/plantuml/svg/
+    svg: false
+  print:
+    disable_toc: false
+  markmap:
+    enable: true
+  drawio:
+    enable: true
+
+taxonomies:
+  tag: tags
+  category: categories
+
