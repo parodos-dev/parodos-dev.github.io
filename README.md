@@ -6,11 +6,18 @@ This site is built by hugo static site generater and published using a github ac
 - Requiremens
     - go
     - git
-    - Download `hugo` *extended* version from [hugo releases page](https://github.com/gohugoio/hugo/releases/)
+    - Download `hugo` *extended* version from [hugo releases page](https://github.com/gohugoio/hugo/releases/)       or run 
+      ```bash
+      sudo snap install hugo
+      ```
 
 - Run it 
     ```bash
     hugo server
+    ```
+    If you encounter cache issue, ie: remote Mardown file not updated in Hugo, you can disable it by adding the `--ignoreCache` flag:
+    ```bash
+    hugo server --ignoreCache
     ```
 
 # Content Organization
