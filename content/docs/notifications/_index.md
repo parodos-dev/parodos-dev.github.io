@@ -27,6 +27,11 @@ Refer to the plugin's [README](https://github.com/janus-idp/backstage-plugins/bl
 ### Updates
 ![Updates](./updates.png)
 
+### Update alert
+When a new update notification is received the UI pops an alert
+  
+![Update alert/popup](./system%20alert.png)
+
 ### Notifications list
 ![Notifications list](./notifications-list.png)
 
