@@ -1,5 +1,5 @@
 ---
-title: serverless-workflows-helm README.md
+title: Workflows
 date: "2024-02-20"
 ---
 
