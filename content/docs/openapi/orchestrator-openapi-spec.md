@@ -4,9 +4,9 @@ title: Orchestrator plugin OpenAPI
 ---
 
 Orchestrator plugin is composed by three parts:
-* orchestrator (frontend)
-* orchestrator-common
-* orchestrator-backend
+* [orchestrator](https://github.com/janus-idp/backstage-plugins/tree/main/plugins/orchestrator) (frontend)
+* [orchestrator-common](https://github.com/janus-idp/backstage-plugins/tree/main/plugins/orchestrator-common)
+* [orchestrator-backend](https://github.com/janus-idp/backstage-plugins/tree/main/plugins/orchestrator-backend)
 
 The plugin provides OpenAPI endpoints definition to facilitate communication between the frontend and backend. This approach minimizes the data that needs to be sent to the frontend, provides flexibility and avoids dependencies on changes in the [CNCF serverless specification](https://github.com/serverlessworkflow/specification/blob/main/specification.md). It also allows for a seamless transition if there's a need to replace the backend implementation.
 
