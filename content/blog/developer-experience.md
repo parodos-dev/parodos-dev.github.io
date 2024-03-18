@@ -9,23 +9,13 @@ If you aim to understand the full development lifecycle of serverless workflows,
 Thanks to the Orchestrator functions and automations, developers can now focus solely on building their applications without being burdened by unnecessary cognitive load. Let's delve into how to effectively manage the end-to-end software development lifecycle of serverless workflows,
 leveraging these built-in capabilities. 
 
-## Software Development with Git
-Let's assume your company follows the `feature branches git workflow`:
-* Developers work on individual `feature` branches.
-* The `develop` branch serves as the integration point where all features are merged to validate the application in the staging environment.
-* Once the software receives the green light, the code is released to the `main` branch and deployed to the production environment.
-
-![feature branches git workflow](/blog/images/git-workflow.png)
-
-Don't be surprised, but the Orchestrator plugin automatically installs all the needed resources to handle these steps for you.
-
 ## A Reference Architecture for Automated Deployments of Serverless Workflows
-The proposed reference architecture consists of the following components:
+The reference architecture that we're going to describe consists of the following components:
 * `Orchestrator Helm chart`: the installer of RHDH Orchestrator .
-* `RHDH`: the Red Hat product for Backstage.
-* `Tekton/Red Hat OpenShift Pipelines`: the recommended CI pipeline to build images and deployment configurations.
-* `ArgoCD/Red Hat OpenShift GitOps`: the selected CD pipeline to deploy the workflow on the RHDH instance.
-* `Quay`: the container registry service to store the software images.
+* `Red Hat Developer Hub (RHDH)`: the Red Hat product for Backstage.
+* `Tekton/Red Hat OpenShift Pipelines`: the Kubernetes-Native CI pipeline to build images and deployment configurations.
+* `ArgoCD/Red Hat OpenShift GitOps`: the CD pipeline to deploy the workflow on the RHDH instance.
+* `Quay.io`: the container registry service to store the software images.
 * `SonataFlow platform`: the SonataFlow implementation of the Serverless Workflow specifications, including a Kubernetes operator and the platform services (data index, jobs service).
 * `SonataFlow`: the custom resource representing the workflow.
 * `GitHub workflow repo`: the source code repository of the workflow.
@@ -34,6 +24,17 @@ The proposed reference architecture consists of the following components:
 ![feature branches git workflow](/blog/images/cicd-architecture.png)
  
 Please note that all these components are either bundled with the Orchestrator plugin or managed by the software projects generated with the RHSH Software Templates.
+
+## Software Development with Git
+Let's assume your company follows the `feature branches git workflow`:
+* Developers work on individual `feature` branches.
+* The `develop` branch serves as the integration point where all features are merged to validate the application in the staging environment.
+* Once the software receives the green light, the code is released to the `main` branch and deployed to the production environment.
+
+![feature branches git workflow](/blog/images/git-workflow.png)
+
+Don't be surprised, but the Orchestrator plugin automatically installs all the needed resources to handle these steps for you throughout the entire
+software development lifecycle.
 
 ## The Software Development Lifecycle
 ### Creating the Software Project
