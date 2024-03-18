@@ -23,7 +23,7 @@ The reference architecture that we're going to describe consists of the followin
 
 ![feature branches git workflow](/blog/images/cicd-architecture.png)
  
-Please note that all these components are either bundled with the Orchestrator plugin or managed by the software projects generated with the RHSH Software Templates.
+Please note that all these components, with the exclusion of the `Quay.io` and the `GitHub` organizations, are either bundled with the Orchestrator plugin or managed by the software projects generated with the RHSH Software Templates.
 
 ## Software Development with Git
 Let's assume your company follows the `feature branches git workflow`:
