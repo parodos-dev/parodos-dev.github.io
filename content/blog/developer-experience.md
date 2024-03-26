@@ -19,7 +19,8 @@ The reference architecture that we're going to describe consists of the followin
 * `SonataFlow platform`: the SonataFlow implementation of the Serverless Workflow specifications, including a Kubernetes operator and the platform services (data index, jobs service).
 * `SonataFlow`: the custom resource representing the workflow.
 * `GitHub workflow repo`: the source code repository of the workflow.
-* `GitHub config repo`: the repository of the `kustomize` deployment configuration.
+* `GitHub gitops repo`: the repository of the `kustomize` deployment configuration.
+  * Includes the commands to boostrap the ArgoCD applications on your selected environment.
 
 ![feature branches git workflow](/blog/images/cicd-architecture.png)
  
@@ -45,7 +46,7 @@ The Orchestrator plugin comes with its own templates designed to kickstart your 
 
 * A fully operational software project to develop your serverless workflow, in a newly generated Git repository under the organization of your choice.
 * A ready-to-use configuration repository with a [kustomize](https://kustomize.io/) configuration to deploy the workflow on the designated RHDH instance.
-* (*) Automated CI tool deployment to trigger workflow builds on the selected cluster.
+* (*) Automated CI tool deployment to build workflows on the selected cluster.
 * (*) Automated CD automation deployment to deploy applications implementing your workflow.
 
 (*): optional but highly recommended!
