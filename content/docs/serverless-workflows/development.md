@@ -1,5 +1,5 @@
 ---
-title: Develop
+title: Development
 date: "2024-02-20"
 weight: 100
 ---

@@ -1,5 +1,5 @@
 ---
-title: Event Driven Architecture Example
+title: Simple Escalation
 date: "2024-02-28"
 ---
 

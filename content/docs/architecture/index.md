@@ -1,6 +1,6 @@
 ---
 title: "Architecture"
-weight: 2
+weight: 1
 ---
 The *Orchestrator* architecture comprises several integral components, each contributing to the seamless execution and management of workflows. Illustrated below is a breakdown of these components:
 

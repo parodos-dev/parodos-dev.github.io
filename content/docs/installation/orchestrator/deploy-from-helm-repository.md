@@ -1,5 +1,5 @@
 ---
-title: Deploy from Helm repository
+title: Deploy from helm repository
 date: "2024-03-12"
 ---
 

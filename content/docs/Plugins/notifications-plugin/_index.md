@@ -1,5 +1,5 @@
 ---
-title: "Notifications plugin"
+title: "Notifications Plugin"
 ---
 
 Documentation section of notifications plugin.
