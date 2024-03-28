@@ -1,6 +1,6 @@
 parodos-dev.github.io 
 
-This site is built by hugo static site generater and published using a github action to https://parodos.dev
+This site is built by hugo static site generater and published using a github action to https://rhdho.dev
 
 # Devleopment
 - Requiremens

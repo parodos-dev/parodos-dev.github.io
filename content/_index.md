@@ -1,5 +1,5 @@
 ---
-title: "Parodos: Workflows for Backstsage"
+title: "Red Hat Developer Hub Orchestrator: Workflows for Backstsage"
 ---
 
 {{< blocks/cover title="Orchestrating Systems | Migrating Code Infrastructure | Keeping Developers in Sync"  color="primary" image_anchor="top" height="min" >}}
@@ -14,7 +14,7 @@ title: "Parodos: Workflows for Backstsage"
 {{< /blocks/cover >}}
 
 {{% blocks/lead color="primary" %}}
-Parodos brings serverless workflows into backstage, focusing on the journey for application migration to the cloud, on boarding developers , and user-made workflows of backstage actions or external systems.
+Red Hat Developer Hub Orchestrator brings serverless workflows into backstage, focusing on the journey for application migration to the cloud, on boarding developers , and user-made workflows of backstage actions or external systems.
 
 {{% /blocks/lead %}}
 

@@ -1,6 +1,6 @@
-baseURL: https://parodos.dev
+baseURL: https://rhdho.dev
 languageCode: en-us
-title: Parodos Dev
+title: Red Hat Developer Hub Orchestrator 
 SectionPagesMenu : "main"
 enableRobotsTXT : true
 theme: 
@@ -34,12 +34,12 @@ markup:
 params:
   copyright:
     authors: >-
-      Parodos Authors|
+       Red Hat Developer Hub Orchestrator Authors|
       [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) |
     from_year: 2023
       #privacy_policy: link to privacy policy
   version_menu: Releases
-  url_latest_version: https://parodos.dev
+  url_latest_version: https://rhdho.dev
   github_repo: https://github.com/parodos-dev/parodos-dev.github.io
   github_project_repo: https://github.com/parodos-dev/parodos-dev.github.io
   time_format_blog: Monday, January 02, 2006
