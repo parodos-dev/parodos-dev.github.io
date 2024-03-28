@@ -1,6 +1,6 @@
 ---
+title: Orchestrator Plugin OpenAPI
 date: "2024-03-08"
-title: Orchestrator plugin OpenAPI
 ---
 
 Orchestrator plugin is composed by three parts:

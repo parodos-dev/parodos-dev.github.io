@@ -1,5 +1,5 @@
 ---
-title: Kustomize
+title: Deploy From Kustomize
 date: "2024-02-20"
 ---
 

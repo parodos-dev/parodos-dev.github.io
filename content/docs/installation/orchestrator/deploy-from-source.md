@@ -1,5 +1,5 @@
 ---
-title: Deploy from source
+title: Deploy From Source
 date: "2024-02-20"
 ---
 
