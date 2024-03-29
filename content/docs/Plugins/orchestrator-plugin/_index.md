@@ -1,5 +1,5 @@
 ---
-title: Orchestrator Plugin OpenAPI
+title: Orchestrator Plugin
 date: "2024-03-08"
 ---
 
