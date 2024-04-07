@@ -4,7 +4,7 @@ weight: 1
 ---
 The *Orchestrator* architecture comprises several integral components, each contributing to the seamless execution and management of workflows. Illustrated below is a breakdown of these components:
 
-- [**Janus IDP Backstage**](https://janus-idp.io/): Serving as the primary interface, Backstage fulfills multiple roles:
+- [**Red Hat Developer Hub**](https://developers.redhat.com/rhdh/overview): Serving as the primary interface, Backstage fulfills multiple roles:
   - [*Orchestrator Plugins*](https://github.com/janus-idp/backstage-plugins/tree/main/plugins/orchestrator): Both frontend and backend plugins are instrumental in presenting deployed workflows for execution and monitoring.
   - [*Notifications Plugin*](https://github.com/janus-idp/backstage-plugins/tree/main/plugins/notifications): Employs notifications to inform users or groups about workflow events.
 - [**Sonataflow Operator**](https://sonataflow.org/serverlessworkflow/main/cloud/operator/install-serverless-operator.html): This controller manages the Sonataflow custom resource (CR), where each CR denotes a deployed workflow.
