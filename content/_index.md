@@ -14,7 +14,7 @@ title: "Parodos: Workflows for Backstsage"
 {{< /blocks/cover >}}
 
 {{% blocks/lead color="primary" %}}
-Parodos brings serverless workflows into backstage, focusing on the journey for application migration to the cloud, on boarding developers , and user-made workflows of backstage actions or external systems.
+Parodos introduces serverless asynchronous workflows to Backstage, with a focus on facilitating the transition of applications to the cloud, onboarding developers, and enabling users to create workflows for backstage actions or external systems.
 
 {{% /blocks/lead %}}
 
