@@ -3,4 +3,39 @@ title: "Ochestrator on Kubernetes"
 date: 2024-04-09
 ---
 
+The following guide is for installing on a Kubernetes cluster. It is well tested and working in CI with a [kind](https://kind.sigs.k8s.io/) installation.
+
+Here's a kind configuration that is easy to work with (the apiserver port is static, so the kubeconfig is always the same)
+```yaml
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+networking:
+  apiServerAddress: "127.0.0.1"
+  apiServerPort: 16443
+nodes:
+  - role: control-plane
+    kubeadmConfigPatches:
+    - |
+      kind: InitConfiguration
+      nodeRegistration:
+        kubeletExtraArgs:
+          node-labels: "ingress-ready=true"
+    extraPortMappings:
+      - containerPort: 80
+        hostPort: 9090
+        protocol: TCP
+      - containerPort: 443
+        hostPort: 9443
+        protocol: TCP
+  - role: worker
+```
+
+Save this file as `kind-config.yaml`, and now run:
+```bash
+kind create --config kind-config.yaml
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+```
+
+The cluster should be up and running with ingress-nginx installed, so localhost:9090 will direct the traffic to backstage, because of the ingress created by the helm chart on port 80.
+
 {{< remoteMD "https://raw.githubusercontent.com/parodos-dev/orchestrator-helm-chart/main/charts/orchestrator-k8s/README.md" >}}
