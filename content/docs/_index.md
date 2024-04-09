@@ -1,13 +1,8 @@
 ---
 title: "Documentation"
-date: 2024-02-20 
+date: 2024-02-20
 ---
 
-# How to add a document?
-Documents can include markdown content from all the related *`parodos-dev`* repositories. 
-To create a document entry from a markdown file use this:
+# Parodos
 
-```bash
-./generate-doc-for-repo.sh \
-    https://github.com/parodos-dev/$REPO/blob/$BRANCH//README.md > content/docs/newdoc.md
-```
+Choose a section from te list bellow. For Parodos introduction, check the [Quick Start](./quickstart/).
