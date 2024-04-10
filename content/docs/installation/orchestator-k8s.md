@@ -33,9 +33,10 @@ nodes:
 Save this file as `kind-config.yaml`, and now run:
 ```bash
 kind create --config kind-config.yaml
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/main/deploy/static/provider/kind/deploy.yaml
+kubectl apply -f https://projectcontour.io/quickstart/contour.yaml
+kubectl patch daemonsets -n projectcontour envoy -p '{"spec":{"template":{"spec":{"nodeSelector":{"ingress-ready":"true"},"tolerations":[{"key":"node-role.kubernetes.io/control-plane","operator":"Equal","effect":"NoSchedule"},{"key":"node-role.kubernetes.io/master","operator":"Equal","effect":"NoSchedule"}]}}}}'
 ```
 
-The cluster should be up and running with ingress-nginx installed, so localhost:9090 will direct the traffic to backstage, because of the ingress created by the helm chart on port 80.
+The cluster should be up and running with [Contour ingress-controller](https://projectcontour.io) installed, so localhost:9090 will direct the traffic to backstage, because of the ingress created by the helm chart on port 80.
 
 {{< remoteMD "https://raw.githubusercontent.com/parodos-dev/orchestrator-helm-chart/main/charts/orchestrator-k8s/README.md" >}}
