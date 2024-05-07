@@ -1,7 +1,7 @@
 ---
 title: "Serverless Workflows"
 date: 2024-02-20 
-weight: 3
+weight: 4
 ---
 
 Documentation section of the project selected set of workflows.
