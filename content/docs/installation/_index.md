@@ -1,7 +1,7 @@
 ---
 title: "Installation"
 date: 2024-03-03
-weight: 2
+weight: 3
 ---
 
 The deployment of the orchestrator involves multiple independent components, each with its unique installation process. Presently, our supported method is through a specialized Helm chart designed for deploying the orchestrator on either OpenShift or Kubernetes environments. This installation process is modular, allowing optional installation of components if they are already present.
