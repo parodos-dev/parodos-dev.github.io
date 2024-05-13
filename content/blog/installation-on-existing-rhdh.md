@@ -65,10 +65,11 @@ In the `app-config` ConfigMap add the following:
 app:
   backend:
     csp:
-        frame-src:
-          - "https://sandbox.kie.org"
-      cors:
-        origin: {{ URL to RHDH service or route }}
+      script-src: ["'self'", "'unsafe-inline'", "'unsafe-eval'"]
+      script-src-elem: ["'self'", "'unsafe-inline'", "'unsafe-eval'"]
+      connect-src: ["'self'", 'http:', 'https:', 'data:']
+    cors:
+      origin: {{ URL to RHDH service or route }}
 ```
 
 To enable the Notifications plugin, edit the same ConfigMaps.
