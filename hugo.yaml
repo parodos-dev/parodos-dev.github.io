@@ -40,6 +40,11 @@ params:
       #privacy_policy: link to privacy policy
   version_menu: Releases
   url_latest_version: https://parodos.dev
+  versions:
+    - version: main
+      url: './'
+    - version: v0.1
+      url: 'v0.1/'
   github_repo: https://github.com/parodos-dev/parodos-dev.github.io
   github_project_repo: https://github.com/parodos-dev/parodos-dev.github.io
   time_format_blog: Monday, January 02, 2006
