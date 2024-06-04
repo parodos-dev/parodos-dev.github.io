@@ -27,29 +27,29 @@ In an RHDH installation, there are two primary ConfigMaps that require modificat
         sha512-l1MJIrZeXp9nOQpxFF5cw1ItOgA/p4xhGjKN12sg4Re8GC1qL+5hik+lA1BjMxAN6nKGWsLdFkgqLWa6jQuQFw==
         pluginConfig:
         orchestrator:
-            dataIndexService:
-            url: http://sonataflow-platform-data-index-service.sonataflow-infra
-            editor:
-            path: "https://sandbox.kie.org/swf-chrome-extension/0.32.0"
+          dataIndexService:
+          url: http://sonataflow-platform-data-index-service.sonataflow-infra
+          editor:
+          path: "https://sandbox.kie.org/swf-chrome-extension/0.32.0"
       - disabled: false
         package: "@janus-idp/backstage-plugin-orchestrator@1.7.8"
         integrity: >-
         sha512-wJtu4Vhx3qjEiTe/i0Js2Jc0nz8B3ZIImJdul02KcyKmXNSKm3/rEiWo6AKaXUk/giRYscZQ1jTqlw/nz7xqeQ==
         pluginConfig:
         dynamicPlugins:
-            frontend:
-            janus-idp.backstage-plugin-orchestrator:
-                appIcons:
-                - importName: OrchestratorIcon
-                    module: OrchestratorPlugin
-                    name: orchestratorIcon
-                dynamicRoutes:
-                - importName: OrchestratorPage
-                    menuItem:
-                    icon: orchestratorIcon
-                    text: Orchestrator
-                    module: OrchestratorPlugin
-                    path: /orchestrator
+          frontend:
+          janus-idp.backstage-plugin-orchestrator:
+            appIcons:
+              - importName: OrchestratorIcon
+                module: OrchestratorPlugin
+                name: orchestratorIcon
+            dynamicRoutes:
+              - importName: OrchestratorPage
+                menuItem:
+                  icon: orchestratorIcon
+                  text: Orchestrator
+                  module: OrchestratorPlugin
+                  path: /orchestrator
 ```
 
 The versions of the plugins may undergo updates, leading to changes in their integrity values. To ensure you are utilizing the latest versions, please consult the Helm chart values available [here](https://github.com/parodos-dev/orchestrator-helm-chart/blob/main/charts/orchestrator/templates/rhdh-operator.yaml#L159)). It's imperative to set both the version and integrity values accordingly.
