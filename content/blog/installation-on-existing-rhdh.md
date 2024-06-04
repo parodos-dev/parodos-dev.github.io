@@ -22,34 +22,30 @@ In an RHDH installation, there are two primary ConfigMaps that require modificat
 ```yaml
     plugins:
       - disabled: false
-        package: "@janus-idp/backstage-plugin-orchestrator-backend-dynamic@1.5.3"
-        integrity: >-
-        sha512-l1MJIrZeXp9nOQpxFF5cw1ItOgA/p4xhGjKN12sg4Re8GC1qL+5hik+lA1BjMxAN6nKGWsLdFkgqLWa6jQuQFw==
+        package: "@janus-idp/backstage-plugin-orchestrator-backend-dynamic@1.8.0"
+        integrity: sha512-wVZE7Dak10edxh1ZEckzYKrE13GrqhzSVelURhxjZcgXEHdGPWYUFHNMEpte7hzIBE85350Ka7fpy7C4BNPvEw==
         pluginConfig:
-        orchestrator:
-          dataIndexService:
-          url: http://sonataflow-platform-data-index-service.sonataflow-infra
-          editor:
-          path: "https://sandbox.kie.org/swf-chrome-extension/0.32.0"
+          orchestrator:
+            dataIndexService:
+              url: http://sonataflow-platform-data-index-service.sonataflow-infra
       - disabled: false
-        package: "@janus-idp/backstage-plugin-orchestrator@1.7.8"
-        integrity: >-
-        sha512-wJtu4Vhx3qjEiTe/i0Js2Jc0nz8B3ZIImJdul02KcyKmXNSKm3/rEiWo6AKaXUk/giRYscZQ1jTqlw/nz7xqeQ==
+        package: "@janus-idp/backstage-plugin-orchestrator@1.10.6"
+        integrity: sha512-qSXQ2O7/eLBEF186PzaRfzLfutFYUq9MdiiIZbHejz+KML9rVInPJkc1tine3R3JQVuw1QBIQ2vhPNbGbHXWZg==
         pluginConfig:
-        dynamicPlugins:
-          frontend:
-          janus-idp.backstage-plugin-orchestrator:
-            appIcons:
-              - importName: OrchestratorIcon
-                module: OrchestratorPlugin
-                name: orchestratorIcon
-            dynamicRoutes:
-              - importName: OrchestratorPage
-                menuItem:
-                  icon: orchestratorIcon
-                  text: Orchestrator
-                  module: OrchestratorPlugin
-                  path: /orchestrator
+          dynamicPlugins:
+            frontend:
+              janus-idp.backstage-plugin-orchestrator:
+                appIcons:
+                  - importName: OrchestratorIcon
+                    module: OrchestratorPlugin
+                    name: orchestratorIcon
+                dynamicRoutes:
+                  - importName: OrchestratorPage
+                    menuItem:
+                      icon: orchestratorIcon
+                      text: Orchestrator
+                    module: OrchestratorPlugin
+                    path: /orchestrator
 ```
 
 The versions of the plugins may undergo updates, leading to changes in their integrity values. To ensure you are utilizing the latest versions, please consult the Helm chart values available [here](https://github.com/parodos-dev/orchestrator-helm-chart/blob/main/charts/orchestrator/templates/rhdh-operator.yaml#L159)). It's imperative to set both the version and integrity values accordingly.
@@ -77,9 +73,8 @@ For the `dynamic-plugins` ConfigMap add:
 ```yaml
     plugins:
       - disabled: false
-        package: "@janus-idp/plugin-notifications@1.1.12"
-        integrity: >-
-          sha512-GCdEuHRQek3ay428C8C4wWgxjNpNwCXgIdFbUUFGCLLkBFSaOEw+XaBvWaBGtQ5BLgE3jQEUxa+422uzSYC5oQ==
+        package: "@janus-idp/plugin-notifications@1.2.5"
+        integrity: sha512-BQ7ujmrbv2MLelNGyleC4Z8fVVywYBMYZTwmRC534WCT38QHQ0cWJbebOgeIYszFA98STW4F5tdKbVot/2gWMg==
         pluginConfig:
           dynamicPlugins:
             frontend:
@@ -98,9 +93,8 @@ For the `dynamic-plugins` ConfigMap add:
                     config:
                       pollingIntervalMs: 5000
       - disabled: false
-        package: "@janus-idp/plugin-notifications-backend-dynamic@1.3.6"
-        integrity: >-
-          sha512-Qd8pniy1yRx+x7LnwjzQ6k9zP+C1yex24MaCcx7dGDPT/XbTokwoSZr4baSSn8jUA6P45NUUevu1d629mG4JGQ==
+        package: "@janus-idp/plugin-notifications-backend-dynamic@1.4.11"
+        integrity: sha512-5zluThJwFVKX0Wlh4E15vDKUFGu/qJ0UsxHYWoISJ+ing1R38gskvN3kukylNTgOp8B78OmUglPfNlydcYEHvA==
 ```
 
 For the `app-config` ConfigMap add the database configuration if isn't already provided. It is required for the notifications plugin:
