@@ -1,5 +1,5 @@
 ---
-title: "Ochestrator on Kubernetes"
+title: "Orchestrator on Kubernetes"
 date: 2024-04-09
 ---
 
