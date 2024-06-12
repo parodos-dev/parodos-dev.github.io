@@ -9,7 +9,7 @@ weight: 1
 This quickstart guide will help you install the Orchestrator using the helm chart and execute a sample workflow through the Red Hat Developer Hub orchestrator plugin UI.
 
 1. **Install Orchestrator**:
-   Follow the [installation instructions for Orchestrator](/docs/installation/orchestator/).
+   Follow the [installation instructions for Orchestrator](/docs/installation/).
 
 2. **Install a sample workflow**:
    Follow the [installation instructions for the greetings workflow](https://github.com/parodos-dev/serverless-workflows-config/blob/gh-pages/docs/greeting/README.md).
