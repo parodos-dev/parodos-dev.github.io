@@ -11,7 +11,7 @@ When [RHDH](https://developers.redhat.com/rhdh) is already installed and in use,
 To install the required components without RHDH, utilize the --set rhdhOperator.enabled=false option. A comprehensive command would resemble the following:
 
 ```bash
-helm upgrade -i orchestrator orchestrator --set rhdhOperator.enabled=false
+helm upgrade -i orchestrator orchestrator/orchestrator --set rhdhOperator.enabled=false
 ```
 This command will result in the installation of the Sonataflow Operator and OpenShift Serverless Operators. Alternatively, these operators can be installed directly from the operator catalog.
 
