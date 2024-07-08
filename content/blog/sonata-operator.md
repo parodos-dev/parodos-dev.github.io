@@ -20,7 +20,7 @@ ecosystem, this repository provides a few Go Modules described below.
 
 ### SonataFlow Operator Types (api)
 
-Every custom resource managed by the operator is exported in the module [api](api). You can use it to programmatically
+Every custom resource managed by the operator is exported in the module [api](https://github.com/apache/incubator-kie-kogito-serverless-operator/tree/main/api). You can use it to programmatically
 create any custom type managed by the operator.
 To use it, simply run:
 
