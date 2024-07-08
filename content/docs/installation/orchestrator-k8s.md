@@ -32,7 +32,7 @@ nodes:
 
 Save this file as `kind-config.yaml`, and now run:
 ```bash
-kind create --config kind-config.yaml
+kind create cluster --config kind-config.yaml
 kubectl apply -f https://projectcontour.io/quickstart/contour.yaml
 kubectl patch daemonsets -n projectcontour envoy -p '{"spec":{"template":{"spec":{"nodeSelector":{"ingress-ready":"true"},"tolerations":[{"key":"node-role.kubernetes.io/control-plane","operator":"Equal","effect":"NoSchedule"},{"key":"node-role.kubernetes.io/master","operator":"Equal","effect":"NoSchedule"}]}}}}'
 ```
