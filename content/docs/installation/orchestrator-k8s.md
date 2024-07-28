@@ -20,6 +20,9 @@ nodes:
       nodeRegistration:
         kubeletExtraArgs:
           node-labels: "ingress-ready=true"
+    - |
+      kind: KubeletConfiguration
+      localStorageCapacityIsolation: true
     extraPortMappings:
       - containerPort: 80
         hostPort: 9090
