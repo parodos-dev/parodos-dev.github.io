@@ -8,7 +8,13 @@ When [RHDH](https://developers.redhat.com/rhdh) is already installed and in use,
 1. Utilize the Helm chart to install the requisite components, such as the SonataFlow operator and the OpenShift Serverless Operator, while ensuring the RHDH installation is disabled.
 2. Manually update the existing RHDH ConfigMap resources with the necessary configuration for the Orchestrator plugin.
 3. Import the Orchestrator software templates into the Backstage catalog.
-To install the required components without RHDH, utilize the --set rhdhOperator.enabled=false option. A comprehensive command would resemble the following:
+
+## Prerequisites
+- Ensure that a [PostgreSQL](https://www.postgresql.org/) database is available and that you have credentials to manage the tablespace (optional).
+  - For your convenience, a [reference implementation](https://github.com/parodos-dev/orchestrator-helm-chart/blob/gh-pages/postgresql/README.md) is provided.
+  - If you already have a PostgreSQL database installed, please refer to this [note](https://github.com/parodos-dev/orchestrator-helm-chart/blob/gh-pages/postgresql/README.md#note-the-default-settings-provided-in-postgresql-values-match-the-defaults-provided-in-the-orchestrator-values) regarding default settings.
+
+To install the required components without RHDH, utilize the `--set rhdhOperator.enabled=false` option. A comprehensive command would resemble the following:
 
 ```bash
 helm upgrade -i orchestrator orchestrator/orchestrator --set rhdhOperator.enabled=false
