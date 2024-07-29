@@ -3,7 +3,7 @@ title: "Quick Start"
 date: 2024-04-05
 weight: 1
 ---
-
+ iddddddddddddddddddddddddddd
 ## Basic Installation
 
 To install Parodos, start by deciding whether to use helm chart or deploy from sources as detailed in the [Installation](../installation/) section.

@@ -2,13 +2,13 @@
 title: "Parodos: Workflows for Backstsage"
 cascade:
   - toc_root: true
-    type: docs
+    type: blog
 ---
 
 {{< blocks/cover title="Orchestrating Systems | Migrating Code Infrastructure | Keeping Developers in Sync"  color="primary" image_anchor="top" height="min" >}}
 
 <div class="mx-auto">
-	<a class="btn btn-lg btn-primary me-3 mb-4" href="{{< relref "/v0.1/docs" >}}">
+	<a class="btn btn-lg btn-primary me-3 mb-4" href="{{< relref "/docs" >}}">
 		Learn More <i class="fa-solid fa-circle-right ms-2"></i>
 	</a>
 </div>

@@ -1,7 +1,7 @@
 baseURL: https://parodos.dev
 languageCode: en-us
 title: Parodos Dev
-SectionPagesMenu : "main"
+SectionPagesMenu : "v0.1"
 enableRobotsTXT : true
 theme: 
   - github.com/google/docsy
@@ -31,6 +31,9 @@ markup:
   highlight:
     style: rose-pine-moon
 
+
+
+
 params:
   copyright:
     authors: >-
@@ -39,10 +42,11 @@ params:
     from_year: 2023
       #privacy_policy: link to privacy policy
   version_menu: Releases
+  version_menu_pagelinks: true
   url_latest_version: https://parodos.dev
   versions:
     - version: main
-      url: './'
+      url: './main'
     - version: v0.1
       url: 'v0.1/'
   github_repo: https://github.com/parodos-dev/parodos-dev.github.io
@@ -54,10 +58,23 @@ params:
   offlineSearchMaxResults: 10
   prism_syntax_highlighting: false
   ui:
+        # Enable the logo
+    navbar_logo : true
+    # Enable to show the side bar menu in its compact state.
+    sidebar_menu_compact : true
+    # Enable the search box in the side bar.
+    sidebar_search_disable : false
+    # Set to true to disable breadcrumb navigation.
+    breadcrumb_disable : false
+    # Show expand/collapse icon for sidebar sections
+    sidebar_menu_foldable : true
+    # Disable about button in footer
+    footer_about_disable : true
+
     sidebar_cache_limit: 10
-    sidebar_menu_compact: false
-    sidebar_menu_foldable: false
-    sidebar_search_disable: false
+    #    sidebar_menu_compact: false
+    #sidebar_menu_foldable: false
+    #sidebar_search_disable: false
     feedback:
       enable: true
       'yes': >-
