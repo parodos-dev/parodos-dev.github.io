@@ -86,7 +86,7 @@ a CA which is not available to the workflow. The error in the workflow pod log u
 
 **Solution:**
 When deploying a workflow in a namespace other than the one where Sonataflow services are running (e.g., sonataflow-infra), there are two essential steps to follow if persistence is required for the workflow:
-1. Create a Secret with PostgreSQL Credentials:
+1. Create a Secret with PostgreSQL Credentials in the target namespace:
     1. The workflow needs to create its own schema in PostgreSQL. To enable this, you must create a secret containing the PostgreSQL credentials in the same namespace as the workflow.
 2. Configure the Namespace Attribute:
     1. Add the namespace attribute under the serviceRef where the PostgreSQL server is deployed.
