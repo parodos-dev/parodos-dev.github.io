@@ -23,4 +23,4 @@ This command will result in the installation of the Sonataflow Operator and Open
 
 The required configurations for Orchestrator can be found at the following links, categorized by version:
 * [v1.0.x](https://github.com/parodos-dev/orchestrator-helm-chart/blob/gh-pages-stable-1.x/existing-rhdh.md)
-* [v1.2.x](https://github.com/parodos-dev/orchestrator-helm-chart/blob/gh-pages/docs/existing-rhdh.md)
+* [v1.2.x](https://github.com/parodos-dev/orchestrator-helm-chart/blob/gh-pages/docs/existing-rhdh.md) - **WIP**
