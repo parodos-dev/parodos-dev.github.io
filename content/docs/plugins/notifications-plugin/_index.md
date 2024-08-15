@@ -36,7 +36,7 @@ The backend plugin provides the backend application for reading and writing noti
 ## Authentication
 The Notifications are primarily meant to be sent by backend plugins. In such flow, the authentication is shared among them.
 
-In case an external system (like a Workflow) create a new notification by sending POST request the Notification REST API, authentication needs to be properly configured via setting the `backend.auth.externalAccess` property of the `app-config` .
+To let external systems (like a Workflow) create new notifications by sending POST requests to the Notification REST API, authentication needs to be properly configured via setting the `backend.auth.externalAccess` property of the `app-config` .
 
 Refer to the service-to-service auth documentation for more details, focusing on the [Static Tokens](https://backstage.io/docs/auth/service-to-service-auth) section as the simplest setup option.
 
@@ -75,6 +75,37 @@ It is possible to forward notification content to email address. In order to do 
 
 ## Configuration
 Configuration options can be found in [plugin's documentation](https://github.com/backstage/backstage/blob/master/plugins/notifications-backend-module-email/config.d.ts).
+
+Example configuration:
+
+```yaml
+      pluginConfig:
+        notifications:
+          processors:
+            email:
+              filter:
+                minSeverity: low
+                maxSeverity: critical
+                excludedTopics: []
+              broadcastConfig:
+                receiver: config # or none or users
+                receiverEmails:
+                  - foo@company.com
+                  - bar@company.com
+              cache:
+                ttl:
+                  days: 1
+              concurrencyLimit: 10
+              replyTo: email@company.com
+              sender: email@company.com
+              transportConfig:
+                hostname: your.smtp.host.com
+                password: a-password
+                username: a-smtp-username
+                port: 25
+                secure: false
+                transport: smtp
+```
 
 ## Ignoring unwanted notifications
 The configuration of the module explains how to configure filters. Filters are used to ignore notifications that should not be forwarded to email. The supported filters include minimum/maximum severity and list of excluded topics.
