@@ -1,10 +1,10 @@
 ---
 title: "Installation"
-date: 2024-03-03
+date: 2024-09-10
 weight: 3
 ---
 
-The deployment of the orchestrator involves multiple independent components, each with its unique installation process. Presently, our supported method is through a specialized Helm chart designed for deploying the orchestrator on either OpenShift or Kubernetes environments. This installation process is modular, allowing optional installation of components if they are already present.
+The deployment of the orchestrator involves multiple independent components, each with its unique installation process. In an OpenShift Cluster, the Red Hat Catalog provides an operator that can handle the installation for you. This installation process is modular, as the CRD exposes various flags that allow you to control which components to install. For a vanilla Kubernetes, there is a helm chart that installs the orchestrator compoments.
 
 The *Orchestrator* deployment encompasses the installation of the engine for serving serverless workflows and Backstage, integrated with orchestrator plugins for workflow invocation, monitoring, and control.
 
