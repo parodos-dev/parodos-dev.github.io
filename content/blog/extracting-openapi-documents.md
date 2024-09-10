@@ -1,13 +1,13 @@
 ---
 date: 2024-09-05
-title: Creating Reduced OpenAPI Documents for Integrating Systems on Serverless Workflows
+title: Creating Extracted OpenAPI Documents for Integrating Systems on Serverless Workflows
 ---
 
-# Creating Reduced OpenAPI Documents for Integrating Systems on Serverless Workflows
-The blog post will guide developers on how to reduce openAPI documents to a manageable size. The need for this procedure has risen in account of restrictions that Quarkus imposes with accepting large YAML files as input [(see appendix)](#appendix). This restriction directs us to be mindful and plan ahead which resources services we would need in our workflow. 
+# Creating Extracted OpenAPI Documents for Integrating Systems on Serverless Workflows
+The blog post will guide developers on how to extract openAPI documents to a new file of manageable size. The need for this procedure has risen in account of restrictions that Quarkus imposes with accepting large YAML files as input [(see appendix)](#appendix). This restriction directs us to be mindful and plan ahead which resources services we would need in our workflow. 
 
 
-In this guide, we will explain what is an OpenAPI Document, how to read and use the openAPI Specification, and eventually we will cover the steps to reduce an openAPI document in a valid manner. 
+In this guide, we will explain what is an OpenAPI Document, how to read and use the openAPI Specification, and eventually we will cover the steps to extract an openAPI document in a valid manner. 
 
 ## What is an OpenAPI Document?
 >A self-contained or composite resource which defines or describes an API or elements of an API. 
@@ -18,7 +18,7 @@ An OpenAPI document uses and conforms to the OpenAPI Specification, and in itsel
 For the OpenAPI Spec Documentation, see: https://swagger.io/specification/
 
 ## How to make sense of an OpenAPI Document:
-Let’s take a look at this [openAPI document](../../assets/examples/github-openapi.yaml) for some reference. This is a reduced version of a [larger openAPI document](https://github.com/github/rest-api-description/blob/main/descriptions/api.github.com/api.github.com.yaml) 
+Let’s take a look at this [openAPI document](../../assets/examples/github-openapi.yaml) for some reference. This is an extracted version of a [larger openAPI document](https://github.com/github/rest-api-description/blob/main/descriptions/api.github.com/api.github.com.yaml) 
 
 <div style="height: 200px; overflow-x: auto; border=10px">
 <pre>
@@ -1238,7 +1238,7 @@ security:
 
 The document will then display the system's paths, and must include at least one path.  
 Under each path, the document specifies the path URI, an HTTP method, parameters (if needed), the requestBody, and defines the responses. 
-Note that both the request and the responses can reference a component from a different part of the document. This will be important when we try to reduce the document to our needed purposes. 
+Note that both the request and the responses can reference a component from a different part of the document. This will be important when we try to extract the document to our needed purposes. 
 
 Moreover, it's good to notice now that references to components from some paths may trigger more refernces, as some components reference other components within themselves.  
 
@@ -1491,7 +1491,7 @@ As mentioned before, some components can also reference other components. Let's 
 </pre>
 </div>
 
-As we can see, the 'workflow-run' component is referencing other schemas in the document. This becomes important if you wish to reduce an openAPI document to a smaller size, as you would need to track all recursive references and include all components that got mentioned in the way. 
+As we can see, the 'workflow-run' component is referencing other schemas in the document. This becomes important if you wish to extract an openAPI document to a smaller size, as you would need to track all recursive references and include all components that got mentioned in the way. 
 
 Note the securitySchemas object, which specifies the authentication method used: 
 ```
@@ -1501,11 +1501,11 @@ securitySchemes:
      scheme: bearer
 ```
 
-## How to reduce an OpenAPI Document to workable size?
+## How to extract an OpenAPI Document to workable size?
 ### Manual and logical approach
 Let's say we have an outline of a serverless workflow, and a very large openAPI document that exposes many system resources, much more than we intend on using.
 
-The procedure for reducing the openAPI document can be logically described as the following:
+The procedure for extracting the openAPI document can be logically described as the following:
 
 1. Copy any ‘openapi’, ‘info’, ‘security’, ‘servers’ objects to the new document.    
 2. Identify all system resources that are needed for the workflow.
@@ -1516,12 +1516,18 @@ The procedure for reducing the openAPI document can be logically described as th
 
 This procedure can be quite tedious when done manually, so some efforts were made to automate the process. 
 
-### Python script to reduce documents
+### Python script to extract documents
 
-The [following script](https://github.com/parodos-dev/serverless-workflows/blob/feat/aap-db-deploy/extract_from_swagger_spec.py) can be used to extract reuced openAPI documents from larger ones. 
+The [following script](https://github.com/parodos-dev/serverless-workflows/blob/main/hack/filter-openapi-specs.py) can be used to extract reuced openAPI documents from larger ones. 
 The script takes an input file, and output file, and a list of tuples (path objects, http method). 
 ```
-python extract.py openapi_spec.json filtered_openapi_spec.json "/apis/apps/v1/namespaces/{namespace}/deployments post" "/apis/apps/v1/namespaces/{namespace}/deployments/{name} get" "/api/v1/namespaces/{namespace}/services post" "/apis/route.openshift.io/v1/namespaces/{namespace}/routes post" "/apis/route.openshift.io/v1/namespaces/{namespace}/routes/{name} get" "/apis/route.openshift.io/v1/namespaces/{namespace}/routes/{name}/status get"
+python extract.py openapi_spec.json filtered_openapi_spec.json \
+"/apis/apps/v1/namespaces/{namespace}/deployments post" \
+"/apis/apps/v1/namespaces/{namespace}/deployments/{name} get" \
+"/api/v1/namespaces/{namespace}/services post" \
+"/apis/route.openshift.io/v1/namespaces/{namespace}/routes post" \
+"/apis/route.openshift.io/v1/namespaces/{namespace}/routes/{name} get" \
+"/apis/route.openshift.io/v1/namespaces/{namespace}/routes/{name}/status get"
 ```
 For each path, it extracts all dependencies (refs) that come with it in a recursive way. 
 * Note that currently some references may be missed by the script. 
@@ -1533,7 +1539,7 @@ Some upcoming efforts will look into integrating this logic natively in the kn-w
 ## Best Practices and Warnings:
 **Document size:** Even though the Quarkus engine has a YAML input file size limit of 3MB, the `kn-workflow` CLI generates k8s resources (configmaps) for spec/schema files.  
 K8s has a default size limit of ~1MB per resource, and by default they get applied to all as part of the helm charts created. 
-Therefore, it is best practice to keep the reduced openAPI documents to under 1MB, until this practice is changed.    
+Therefore, it is best practice to keep the extracted openAPI documents to under 1MB, until this practice is changed.    
 
 <a name="appendix"></a>
 ### Appendix:
