@@ -15,7 +15,7 @@ This site is built by hugo static site generater and published using a github ac
     ```bash
     hugo server
     ```
-    If you encounter cache issue, ie: remote Mardown file not updated in Hugo, you can disable it by adding the `--ignoreCache` flag:
+    If you encounter cache issue, ie: remote Markdown file not updated in Hugo, you can disable it by adding the `--ignoreCache` flag:
     ```bash
     hugo server --ignoreCache
     ```
