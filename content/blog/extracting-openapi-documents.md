@@ -1563,11 +1563,11 @@ com.fasterxml.jackson.dataformat.yaml.JacksonYAMLParseException: The incoming YA
 <a name="appendixB"></a>
 
 #### Size restriction workaround:
-By passing the following parameter to the java build environment, is is possible to re-set the maximum YAML input file size limit. 
+By passing the following parameter to the Java build environment, it is possible to set the maximum YAML input file size limit. 
 ```
 -DmaxYamlCodePoints=99999999
 ```
-The CodePoints parameter refers to Unicode points, which are basically the number of characters in the input file (as we're not using special chars like emojis in the yaml input files).
+The CodePoints parameter refers to Unicode points, which are essentially the number of characters in the input file (for UTF-8 encoding)
 The maximum code point number is the integer max, 2^31-1.
 
 
