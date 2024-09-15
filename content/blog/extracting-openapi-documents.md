@@ -4,7 +4,9 @@ title: Creating Extracted OpenAPI Documents for Integrating Systems on Serverles
 ---
 
 # Creating Extracted OpenAPI Documents for Integrating Systems on Serverless Workflows
-The blog post will guide developers on how to extract openAPI documents to a new file of manageable size. The need for this procedure has risen in account of restrictions that Quarkus imposes with accepting large YAML files as input [(see appendix)](#appendix). This restriction directs us to be mindful and plan ahead which resources services we would need in our workflow. 
+The blog post will guide developers on how to extract openAPI documents to a new file of manageable size. The need for this procedure has risen in account of restrictions that Quarkus imposes with accepting large YAML files as input [(see appendix)](#appendix). This restriction directs us to be mindful and plan ahead which resources services we would need in our workflow.
+
+Please note that there is a way to work around the input file size restriction, as will be demonstrated in the [(appendix.)](#appendix)
 
 
 In this guide, we will explain what is an OpenAPI Document, how to read and use the openAPI Specification, and eventually we will cover the steps to extract an openAPI document in a valid manner. 
@@ -1541,8 +1543,12 @@ Some upcoming efforts will look into integrating this logic natively in the kn-w
 K8s has a default size limit of ~1MB per resource, and by default they get applied to all as part of the helm charts created. 
 Therefore, it is best practice to keep the extracted openAPI documents to under 1MB, until this practice is changed.    
 
-<a name="appendix"></a>
+<a name="appendixA"></a>
+
 ### Appendix:
+
+#### Input file size restriction errors:
+
 Quarkus uses [snakeYAML](https://bitbucket.org/snakeyaml/snakeyaml/src/master/) to process the input YAML files in a serverless workflow. A default setting of a maximum size limit has been put in place, which inhibits accepting large files. 
 ```
 Caused by: org.yaml.snakeyaml.error.YAMLException: The incoming YAML document exceeds the limit: 3145728 code points.
@@ -1553,4 +1559,15 @@ com.fasterxml.jackson.dataformat.yaml.JacksonYAMLParseException: The incoming YA
  ```
 
  For reference, a [reproducer](https://github.com/ElaiShalevRH/reproducers) was creater for this issue.  
+
+<a name="appendixB"></a>
+
+#### Size restriction workaround:
+By passing the following parameter to the Java build environment, it is possible to set the maximum YAML input file size limit. 
+```
+-DmaxYamlCodePoints=99999999
+```
+The CodePoints parameter refers to Unicode points, which are essentially the number of characters in the input file (for UTF-8 encoding)
+The maximum code point number is the integer max, 2^31-1.
+
 
