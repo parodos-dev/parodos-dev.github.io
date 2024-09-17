@@ -9,4 +9,4 @@ The *Orchestrator* plugins are deployed on [Red Hat Developer Hub
 ](https://developers.redhat.com/rhdh/overview) instance, serves as the frontend.
 To utilize *Backstage* capabilities, the *Orchestrator* imports software templates designed to ease the development of new workflows and offers an opinionated method for managing their lifecycle by including CI/CD resources as part of the template.
 
-{{< remoteMD "https://github.com/parodos-dev/orchestrator-helm-operator/blob/gh-pages?raw=true" >}}
+{{< remoteMD "https://github.com/parodos-dev/orchestrator-helm-operator/blob/gh-pages/README.md?raw=true" >}}
