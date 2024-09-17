@@ -11,17 +11,25 @@ This document provides solutions to common problems encountered with serverless 
 
 ## Table of Contents
 
-1. [Workflow Errors](#workflow-errors)
-2. [Configuration Problems](#configuration-problems)
-3. [Performance Issues](#performance-issues)
-4. [Error Messages](#error-messages)
-5. [Network Problems](#network-problems)
-6. [Common Scenarios](#common-scenarios)
-7. [Contact Support](#contact-support)
+1. [HTTP Errors](#http-errors)
+2. [Workflow Errors](#workflow-errors)
+3. [Configuration Problems](#configuration-problems)
+4. [Performance Issues](#performance-issues)
+5. [Error Messages](#error-messages)
+6. [Network Problems](#network-problems)
+7. [Common Scenarios](#common-scenarios)
+8. [Contact Support](#contact-support)
 
 ---
 
-## Workflow Errors
+## HTTP Errors
+Many workflow operations are REST requests to REST endpoints. If an HTTP error occurs then the workflow will fail and the HTTP code and message will be displayed. Here is an [example](https://github.com/parodos-dev/parodos-dev.github.io/blob/main/content/1.2-rc/docs/serverless-workflows/409-error.png?raw=true) of the error in the UI.
+Please use [HTTP codes documentation](https://developer.mozilla.org/docs/Web/HTTP/Status) for understanding the meaning of such errors.  
+Here are some examples:
+ - `409`. Usually indicates that we are trying to update or create a resource that already exists. E.g. K8S/OCP resources.
+ - `401`. Unauthorized access. A token, password or username might be wrong or expired.
+ 
+ ## Workflow Errors
 
 ### Problem: Workflow execution fails
 
