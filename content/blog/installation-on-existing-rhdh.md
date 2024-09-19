@@ -3,7 +3,7 @@ date: 2024-03-13
 title: Installing the Orchestrator on existing RHDH instance
 ---
 
-When [RHDH](https://developers.redhat.com/rhdh) is already installed and in use, reinstalling it via the Helm chart is unnecessary. Instead, integrating the Orchestrator into such an environment involves a few key steps:
+When [RHDH](https://developers.redhat.com/rhdh) is already installed and in use, reinstalling it is unnecessary. Instead, integrating the Orchestrator into such an environment involves a few key steps:
 
 1. Utilize the Helm chart to install the requisite components, such as the SonataFlow operator and the OpenShift Serverless Operator, while ensuring the RHDH installation is disabled.
 2. Manually update the existing RHDH ConfigMap resources with the necessary configuration for the Orchestrator plugin.
