@@ -2,7 +2,7 @@
 title: "Architecture"
 weight: 1
 ---
-The *Orchestrator* architecture comprises several integral components, each contributing to the seamless execution and management of workflows. Illustrated below is a breakdown of these components:
+The Orchestrator architecture comprises several integral components, each contributing to the seamless execution and management of workflows. Illustrated below is a breakdown of these components:
 
 - [**Red Hat Developer Hub**](https://developers.redhat.com/rhdh/overview): Serving as the primary interface, Backstage fulfills multiple roles:
   - [*Orchestrator Plugins*](https://github.com/janus-idp/backstage-plugins/tree/main/plugins/orchestrator): Both frontend and backend plugins are instrumental in presenting deployed workflows for execution and monitoring.

@@ -3,12 +3,12 @@ title: "Workflow Types"
 date: 2024-05-07
 ---
 
-The *Orchestrator* features two primary workflow categories:
+The Orchestrator features two primary workflow categories:
 - *Infrastructure workflows*: focus on automating infrastructure-related tasks
 - *Assessment workflows*: focus on evaluating and analyzing data to suggest suitable infrastructure workflow options for subsequent execution
 
 ### Infrastructure workflow
-In the *Orchestrator*, an infrastructure refers to a workflow that executes a sequence of operations based on user input (optional) and generates output (optional) without requiring further action. 
+In the Orchestrator, an infrastructure refers to a workflow that executes a sequence of operations based on user input (optional) and generates output (optional) without requiring further action.
 
 To define this type, developers need to include the following annotation in the workflow definition file:
 
@@ -17,7 +17,7 @@ annotations:
   - "workflow-type/infrastructure"
 ```
 
-The *Orchestrator* plugin utilizes this metadata to facilitate the processing and visualization of infrastructure workflow inputs and outputs within the user interface.
+The Orchestrator plugin utilizes this metadata to facilitate the processing and visualization of infrastructure workflow inputs and outputs within the user interface.
 
 ##### Examples:
 - [Greeting](https://github.com/parodos-dev/serverless-workflows/blob/main/greeting/greeting.sw.yaml)
@@ -26,8 +26,8 @@ The *Orchestrator* plugin utilizes this metadata to facilitate the processing an
 
 
 ### Assessment workflow
-In the *Orchestrator*, an assessment is akin to an infrastructure workflow that concludes with a recommended course of action. 
-Upon completion, the assessment yields a *workflowOptions* object, which presents a list of infrastructure workflows suitable from the user's inputs evaluation. 
+In the Orchestrator, an assessment is akin to an infrastructure workflow that concludes with a recommended course of action.
+Upon completion, the assessment yields a *workflowOptions* object, which presents a list of infrastructure workflows suitable from the user's inputs evaluation.
 
 To define this type, developers must include the following annotation in the workflow definition file:
 
@@ -36,7 +36,7 @@ annotations:
   - "workflow-type/assessment"
 ```
 
-The *Orchestrator* plugin utilizes this metadata to facilitate the processing and visualization of assessment workflow inputs and outputs within the user interface. 
+The Orchestrator plugin utilizes this metadata to facilitate the processing and visualization of assessment workflow inputs and outputs within the user interface.
 This includes generating links to initiate infrastructure workflows from the list of recommended options, enabling seamless execution and integration.
 
 The *workflowOptions* object must possess six essential attributes with specific types, including lists that can be empty or contain objects with `id` and `name` properties, similar to the `currentVersion` attribute. See an example in the below code snippet.
@@ -69,7 +69,7 @@ The *workflowOptions* object must possess six essential attributes with specific
 - [Dummy Assessment](https://github.com/parodos-dev/serverless-workflow-examples/tree/main/assessment)
 
 #### Note
-If the aforementioned annotation is missing in the workflow definition file, the *Orchestrator* plugin will default to treating the workflow as an infrastructure workflow, without considering its output.
+If the aforementioned annotation is missing in the workflow definition file, the Orchestrator plugin will default to treating the workflow as an infrastructure workflow, without considering its output.
 
 To avoid unexpected behavior and ensure clarity, it is strongly advised to always include the annotation to explicitly specify the workflow type, preventing any surprises or misinterpretations.
 
