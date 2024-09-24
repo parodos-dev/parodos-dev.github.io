@@ -13,9 +13,8 @@ When [RHDH](https://developers.redhat.com/rhdh) is already installed and in use,
 - RHDH is already deployed with a running Backstage instance.
   - Software templates for workflows requires GitHub provider to be configured.
 - Ensure that a [PostgreSQL](https://www.postgresql.org/) database is available and that you have credentials to manage the tablespace (optional).
-  - For your convenience, a [reference implementation](https://github.com/parodos-dev/orchestrator-helm-chart/blob/gh-pages/postgresql/README.md) is provided.
-  - If you already have a PostgreSQL database installed, please refer to this [note](https://github.com/parodos-dev/orchestrator-helm-chart/blob/gh-pages/postgresql/README.md#note-the-default-settings-provided-in-postgresql-values-match-the-defaults-provided-in-the-orchestrator-values) regarding default settings.
+  - For your convenience, a [reference implementation](https://github.com/parodos-dev/orchestrator-helm-operator/blob/gh-pages/postgresql/README.md) is provided.
+  - If you already have a PostgreSQL database installed, please refer to this [note](https://github.com/parodos-dev/orchestrator-helm-operator/blob/gh-pages/postgresql/README.md#note-the-default-settings-provided-in-postgresql-values-match-the-defaults-provided-in-the-orchestrator-values) regarding default settings.
 
 The required configurations for Orchestrator can be found at the following links:
-* [v1.0.x](https://github.com/parodos-dev/orchestrator-helm-chart/blob/gh-pages-stable-1.x/existing-rhdh.md) - for RHDH-1.1.x
-* [v1.2.x](https://github.com/parodos-dev/orchestrator-helm-chart/blob/gh-pages/docs/existing-rhdh.md) - for RHDH-1.2.x **WIP**
+* [v1.2.x](https://github.com/parodos-dev/orchestrator-helm-operator/blob/gh-pages/existing-rhdh.md) - for RHDH-1.2.x
