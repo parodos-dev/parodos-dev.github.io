@@ -93,4 +93,4 @@ a CA which is not available to the workflow. The error in the workflow pod log u
 ### Problem: Workflow installed in a different namespace than Sonataflow services fails to start
 
 **Solution:**
-When deploying a workflow in a namespace other than the one where Sonataflow services are running (e.g., sonataflow-infra), there are essential steps to follow to enable persistence and connectivity for the workflow. See the following [steps](https://github.com/parodos-dev/orchestrator-helm-operator/blob/gh-pages/README.md#additional-workflow-namespaces).
+When deploying a workflow in a namespace other than the one where Sonataflow services are running (e.g., sonataflow-infra), there are essential steps to follow to enable persistence and connectivity for the workflow. See the following [steps](https://github.com/parodos-dev/orchestrator-helm-operator/blob/main/docs/release-1.2/README.md#additional-workflow-namespaces).
