@@ -16,5 +16,4 @@ When [RHDH](https://developers.redhat.com/rhdh) is already installed and in use,
   - For your convenience, a [reference implementation](https://github.com/parodos-dev/orchestrator-helm-operator/blob/main/docs/postgresql/README.md) is provided.
   - If you already have a PostgreSQL database installed, please refer to this [note](https://github.com/parodos-dev/orchestrator-helm-operator/blob/main/docs/postgresql/README.md#note-the-default-settings-provided-in-postgresql-values-match-the-defaults-provided-in-the-orchestrator-values) regarding default settings.
 
-The required configurations for Orchestrator can be found at the following links:
-* [v1.2.x](https://github.com/parodos-dev/orchestrator-helm-operator/blob/main/docs/release-1.2/existing-rhdh.md) - for RHDH-1.2.x
+The installation steps are detailed [here](https://github.com/parodos-dev/orchestrator-helm-operator/blob/main/docs/release-1.2/existing-rhdh.md).
