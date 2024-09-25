@@ -1,8 +1,8 @@
 baseURL: /
 languageCode: en-us
-title: Parodos Dev
+title: Orchestrator Dev
 enableRobotsTXT: true
-theme: 
+theme:
   - github.com/google/docsy
 module:
   imports:
@@ -37,19 +37,20 @@ markup:
 params:
   copyright:
     authors: >-
-      Parodos Authors|
+      Orchestrator Authors|
       [CC BY 4.0](https://creativecommons.org/licenses/by/4.0) |
-    from_year: 2023
+    from_year:
+      2023
       #privacy_policy: link to privacy policy
 
-  version_menu: Documentation 
+  version_menu: Documentation
   version_menu_pagelinks: false
   url_latest_version: https://parodos.dev
   versions:
-    - version: 1.2-rc
-      url: '/1.2-rc/docs'
-    - version: v1.1.x
-      url: '/v1.1.x/docs'
+    - version: 1.2
+      url: "/1.2/docs"
+    - version: snapshot
+      url: "/snapshot"
 
   github_repo: https://github.com/parodos-dev/parodos-dev.github.io
   github_project_repo: https://github.com/parodos-dev/parodos-dev.github.io
@@ -60,18 +61,18 @@ params:
   offlineSearchMaxResults: 10
   prism_syntax_highlighting: false
   ui:
-        # Enable the logo
-    navbar_logo : true
+    # Enable the logo
+    navbar_logo: true
     # Enable to show the side bar menu in its compact state.
-    sidebar_menu_compact : true
+    sidebar_menu_compact: true
     # Enable the search box in the side bar.
-    sidebar_search_disable : false
+    sidebar_search_disable: false
     # Set to true to disable breadcrumb navigation.
-    breadcrumb_disable : false
+    breadcrumb_disable: false
     # Show expand/collapse icon for sidebar sections
-    sidebar_menu_foldable : true
+    sidebar_menu_foldable: true
     # Disable about button in footer
-    footer_about_enabled : false
+    footer_about_enabled: false
 
     sidebar_cache_limit: 10
     #    sidebar_menu_compact: false
@@ -79,11 +80,11 @@ params:
     #sidebar_search_disable: false
     feedback:
       enable: true
-      'yes': >-
+      "yes": >-
         Glad to hear it! Please <a
         href="https://github.com/parodos-dev/parodos-dev.github.io/issues/new">tell us how we can
         improve</a>.
-      'no': >-
+      "no": >-
         Sorry to hear that. Please <a
         href="https://github.com/parodos-dev/parodos-dev.github.io/issues/new">tell us how we can
         improve</a>.
@@ -128,4 +129,3 @@ params:
 taxonomies:
   tag: tags
   category: categories
-
