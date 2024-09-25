@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting
 date: "2024-07-25"
-weight: 101
+weight: 120
 ---
 
 
@@ -94,14 +94,3 @@ a CA which is not available to the workflow. The error in the workflow pod log u
 
 **Solution:**
 When deploying a workflow in a namespace other than the one where Sonataflow services are running (e.g., sonataflow-infra), there are essential steps to follow to enable persistence and connectivity for the workflow. See the following [steps](https://github.com/parodos-dev/orchestrator-helm-operator/blob/gh-pages/README.md#additional-workflow-namespaces).
-
-
-## Performance Issues
-TBD
-## Error Messages
-TBD
-## Network Problems
-TBD
-## Common Scenarios
-
-
