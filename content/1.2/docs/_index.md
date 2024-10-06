@@ -8,5 +8,5 @@ cascade:
 
 # Orchestrator
 
-Choose a section from the list bellow. For Orchestrator introduction, check the [Quick Start](./quickstart/).
+Choose a section from the list below. For Orchestrator introduction, check the [Quick Start](./quickstart/).
 
