@@ -93,8 +93,17 @@ a CA which is not available to the workflow. The error in the workflow pod log u
 ### Problem: Workflow installed in a different namespace than Sonataflow services fails to start
 
 **Solution:**
-When deploying a workflow in a namespace other than the one where Sonataflow services are running (e.g., sonataflow-infra), there are essential steps to follow to enable persistence and connectivity for the workflow. See the following [steps](https://github.com/parodos-dev/orchestrator-helm-operator/blob/main/docs/main/README.md#additional-workflow-namespaces).
+When deploying a workflow in a namespace other than the one where Sonataflow services are running (e.g., `sonataflow-infra`), there are essential steps to follow to enable persistence and connectivity for the workflow. See the following [steps](https://github.com/parodos-dev/orchestrator-helm-operator/blob/main/docs/main/README.md#additional-workflow-namespaces).
 
 ### Problem: sonataflow-platform-data-index-service pods can't connect to the database on startup
 
-Check if the PostgreSQL pod is still starting. If it is, allow some time for the pod to become fully operational before the DataIndex and JobService pods are ready.
+1. **Ensure PostgreSQL Pod has Fully Started**\
+If the PostgreSQL pod is still initializing, allow additional time for it to become 
+fully operational before expecting the `DataIndex` and `JobService` pods to connect.
+1. **Verify network policies if PostgreSQL Server is in a different namespace**\
+If PostgreSQL Server is deployed in a separate namespace from Sonataflow services
+(e.g., not in `sonataflow-infra` namespace), ensure that network policies in the
+PostgreSQL namespace allow ingress from the Sonataflow services namespace
+(e.g., `sonataflow-infra`). Without appropriate ingress rules,
+network policies may prevent the `DataIndex` and `JobService` pods from
+connecting to the database.
