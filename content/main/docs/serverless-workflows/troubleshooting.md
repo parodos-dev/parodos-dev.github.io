@@ -93,41 +93,17 @@ a CA which is not available to the workflow. The error in the workflow pod log u
 ### Problem: Workflow installed in a different namespace than Sonataflow services fails to start
 
 **Solution:**
-When deploying a workflow in a namespace other than the one where Sonataflow services are running (e.g., sonataflow-infra), there are essential steps to follow to enable persistence and connectivity for the workflow. See the following [steps](https://github.com/parodos-dev/orchestrator-helm-operator/blob/main/docs/main/README.md#additional-workflow-namespaces).
+When deploying a workflow in a namespace other than the one where Sonataflow services are running (e.g., `sonataflow-infra`), there are essential steps to follow to enable persistence and connectivity for the workflow. See the following [steps](https://github.com/parodos-dev/orchestrator-helm-operator/blob/main/docs/main/README.md#additional-workflow-namespaces).
 
 ### Problem: sonataflow-platform-data-index-service pods can't connect to the database on startup
 
-First, check if the PostgreSQL pod is still starting. If it is, allow some time for the pod to become fully operational before the DataIndex and JobService pods are ready.
-
-If the PostgreSQL pod is running but the issue persists, verify that the `sonataflow-infra` namespace has the required label `rhdh.redhat.com/workflow-namespace`. Missing this label can cause connectivity issues.
-
-**Solution:**
-
-Get the NetworkPolicy name from its [definition](https://github.com/parodos-dev/orchestrator-helm-operator/blob/03ddd07bcd8e2aaf9fb37cedb6604be2cf37b6f3/helm-charts/orchestrator/templates/network-policies.yaml#L5). or example, it may be `allow-rhdh-to-sonataflow-and-workflows`.
-
-View the details of the specified NetworkPolicy:
-
-```bash
-oc get networkpolicy allow-rhdh-to-sonataflow-and-workflows -n sonataflow-infra
-```
-
-In the output YAML, you should see something like:
-
-```yaml
-- namespaceSelector:
-    matchLabels:
-    # Allow any other namespace the has workflows deployed because this is where
-    # this namespace contains the sonataflow services
-    rhdh.redhat.com/workflow-namespace: ""
-```
-
-verify if that label is available in `sonataflow-infra` namespace:
-
-```bash
-oc get ns sonataflow-infra -o yaml
-```
-
-If the required label is missing, you can add it by running the following command:
-```bash
-oc label ns sonataflow-infra rhdh.redhat.com/workflow-namespace: ""
-```
+1. **Ensure PostgreSQL Pod has Fully Started**\
+If the PostgreSQL pod is still initializing, allow additional time for it to become 
+fully operational before expecting the `DataIndex` and `JobService` pods to connect.
+1. **Verify network policies if PostgreSQL Server is in a different namespace**\
+If PostgreSQL Server is deployed in a separate namespace from Sonataflow services
+(e.g., not in `sonataflow-infra` namespace), ensure that network policies in the
+PostgreSQL namespace allow ingress from the Sonataflow services namespace
+(e.g., `sonataflow-infra`). Without appropriate ingress rules,
+network policies may prevent the `DataIndex` and `JobService` pods from
+connecting to the database.
