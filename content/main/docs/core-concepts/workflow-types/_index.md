@@ -20,9 +20,9 @@ annotations:
 The Orchestrator plugin utilizes this metadata to facilitate the processing and visualization of infrastructure workflow inputs and outputs within the user interface.
 
 ##### Examples:
-- [Greeting](https://github.com/parodos-dev/serverless-workflows/blob/main/greeting/greeting.sw.yaml)
-- [Ticket Escalation](https://github.com/parodos-dev/serverless-workflows/blob/main/escalation/ticketEscalation.sw.yaml)
-- [Move2Kube](https://github.com/parodos-dev/serverless-workflows/blob/main/move2kube/m2k.sw.yml)
+- [Greeting](https://github.com/parodos-dev/serverless-workflows/blob/main/workflows/greeting/greeting.sw.yaml)
+- [Ticket Escalation](https://github.com/parodos-dev/serverless-workflows/blob/main/workflows/escalation/ticketEscalation.sw.yaml)
+- [Move2Kube](https://github.com/parodos-dev/serverless-workflows/blob/main/workflows/move2kube/m2k.sw.yml)
 
 
 ### Assessment workflow
@@ -65,7 +65,7 @@ The *workflowOptions* object must possess six essential attributes with specific
 ```
 
 ##### Examples:
-- [MTA](https://github.com/parodos-dev/serverless-workflows/blob/main/mta/mta.sw.yaml)
+- [MTA](https://github.com/parodos-dev/serverless-workflows/blob/main/workflows/mta/mta.sw.yaml)
 - [Dummy Assessment](https://github.com/parodos-dev/serverless-workflow-examples/tree/main/assessment)
 
 #### Note
