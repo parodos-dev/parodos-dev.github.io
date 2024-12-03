@@ -22,7 +22,7 @@ The reference architecture that we're going to describe consists of the followin
 * `GitHub gitops repo`: the repository of the `kustomize` deployment configuration.
   * Includes the commands to boostrap the ArgoCD applications on your selected environment.
 
-![feature branches git workflow](/content/blog/images/cicd-architecture.png)
+![feature branches git workflow](/blog/images/cicd-architecture.png)
  
 Please note that all these components, with the exclusion of the `Quay.io` and the `GitHub` organizations, are either bundled with the Orchestrator plugin or managed by the software projects generated with the RHDH Software Templates.
 
@@ -32,7 +32,7 @@ Let's assume your company follows the `feature branches git workflow`:
 * The `develop` branch serves as the integration point where all features are merged to validate the application in the staging environment.
 * Once the software receives the green light, the code is released to the `main` branch and deployed to the production environment.
 
-![feature branches git workflow](/content/blog/images/git-workflow.png)
+![feature branches git workflow](/blog/images/git-workflow.png)
 
 Don't be surprised, but the Orchestrator plugin automatically installs all the needed resources to handle these steps for you throughout the entire
 software development lifecycle.
