@@ -1,4 +1,4 @@
-module github.com/parodos-dev/parodos-dev.github.io
+module github.com/rhdhorchestrator/rhdhorchestrator.github.io
 
 go 1.20
 

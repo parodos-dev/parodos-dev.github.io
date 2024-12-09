@@ -45,7 +45,7 @@ params:
 
   version_menu: Documentation
   version_menu_pagelinks: false
-  url_latest_version: https://parodos.dev
+  url_latest_version: https://rhdhorchestrator.io
   versions:
     - version: 1.3
       url: "/1.3/docs"
@@ -54,8 +54,8 @@ params:
     - version: main
       url: "/main/docs"
 
-  github_repo: https://github.com/parodos-dev/parodos-dev.github.io
-  github_project_repo: https://github.com/parodos-dev/parodos-dev.github.io
+  github_repo: https://github.com/rhdhorchestrator/rhdhorchestrator.github.io
+  github_project_repo: https://github.com/rhdhorchestrator/rhdhorchestrator.github.io
   time_format_blog: Monday, January 02, 2006
   time_format_default: January 2, 2006
   offlineSearch: true
@@ -84,11 +84,11 @@ params:
       enable: true
       "yes": >-
         Glad to hear it! Please <a
-        href="https://github.com/parodos-dev/parodos-dev.github.io/issues/new">tell us how we can
+        href="https://github.com/rhdhorchestrator/rhdhorchestrator.github.io/issues/new">tell us how we can
         improve</a>.
       "no": >-
         Sorry to hear that. Please <a
-        href="https://github.com/parodos-dev/parodos-dev.github.io/issues/new">tell us how we can
+        href="https://github.com/rhdhorchestrator/rhdhorchestrator.github.io/issues/new">tell us how we can
         improve</a>.
     readingtime:
       enable: true
@@ -112,7 +112,7 @@ params:
       #  desc: Practical questions and curated answers
     developer:
       - name: GitHub
-        url: https://github.com/parodos-dev/parodos-dev.github.io
+        url: https://github.com/rhdhorchestrator/rhdhorchestrator.github.io
         icon: fa-brands fa-github
         desc: Development takes place here!
 

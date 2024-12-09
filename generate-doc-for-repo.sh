@@ -2,11 +2,11 @@
 
 if [[ "$#" -eq 0 ]]; then
    cat << EOF
-   This script will generate a post file in markdown format, that will 
+   This script will generate a post file in markdown format, that will
    source its content in build-time from a remote markdown file:
-   
+
     Example:
-   ./generate-doc-for-repo.sh https://github.com/parodos-dev/serverless-workflows/blob/main/README.md
+   ./generate-doc-for-repo.sh https://github.com/rhdhorchestrator/serverless-workflows/blob/main/README.md
 
 EOF
 exit 1
