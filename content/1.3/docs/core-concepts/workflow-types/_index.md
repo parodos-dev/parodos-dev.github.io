@@ -65,7 +65,7 @@ The *workflowOptions* object must possess six essential attributes with specific
 ```
 
 ##### Examples:
-- [MTA](https://github.com/parodos-dev/serverless-workflows/blob/v1.3.x/mta/mta.sw.yaml)
+- [MTA](https://github.com/parodos-dev/serverless-workflows/blob/v1.3.x/mta-v7.x/mta.sw.yaml)
 - [Dummy Assessment](https://github.com/parodos-dev/serverless-workflow-examples/tree/main/assessment)
 
 #### Note
