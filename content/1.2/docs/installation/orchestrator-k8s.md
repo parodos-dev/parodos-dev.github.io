@@ -42,4 +42,4 @@ kubectl patch daemonsets -n projectcontour envoy -p '{"spec":{"template":{"spec"
 
 The cluster should be up and running with [Contour ingress-controller](https://projectcontour.io) installed, so localhost:9090 will direct the traffic to Backstage, because of the ingress created by the helm chart on port 80.
 
-{{< remoteMD "https://raw.githubusercontent.com/parodos-dev/orchestrator-helm-chart/main/charts/orchestrator-k8s/README.md" >}}
+{{< remoteMD "https://raw.githubusercontent.com/rhdhorchestrator/orchestrator-helm-chart/main/charts/orchestrator-k8s/README.md" >}}

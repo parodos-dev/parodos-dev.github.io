@@ -23,12 +23,12 @@ This document provides solutions to common problems encountered with serverless 
 ---
 
 ## HTTP Errors
-Many workflow operations are REST requests to REST endpoints. If an HTTP error occurs then the workflow will fail and the HTTP code and message will be displayed. Here is an [example](https://github.com/parodos-dev/parodos-dev.github.io/blob/main/content/1.2/docs/serverless-workflows/409-error.png?raw=true) of the error in the UI.
-Please use [HTTP codes documentation](https://developer.mozilla.org/docs/Web/HTTP/Status) for understanding the meaning of such errors.  
+Many workflow operations are REST requests to REST endpoints. If an HTTP error occurs then the workflow will fail and the HTTP code and message will be displayed. Here is an [example](https://github.com/rhdhorchestrator/rhdhorchestrator.github.io/blob/main/content/1.2/docs/serverless-workflows/409-error.png?raw=true) of the error in the UI.
+Please use [HTTP codes documentation](https://developer.mozilla.org/docs/Web/HTTP/Status) for understanding the meaning of such errors.
 Here are some examples:
  - `409`. Usually indicates that we are trying to update or create a resource that already exists. E.g. K8S/OCP resources.
  - `401`. Unauthorized access. A token, password or username might be wrong or expired.
- 
+
  ## Workflow Errors
 
 ### Problem: Workflow execution fails
@@ -68,13 +68,13 @@ Here are some examples:
         $ oc get pods -l sonataflow.org/service=sonataflow-platform-data-index-service -n sonataflow-infra
         NAME                                                      READY   STATUS    RESTARTS   AGE
         sonataflow-platform-data-index-service-546f59f89f-b7548   1/1     Running   0          11kh
-        
+
         $ oc rollout restart deployment my-workflow
     ```
 
 ### Problem: Workflow is failing to reach an HTTPS endpoint because it can't verify it
 
-- REST actions performed by the workflow can fail the SSL certificate check if the target endpoint is signed with 
+- REST actions performed by the workflow can fail the SSL certificate check if the target endpoint is signed with
 a CA which is not available to the workflow. The error in the workflow pod log usually looks like this:
 
     ```console
@@ -99,7 +99,7 @@ If the PostgreSQL pod is running but the issue persists, verify that the `sonata
 
 **Solution:**
 
-Get the NetworkPolicy name from its [definition](https://github.com/parodos-dev/orchestrator-helm-operator/blob/03ddd07bcd8e2aaf9fb37cedb6604be2cf37b6f3/helm-charts/orchestrator/templates/network-policies.yaml#L5). or example, it may be `allow-rhdh-to-sonataflow-and-workflows`.
+Get the NetworkPolicy name from its [definition](https://github.com/rhdhorchestrator/orchestrator-helm-operator/blob/03ddd07bcd8e2aaf9fb37cedb6604be2cf37b6f3/helm-charts/orchestrator/templates/network-policies.yaml#L5). or example, it may be `allow-rhdh-to-sonataflow-and-workflows`.
 
 View the details of the specified NetworkPolicy:
 

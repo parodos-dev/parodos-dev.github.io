@@ -20,7 +20,7 @@ Next, add robot account permissions to the created repository.
 ![Setting permissions](/blog/images/add-robot-accout-perm-to-workflow.png)
 
 ### Creating a Secret for GitOps Cluster
-Refer to the instructions [here](https://github.com/parodos-dev/orchestrator-helm-operator/blob/main/docs/gitops/README.md#installing-docker-credentials) for creating and configuring the secret for the target cluster.
+Refer to the instructions [here](https://github.com/rhdhorchestrator/orchestrator-helm-operator/blob/main/docs/gitops/README.md#installing-docker-credentials) for creating and configuring the secret for the target cluster.
 
 ## Creating the Software Template
 The Orchestrator plugin provides templates to kickstart your workflow project. By selecting a template tagged with `orchestrator`, you gain access to the following benefits:
