@@ -1,6 +1,6 @@
 baseURL: /
 languageCode: en-us
-title: Orchestrator Dev
+title: RHDH Orchestrator
 enableRobotsTXT: true
 theme:
   - github.com/google/docsy
