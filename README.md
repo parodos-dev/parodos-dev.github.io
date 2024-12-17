@@ -25,9 +25,9 @@ This site is built by hugo static site generater and published using a github ac
 - content/docs \
   The main directory for the project document
 - content/docs/workflows \
-  Document for the selected set of workflows, for https://rhdhorchestrator/serverless-workflows
+  Document for the selected set of workflows, for https://www.rhdhorchestrator.io/main/docs/serverless-workflows
 - content/docs/workflows-examples \
-  Document for the examples workflows, for https://rhdhorchestrator/serverless-workflow-examples
+  Document for the examples workflows, for https://www.rhdhorchestrator.io/main/docs/serverless-workflows/examples
 - content/post \
   Articles, blog posts, etc.
 
