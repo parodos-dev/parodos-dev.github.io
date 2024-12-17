@@ -4,7 +4,7 @@ date: 2024-11-25
 ---
 
 ## Operators
-The orchestrator runtime/deployment is made of two main parts: `OpenShift Serverless Logic operator` and `RHDH operator`
+The Orchestrator runtime/deployment is made of two main parts: `OpenShift Serverless Logic operator` and `RHDH operator`
 
 ### OpenShift Serverless Logic operator requirements
 OpenShift Serverless Logic operator resource requirements are described [OpenShift Serverless Logic Installation Requirements](https://openshift-knative.github.io/docs/docs/latest/serverless-logic/getting-started/preparing-environment.html#proc-minimal-local-environment-setup). This is mainly for local environment settings.  
